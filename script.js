@@ -17,16 +17,31 @@ function loadScript(src){
 async function loadQRCode(){ if(!window.QRCode) await loadScript("https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"); return window.QRCode; }
 async function loadJSZip(){ if(!window.JSZip) await loadScript("https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"); return window.JSZip; }
 
-/* ---------- Category icons (outline style, currentColor so they inherit the brand teal) ---------- */
-const icons={
-"ক্যালকুলেটর":`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="2"/><line x1="8" y1="7.5" x2="16" y2="7.5"/><circle cx="8.2" cy="12" r="0.9" fill="currentColor" stroke="none"/><circle cx="12" cy="12" r="0.9" fill="currentColor" stroke="none"/><circle cx="15.8" cy="12" r="0.9" fill="currentColor" stroke="none"/><circle cx="8.2" cy="16" r="0.9" fill="currentColor" stroke="none"/><circle cx="12" cy="16" r="0.9" fill="currentColor" stroke="none"/><circle cx="15.8" cy="16" r="0.9" fill="currentColor" stroke="none"/></svg>`,
-"ফাইন্যান্স":`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="4,16 9,10.5 13,13.5 20,5"/><polyline points="14.5,5 20,5 20,10.5"/></svg>`,
-"টেক্সট":`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="6" x2="19" y2="6"/><line x1="5" y1="12" x2="19" y2="12"/><line x1="5" y1="18" x2="13" y2="18"/></svg>`,
-"ইমেজ":`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="8.5" cy="10" r="1.4"/><polyline points="5,17 10,12.5 13,15 16.5,11.2 19,15"/></svg>`,
-"PDF":`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3h7l4 4v14H7z"/><path d="M14 3v4h4"/><line x1="9.5" y1="13" x2="14.5" y2="13"/><line x1="9.5" y1="16.5" x2="14.5" y2="16.5"/></svg>`,
-"ডেভেলপার":`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="9,7 4,12 9,17"/><polyline points="15,7 20,12 15,17"/></svg>`,
-"ইউটিলিটি":`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="7" height="7" rx="1.5"/><rect x="13" y="4" width="7" height="7" rx="1.5"/><rect x="4" y="13" width="7" height="7" rx="1.5"/><rect x="13" y="13" width="7" height="7" rx="1.5"/></svg>`
+/* ---------- Per-tool icons (each tool gets its own distinct mark, outline style, currentColor) ---------- */
+const toolIcons={
+"age-calculator":`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="12" width="16" height="8" rx="1.5"/><line x1="4" y1="16" x2="20" y2="16"/><line x1="8" y1="12" x2="8" y2="8"/><line x1="12" y1="12" x2="12" y2="7"/><line x1="16" y1="12" x2="16" y2="8"/><circle cx="8" cy="6.5" r="1" fill="currentColor" stroke="none"/><circle cx="12" cy="5.2" r="1" fill="currentColor" stroke="none"/><circle cx="16" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>`,
+"percentage-calculator":`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="19" x2="19" y2="5"/><circle cx="7.3" cy="7.3" r="2.5"/><circle cx="16.7" cy="16.7" r="2.5"/></svg>`,
+"bmi-calculator":`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="16" width="16" height="5" rx="1.4"/><circle cx="12" cy="18.5" r="0.9" fill="currentColor" stroke="none"/><circle cx="12" cy="7.5" r="2.6"/><path d="M8 16c0-3 1.8-5.3 4-5.3s4 2.3 4 5.3"/></svg>`,
+"discount-calculator":`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12.5 12.5 20 4 11.5V4h7.5z"/><circle cx="8" cy="8" r="1.6" fill="currentColor" stroke="none"/><line x1="8.5" y1="15.5" x2="15.5" y2="8.5"/></svg>`,
+"profit-loss-calculator":`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="4,9 9,4 14,9"/><line x1="9" y1="4" x2="9" y2="14"/><polyline points="20,15 15,20 10,15"/><line x1="15" y1="10" x2="15" y2="20"/></svg>`,
+"salary-calculator":`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="12" rx="2"/><circle cx="16" cy="12" r="1.8"/><line x1="3" y1="10" x2="8" y2="10"/></svg>`,
+"vat-calculator":`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12v18l-2-1.3L14 21l-2-1.3L10 21l-2-1.3L6 21z"/><line x1="9" y1="8" x2="15" y2="8"/><line x1="9" y1="12" x2="15" y2="12"/></svg>`,
+"emi-calculator":`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="12,3 21,9 3,9"/><line x1="5" y1="9" x2="5" y2="19"/><line x1="10" y1="9" x2="10" y2="19"/><line x1="14" y1="9" x2="14" y2="19"/><line x1="19" y1="9" x2="19" y2="19"/><line x1="3" y1="19" x2="21" y2="19"/></svg>`,
+"date-calculator":`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="8" height="8" rx="1.3"/><line x1="3" y1="8" x2="11" y2="8"/><rect x="13" y="11" width="8" height="8" rx="1.3"/><line x1="13" y1="14" x2="21" y2="14"/><line x1="11" y1="9" x2="16" y2="14" stroke-dasharray="2 2"/></svg>`,
+"currency-converter":`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h13"/><polyline points="14,4 18,8 14,12"/><path d="M20 16H7"/><polyline points="10,20 6,16 10,12"/></svg>`,
+"word-counter":`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="11" x2="20" y2="11"/><line x1="4" y1="16" x2="14" y2="16"/><line x1="17" y1="19" x2="17" y2="21.5"/><line x1="19" y1="19" x2="19" y2="21.5"/><line x1="21" y1="19" x2="21" y2="21.5"/></svg>`,
+"character-counter":`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 19 10.5 5h1l4.5 14"/><line x1="7.6" y1="14" x2="14.4" y2="14"/><line x1="18" y1="7" x2="18" y2="9.5"/><line x1="20" y1="7" x2="20" y2="9.5"/></svg>`,
+"case-converter":`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><text x="12" y="17.5" font-size="14" text-anchor="middle" font-family="Arial,sans-serif" font-weight="700" fill="currentColor" stroke="none">Aa</text></svg>`,
+"image-compressor":`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><polyline points="9,10 6,10 6,7"/><line x1="6" y1="10" x2="10" y2="6"/><polyline points="15,14 18,14 18,17"/><line x1="18" y1="14" x2="14" y2="18"/></svg>`,
+"image-resizer":`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><polyline points="14,9 18,9 18,13"/><line x1="18" y1="9" x2="13" y2="14"/><polyline points="10,15 6,15 6,11"/><line x1="6" y1="15" x2="11" y2="10"/></svg>`,
+"jpg-to-png":`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="8.5" width="7" height="7" rx="1.3" fill="currentColor" stroke="none"/><line x1="10.5" y1="12" x2="14.5" y2="12"/><polyline points="12.7,9.8 15.2,12 12.7,14.2"/><rect x="16" y="8.5" width="7" height="7" rx="1.3"/></svg>`,
+"png-to-jpg":`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="8.5" width="7" height="7" rx="1.3"/><line x1="10.5" y1="12" x2="14.5" y2="12"/><polyline points="12.7,9.8 15.2,12 12.7,14.2"/><rect x="16" y="8.5" width="7" height="7" rx="1.3" fill="currentColor" stroke="none"/></svg>`,
+"pdf-to-jpg":`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M2 2h6l3 3v13H2z"/><line x1="4" y1="10" x2="8.5" y2="10"/><line x1="4" y1="13" x2="8.5" y2="13"/><polyline points="11.5,11 15,11"/><polyline points="13.3,8.8 15.7,11 13.3,13.2"/><rect x="16.5" y="6.5" width="7" height="7.5" rx="1.3"/><polyline points="17.3,12.3 19.5,9.8 21.8,12.7"/></svg>`,
+"json-formatter":`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><text x="12" y="17.5" font-size="16" text-anchor="middle" font-family="Georgia,serif" font-weight="700" fill="currentColor" stroke="none">{ }</text></svg>`,
+"password-generator":`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="4"/><line x1="11" y1="11" x2="20" y2="20"/><line x1="15.5" y1="15.5" x2="18" y2="13"/><line x1="18" y1="18" x2="20.5" y2="15.5"/></svg>`,
+"qr-generator":`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="6" height="6" rx="1"/><rect x="5.3" y="5.3" width="1.4" height="1.4" fill="currentColor" stroke="none"/><rect x="15" y="3" width="6" height="6" rx="1"/><rect x="17.3" y="5.3" width="1.4" height="1.4" fill="currentColor" stroke="none"/><rect x="3" y="15" width="6" height="6" rx="1"/><rect x="5.3" y="17.3" width="1.4" height="1.4" fill="currentColor" stroke="none"/><rect x="15" y="15" width="2.2" height="2.2" fill="currentColor" stroke="none"/><rect x="18.5" y="15" width="2.5" height="2.5" fill="currentColor" stroke="none"/><rect x="15" y="18.5" width="2.5" height="2.5" fill="currentColor" stroke="none"/><rect x="18.8" y="18.8" width="1.8" height="1.8" fill="currentColor" stroke="none"/></svg>`
 };
+const genericIcon=`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="7" height="7" rx="1.5"/><rect x="13" y="4" width="7" height="7" rx="1.5"/><rect x="4" y="13" width="7" height="7" rx="1.5"/><rect x="13" y="13" width="7" height="7" rx="1.5"/></svg>`;
 const shareIcon=`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="2.3"/><circle cx="6" cy="12" r="2.3"/><circle cx="18" cy="19" r="2.3"/><line x1="8" y1="10.8" x2="16" y2="6.2"/><line x1="8" y1="13.2" x2="16" y2="17.8"/></svg>`;
 
 /* ---------- App state ---------- */
@@ -136,11 +151,11 @@ function bindShare(title){
 }
 
 /* ---------- Cards / listing ---------- */
-function card(t){return `<div class="card tool-card"><div class="tool-icon">${icons[t[3]]||icons["ইউটিলিটি"]}</div><h3>${esc(t[1])}</h3><p>${esc(t[2])}</p><a class="btn" href="#/${t[0]}">ব্যবহার করুন →</a></div>`}
+function card(t){return `<div class="card tool-card"><div class="tool-icon">${toolIcons[t[0]]||genericIcon}</div><h3>${esc(t[1])}</h3><p>${esc(t[2])}</p><a class="btn" href="#/${t[0]}">ব্যবহার করুন →</a></div>`}
 function relatedTools(currentId,category,n){
   const list=tools.filter(t=>t[0]!==currentId && t[3]===category).slice(0,n);
   if(!list.length)return "";
-  return `<div class="related"><h3>${state.lang==="bn"?"সম্পর্কিত Tools":"Related tools"}</h3><div class="related-list">${list.map(t=>`<a href="#/${t[0]}"><span class="tool-icon">${icons[t[3]]}</span><span><b>${esc(t[1])}</b><br><small style="color:var(--muted)">${esc(t[2])}</small></span></a>`).join("")}</div></div>`;
+  return `<div class="related"><h3>${state.lang==="bn"?"সম্পর্কিত Tools":"Related tools"}</h3><div class="related-list">${list.map(t=>`<a href="#/${t[0]}"><span class="tool-icon">${toolIcons[t[0]]||genericIcon}</span><span><b>${esc(t[1])}</b><br><small style="color:var(--muted)">${esc(t[2])}</small></span></a>`).join("")}</div></div>`;
 }
 
 /* ---------- Pages ---------- */
@@ -153,10 +168,14 @@ function home(){
   $("#search").addEventListener("keydown",e=>{if(e.key==="Enter")searchTools(e.target.value)});
 }
 function searchTools(q){const a=tools.filter(t=>(t[1]+t[2]+t[3]).toLowerCase().includes(q.toLowerCase()));const box=document.querySelector("#searchResults");if(box)box.innerHTML=a.map(card).join("")||"<p>কোনো tool পাওয়া যায়নি।</p>";else if(q){app.insertAdjacentHTML("beforeend",`<section class="section container" id="searchResults">${a.map(card).join("")||"<p>কোনো tool পাওয়া যায়নি।</p>"}</section>`)}}
-function toolsPage(){
-  setMeta("সব Tools — BanglaSmartTools","BanglaSmartTools-এর সব ফ্রি অনলাইন tool এক জায়গায় — calculator, image, PDF, text ও developer tools।");
+function toolsPage(cat){
+  const list=cat?tools.filter(t=>t[3]===cat):tools;
+  const heading=cat?`${cat} Tools`:"সব Tools";
+  setMeta(`${heading} — BanglaSmartTools`,cat?`BanglaSmartTools-এর সব ${cat} ক্যাটেগরির ফ্রি অনলাইন tool।`:"BanglaSmartTools-এর সব ফ্রি অনলাইন tool এক জায়গায় — calculator, image, PDF, text ও developer tools।");
   clearSchema();
-  app.innerHTML=`<section class="section container"><h1>সব Tools</h1><p>আপনার প্রয়োজনীয় free online tool বেছে নিন।</p><div class="grid">${tools.map(card).join("")}</div></section>`;
+  const cats=[...new Set(tools.map(x=>x[3]))];
+  const chips=`<a class="chip${!cat?" active":""}" href="#/tools">সব</a>`+cats.map(c=>`<a class="chip${c===cat?" active":""}" href="#/tools?cat=${encodeURIComponent(c)}">${c}</a>`).join("");
+  app.innerHTML=`<section class="section container"><h1>${heading}</h1><p>আপনার প্রয়োজনীয় free online tool বেছে নিন।</p><div class="chips" style="margin:14px 0 26px">${chips}</div><div class="grid">${list.map(card).join("")||"<p>এই category-তে কোনো tool পাওয়া যায়নি।</p>"}</div></section>`;
 }
 function blog(){
   setMeta("Blog — BanglaSmartTools","VAT, Percentage, Excel, Tally ও PDF নিয়ে সহজ বাংলা guide।");
@@ -301,12 +320,14 @@ function notFound(){
 }
 
 function route(){
-  let r=location.hash.slice(2)||"";
+  let raw=location.hash.slice(2)||"";
+  let [r,qs]=raw.split("?");
+  const params=new URLSearchParams(qs||"");
   window.scrollTo(0,0);
   if(r==="")return home();
   if(r.startsWith("blog/"))return article(r.slice(5));
   if(["about","contact","privacy","terms","disclaimer"].includes(r))return legal(r);
-  if(r==="tools")return toolsPage();
+  if(r==="tools")return toolsPage(params.get("cat"));
   if(r.startsWith("search"))return home();
   if(r==="blog")return blog();
   return toolPage(r);
