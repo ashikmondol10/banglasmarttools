@@ -121,6 +121,36 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://banglasmarttools.com/#/unit-converter</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://banglasmarttools.com/#/number-to-words</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://banglasmarttools.com/#/bangla-number-converter</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://banglasmarttools.com/#/data-size-converter</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://banglasmarttools.com/#/base-converter</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://banglasmarttools.com/#/color-converter</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://banglasmarttools.com/#/blog/vat-kivabe-hisab</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -147,6 +177,36 @@
   </url>
   <url>
     <loc>https://banglasmarttools.com/#/blog/website-theke-income</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://banglasmarttools.com/#/blog/bmi-ki-o-sustho-wjon</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://banglasmarttools.com/#/blog/emi-loan-nawar-age</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://banglasmarttools.com/#/blog/strong-password-niyom</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://banglasmarttools.com/#/blog/qr-code-ki</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://banglasmarttools.com/#/blog/json-ki-developer-guide</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://banglasmarttools.com/#/blog/image-optimize-website</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
