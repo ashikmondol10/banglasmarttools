@@ -151,6 +151,56 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://banglasmarttools.com/#/base64-encoder-decoder</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://banglasmarttools.com/#/url-encoder-decoder</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://banglasmarttools.com/#/uuid-generator</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://banglasmarttools.com/#/timestamp-converter</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://banglasmarttools.com/#/lorem-ipsum-generator</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://banglasmarttools.com/#/text-reverser</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://banglasmarttools.com/#/sentence-counter</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://banglasmarttools.com/#/remove-duplicate-lines</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://banglasmarttools.com/#/text-sorter</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://banglasmarttools.com/#/time-calculator</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://banglasmarttools.com/#/blog/vat-kivabe-hisab</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>

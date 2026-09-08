@@ -45,7 +45,17 @@ const toolIcons={
 "bangla-number-converter":`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><text x="1" y="10" font-size="8" font-family="Arial,sans-serif" font-weight="700" fill="currentColor" stroke="none">০৯</text><text x="12.5" y="21" font-size="8" font-family="Arial,sans-serif" font-weight="700" fill="currentColor" stroke="none">09</text><polyline points="6,13 17,7"/><polyline points="14,7.3 17.3,7 17,10.3"/></svg>`,
 "data-size-converter":`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="8" ry="2.6"/><path d="M4 5v6c0 1.4 3.6 2.6 8 2.6s8-1.2 8-2.6V5"/><path d="M4 11v6c0 1.4 3.6 2.6 8 2.6s8-1.2 8-2.6v-6"/></svg>`,
 "base-converter":`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="9" width="4.5" height="4.5" fill="currentColor" stroke="none"/><rect x="9" y="9" width="4.5" height="4.5"/><rect x="16" y="9" width="4.5" height="4.5" fill="currentColor" stroke="none"/></svg>`,
-"color-converter":`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="4.2" fill="currentColor" stroke="none" opacity="0.8"/><circle cx="15.5" cy="8" r="4.2"/><circle cx="11.7" cy="15" r="4.2" fill="none"/></svg>`
+"color-converter":`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="4.2" fill="currentColor" stroke="none" opacity="0.8"/><circle cx="15.5" cy="8" r="4.2"/><circle cx="11.7" cy="15" r="4.2" fill="none"/></svg>`,
+"base64-encoder-decoder":`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><text x="12" y="16" font-size="10" text-anchor="middle" font-family="Arial,sans-serif" font-weight="700" fill="currentColor" stroke="none">B64</text></svg>`,
+"url-encoder-decoder":`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 15l6-6"/><path d="M7 12l-2.5 2.5a3 3 0 0 0 4.24 4.24L11 16.5"/><path d="M13 7.5l2.26-2.26a3 3 0 0 1 4.24 4.24L17 12"/></svg>`,
+"uuid-generator":`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="7.5" cy="12" r="2"/><line x1="12.5" y1="9.5" x2="19" y2="9.5"/><line x1="12.5" y1="12" x2="19" y2="12"/><line x1="12.5" y1="14.5" x2="16.5" y2="14.5"/></svg>`,
+"timestamp-converter":`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="12" r="7.5"/><polyline points="10,7.5 10,12 13.5,14"/><polyline points="19,9 22,9 22,12"/></svg>`,
+"lorem-ipsum-generator":`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="11" x2="21" y2="11"/><line x1="3" y1="16" x2="15" y2="16"/><path d="M19 15.3l1 2 2 1-2 1-1 2-1-2-2-1 2-1z" stroke-width="1.3"/></svg>`,
+"text-reverser":`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><text x="1" y="10" font-size="8" font-family="Arial,sans-serif" font-weight="700" fill="currentColor" stroke="none">AB</text><text x="14" y="21" font-size="8" font-family="Arial,sans-serif" font-weight="700" fill="currentColor" stroke="none">BA</text><polyline points="6,13 17,7"/><polyline points="14,7.3 17.3,7 17,10.3"/></svg>`,
+"sentence-counter":`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="7" x2="15" y2="7"/><circle cx="18" cy="7" r="1" fill="currentColor" stroke="none"/><line x1="4" y1="13" x2="17" y2="13"/><circle cx="20" cy="13" r="1" fill="currentColor" stroke="none"/><line x1="4" y1="19" x2="12" y2="19"/><circle cx="15" cy="19" r="1" fill="currentColor" stroke="none"/></svg>`,
+"remove-duplicate-lines":`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="5" x2="15" y2="5"/><line x1="3" y1="9.5" x2="15" y2="9.5" opacity="0.35"/><line x1="17.5" y1="7" x2="21.5" y2="11"/><line x1="21.5" y1="7" x2="17.5" y2="11"/><line x1="3" y1="15" x2="17" y2="15"/><line x1="3" y1="19.5" x2="11" y2="19.5"/></svg>`,
+"text-sorter":`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><text x="2" y="10" font-size="8" font-family="Arial,sans-serif" font-weight="700" fill="currentColor" stroke="none">A</text><text x="2" y="21" font-size="8" font-family="Arial,sans-serif" font-weight="700" fill="currentColor" stroke="none">Z</text><line x1="16" y1="4" x2="16" y2="19"/><polyline points="12.5,15.5 16,19 19.5,15.5"/></svg>`,
+"time-calculator":`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="10.5" cy="12.5" r="7.5"/><line x1="10.5" y1="8" x2="10.5" y2="12.5"/><line x1="10.5" y1="12.5" x2="13.5" y2="14.5"/><line x1="19" y1="4" x2="19" y2="8"/><line x1="17" y1="6" x2="21" y2="6"/></svg>`
 };
 const genericIcon=`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="7" height="7" rx="1.5"/><rect x="13" y="4" width="7" height="7" rx="1.5"/><rect x="4" y="13" width="7" height="7" rx="1.5"/><rect x="13" y="13" width="7" height="7" rx="1.5"/></svg>`;
 const shareIcon=`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="2.3"/><circle cx="6" cy="12" r="2.3"/><circle cx="18" cy="19" r="2.3"/><line x1="8" y1="10.8" x2="16" y2="6.2"/><line x1="8" y1="13.2" x2="16" y2="17.8"/></svg>`;
@@ -84,7 +94,17 @@ const tools=[
 ["bangla-number-converter","বাংলা-ইংরেজি সংখ্যা","০-৯ থেকে ০-৯ বাংলা-ইংরেজি সংখ্যা রূপান্তর করুন","কনভার্টার"],
 ["data-size-converter","Data Size Converter","Bit, Byte, KB, MB, GB, TB পরিবর্তন করুন","কনভার্টার"],
 ["base-converter","Number Base Converter","Binary, Octal, Decimal, Hex রূপান্তর করুন","ডেভেলপার"],
-["color-converter","Color Converter","HEX ও RGB color code রূপান্তর করুন","ডেভেলপার"]];
+["color-converter","Color Converter","HEX ও RGB color code রূপান্তর করুন","ডেভেলপার"],
+["base64-encoder-decoder","Base64 Encoder/Decoder","টেক্সটকে Base64-এ এনকোড বা ডিকোড করুন","ডেভেলপার"],
+["url-encoder-decoder","URL Encoder/Decoder","URL বা টেক্সট encode/decode করুন","ডেভেলপার"],
+["uuid-generator","UUID Generator","Unique ID (UUID v4) তৈরি করুন","ডেভেলপার"],
+["timestamp-converter","Timestamp Converter","Unix timestamp ও তারিখ-সময় রূপান্তর করুন","ডেভেলপার"],
+["lorem-ipsum-generator","Lorem Ipsum Generator","Design/Development-এর জন্য placeholder text তৈরি করুন","টেক্সট"],
+["text-reverser","Text Reverser","টেক্সট বা শব্দের ক্রম উল্টে দিন","টেক্সট"],
+["sentence-counter","Sentence Counter","লেখায় কতগুলো বাক্য আছে গণনা করুন","টেক্সট"],
+["remove-duplicate-lines","Remove Duplicate Lines","একই রকম লাইন বাদ দিয়ে unique list বানান","টেক্সট"],
+["text-sorter","Text Sorter","লাইনগুলো A-Z বা Z-A ক্রমে সাজান","টেক্সট"],
+["time-calculator","Time Calculator","দুই সময়ের মধ্যে ব্যবধান বের করুন","ক্যালকুলেটর"]];
 
 /* blogs: [slug, title, short description, sections[[heading, htmlBody]...], relatedToolId|null] */
 const blogs=[
@@ -179,6 +199,269 @@ const blogs=[
 ["অতিরিক্ত টিপস","Lazy loading ব্যবহার করুন (page-এর নিচের ছবি প্রথমে load না হয়ে scroll করলে load হবে), এবং একই ছবি বারবার আলাদা সাইজে আপলোড না করে একবার optimize করেই রাখুন।"]
 ],"image-compressor"]];
 
+/* ---------- Per-tool page content: About / How to use / Benefits / Tips / FAQ ---------- */
+const toolContent={
+"text-reverser":{
+about:"এই টুল দিয়ে যেকোনো লেখা এক ক্লিকে reverse করা যায় — অক্ষরের ক্রম উল্টে অথবা শব্দের ক্রম উল্টে, দুই ভাবেই।",
+how:["টেক্সট বক্সে লেখা লিখুন বা paste করুন","\u201cঅক্ষর Reverse\u201d বা \u201cশব্দের ক্রম Reverse\u201d বাটনে চাপুন","ফলাফল Copy করে নিন"],
+benefits:["Palindrome চেক করতে সুবিধাজনক","Word-order reverse করে caption/স্টাইল তৈরি করা যায়","কোনো software ছাড়াই ইনস্ট্যান্ট রেজাল্ট"],
+tips:["জটিল বাংলা যুক্তাক্ষর/মাত্রাযুক্ত শব্দ character-by-character reverse করলে দেখতে অস্বাভাবিক লাগতে পারে — এক্ষেত্রে Word Reverse ব্যবহার করাই ভালো।","ইংরেজি বা সাধারণ সংখ্যার জন্য Character Reverse নিখুঁতভাবে কাজ করে।"],
+faq:[["এটা কি বাংলা টেক্সটেও কাজ করে?","হ্যাঁ, তবে যুক্তাক্ষরযুক্ত জটিল বাংলা শব্দে character reverse করলে ফলাফল visually কিছুটা ভিন্ন দেখাতে পারে।"],["Word order reverse কী?","এটি পুরো শব্দগুলোর ক্রম উল্টে দেয়, প্রতিটি শব্দের ভেতরের অক্ষর অপরিবর্তিত থাকে।"],["এটি কি ফাইল সেভ করে?","না, সব processing browser-এই হয়, কোনো ডেটা সার্ভারে যায় না।"]]
+},
+"sentence-counter":{
+about:"এই টুল লেখার মধ্যে কতগুলো বাক্য, শব্দ ও অক্ষর আছে তা রিয়েল-টাইমে গণনা করে — বাংলা \u201c।\u201d এবং ইংরেজি \u201c.\u201d, \u201c!\u201d, \u201c?\u201d সবই বাক্যের শেষ চিহ্ন হিসেবে ধরা হয়।",
+how:["টেক্সট বক্সে লেখা লিখুন বা paste করুন","টাইপ করার সাথে সাথেই বাক্য, শব্দ ও অক্ষর সংখ্যা দেখা যাবে","প্রয়োজনমতো লেখা সম্পাদনা করুন"],
+benefits:["রচনা বা articleর গঠন বুঝতে সাহায্য করে","Assignment/thesis-এর word ও sentence limit মেনে চলতে সুবিধা","কোনো সাইন-আপ ছাড়াই তাৎক্ষণিক ফলাফল"],
+tips:["গড় বাক্যে ১৫-২০ শব্দ রাখলে লেখা পড়তে সহজ হয়।","অতিরিক্ত লম্বা বাক্য ভেঙে ছোট করলে readability বাড়ে।"],
+faq:[["বাক্য কীভাবে গণনা করা হয়?","।, ., !, ? চিহ্নের ভিত্তিতে বাক্য আলাদা করা হয়।"],["সংক্ষিপ্ত রূপ (যেমন Dr.) কি ভুল গণনা করবে?","এই ধরনের বিশেষ সংক্ষিপ্ত রূপে মাঝেমধ্যে এক্সট্রা বাক্য গণনা হতে পারে, চূড়ান্ত হিসেবে ম্যানুয়াল চেক করে নেওয়া ভালো।"],["Word limit-ও কি দেখা যায়?","হ্যাঁ, শব্দ ও অক্ষর সংখ্যা একসাথেই দেখানো হয়।"]]
+},
+"remove-duplicate-lines":{
+about:"একাধিক লাইনের তালিকা থেকে হুবহু একই রকম (duplicate) লাইন বাদ দিয়ে শুধু unique লাইনগুলো রেখে দেয় এই টুল।",
+how:["প্রতি লাইনে একটি করে item/লাইন লিখুন বা paste করুন","\u201cDuplicate সরান\u201d বাটনে চাপুন","ফলাফল দেখে Copy করে নিন"],
+benefits:["Email/ফোন নাম্বারের তালিকা পরিষ্কার করতে দ্রুত","Excel/CSV-তে paste করার আগে duplicate বাদ দেওয়া যায়","লাইনের মূল ক্রম (প্রথম occurrence) বজায় থাকে"],
+tips:["শুধু শেষের বাড়তি space বাদ দিয়ে তুলনা করা হয়, তাই ভেতরের বানান ভিন্ন হলে সেগুলো আলাদা লাইন হিসেবেই গণ্য হবে।","Case-sensitive — \u201cDhaka\u201d ও \u201cdhaka\u201d আলাদা লাইন হিসেবে গণ্য হবে।"],
+faq:[["খালি লাইন কি বাদ যায়?","খালি লাইনও একটি লাইন হিসেবে গণ্য হয়, একাধিক খালি লাইন থাকলে প্রথমটি ছাড়া বাকিগুলো বাদ যাবে।"],["লাইনের ক্রম কি পরিবর্তন হয়?","না, unique লাইনগুলো তাদের প্রথম আসা অবস্থানের ক্রমেই থাকে।"],["ফাইল আপলোড করা যায় কি?","না, বর্তমানে সরাসরি টেক্সট paste করে ব্যবহার করতে হয়।"]]
+},
+"text-sorter":{
+about:"একাধিক লাইনের তালিকা A→Z বা Z→A ক্রমে সাজিয়ে দেয় এই টুল — নাম, ঠিকানা বা যেকোনো list গোছাতে কাজে লাগে।",
+how:["প্রতি লাইনে একটি item লিখুন বা paste করুন","A→Z বা Z→A বাটনে চাপুন","সাজানো ফলাফল Copy করে নিন"],
+benefits:["Alphabetically sorted list তৈরি করা সহজ","বাংলা ও ইংরেজি উভয় লেখাতেই কাজ করে","কোনো Excel/Spreadsheet খোলার দরকার নেই"],
+tips:["সংখ্যা দিয়ে শুরু হওয়া লাইনগুলো alphabetically নয়, বরং প্রথম অক্ষরের ভিত্তিতে সাজবে।","খালি লাইন থাকলে সেগুলো সরিয়ে নেওয়াই ভালো ফলাফল দেবে।"],
+faq:[["এটা কি সংখ্যাও সঠিকভাবে সাজায়?","এটি alphabetical/lexical সাজায়, তাই বড় সংখ্যাগুলো (যেমন ১০০ বনাম ৯) numeric ক্রমে নাও আসতে পারে।"],["বাংলা লেখা কি ঠিকভাবে সাজে?","হ্যাঁ, বাংলা বর্ণমালা অনুযায়ী sort করা হয়।"],["সাজানোর পর আগের ক্রম ফিরে পাওয়া যাবে?","না, তাই সাজানোর আগে মূল লেখা আলাদা করে রাখা ভালো।"]]
+},
+"time-calculator":{
+about:"দুইটি সময় (ঘণ্টা:মিনিট) দিলে তাদের মধ্যে কত ঘণ্টা-মিনিট ব্যবধান তা এই টুল বের করে দেয় — কাজের সময়, শিফট বা মিটিং দৈর্ঘ্য হিসাব করতে কাজে লাগে।",
+how:["শুরুর সময় সিলেক্ট করুন","শেষ সময় সিলেক্ট করুন","\u201cব্যবধান বের করুন\u201d বাটনে চাপুন"],
+benefits:["Office/শিফটের কাজের সময় দ্রুত হিসাব করা যায়","Overnight (মধ্যরাত পার হওয়া) সময়ও সঠিকভাবে গণনা হয়","হাতে হিসাবের ভুল এড়ানো যায়"],
+tips:["শেষ সময় শুরুর সময়ের চেয়ে ছোট হলে এটি পরের দিনের সময় ধরে নিয়ে হিসাব করে (২৪ ঘণ্টা যোগ করে)।","দিন পার হওয়া শিফটের জন্য এই ব্যবহারই সবচেয়ে সহজ।"],
+faq:[["সেকেন্ড হিসাব করা যায় কি?","না, বর্তমানে ঘণ্টা ও মিনিট পর্যন্ত সাপোর্ট করে।"],["একাধিক দিনের ব্যবধান বের করতে চাইলে?","তারিখসহ ব্যবধানের জন্য আমাদের Date Calculator ব্যবহার করুন।"],["মধ্যরাত পার হওয়া শিফট কি ঠিকভাবে হিসাব হয়?","হ্যাঁ, যেমন রাত ১০টা থেকে সকাল ৬টা দিলে সঠিকভাবে ৮ ঘণ্টা দেখাবে।"]]
+},
+"age-calculator":{
+about:"জন্মতারিখ দিলেই এই টুল আপনার সঠিক বয়স বছর, মাস ও দিন হিসেবে বের করে দেয় — চাকরির আবেদন, পরীক্ষার ফর্ম বা যেকোনো সরকারি কাজে বয়স লেখার জন্য এটি কাজে লাগে।",
+how:["জন্মতারিখ সিলেক্ট করুন","\u201cহিসাব করুন\u201d বাটনে ক্লিক করুন","বছর-মাস-দিন আকারে ফলাফল দেখুন, চাইলে Copy করুন"],
+benefits:["হাতে গণনার ভুল এড়ানো যায়","লিপ ইয়ার সহ নির্ভুল হিসাব"],
+tips:["সরকারি ফর্মে জন্ম নিবন্ধন সনদের তারিখ ব্যবহার করুন","চাকরির বয়সসীমা যাচাইয়ে আবেদনের শেষ তারিখ পর্যন্ত হিসাব করুন"],
+faq:[["এই বয়স কি সরকারি কাগজে ব্যবহার করা যাবে?","হ্যাঁ, এটি সঠিক ক্যালেন্ডার হিসাব দেয়, তবে চূড়ান্ত প্রমাণ হিসেবে জন্ম নিবন্ধন সনদই গণ্য হয়।"],["লিপ ইয়ার হিসাবে ধরা হয় কি?","হ্যাঁ, প্রতিটি মাসের প্রকৃত দিন সংখ্যা (লিপ ইয়ার সহ) হিসাব করা হয়।"],["ভবিষ্যতের তারিখ দিলে কী হবে?","ফলাফল সঠিক আসবে না, তাই জন্মতারিখ অতীতের হতে হবে।"]]
+},
+"percentage-calculator":{
+about:"যেকোনো সংখ্যার নির্দিষ্ট শতাংশ (percentage) মুহূর্তেই বের করে দেয় এই টুল — পরীক্ষার নম্বর, ছাড় বা লাভের হিসাবে ব্যবহার করা যায়।",
+how:["মূল সংখ্যাটি লিখুন","কত শতাংশ বের করতে চান তা লিখুন","\u201cহিসাব করুন\u201d চাপুন, ফলাফল সাথে সাথে দেখা যাবে"],
+benefits:["ক্যালকুলেটরে টাইপ করার ঝামেলা নেই","ভুল হিসাবের ঝুঁকি থাকে না"],
+tips:["Discount হিসাব করতে চাইলে আমাদের Discount Calculator ব্যবহার করুন","Percentage বৃদ্ধি/হ্রাস বের করতে সংশ্লিষ্ট ব্লগ পোস্ট দেখুন"],
+faq:[["Percentage বের করার formula কী?","ফলাফল = (সংখ্যা × শতাংশ) ÷ ১০০।"],["Negative সংখ্যা দেওয়া যাবে?","হ্যাঁ, negative সংখ্যার শতাংশও সঠিকভাবে হিসাব হবে।"],["Decimal সংখ্যা সমর্থিত?","হ্যাঁ, দশমিক সংখ্যা দিয়েও হিসাব করা যায়।"]]
+},
+"bmi-calculator":{
+about:"উচ্চতা ও ওজন দিয়ে Body Mass Index (BMI) হিসাব করে বোঝায় আপনার ওজন স্বাস্থ্যকর সীমার মধ্যে আছে কিনা।",
+how:["ওজন কিলোগ্রামে লিখুন","উচ্চতা সেন্টিমিটারে লিখুন","\u201cহিসাব করুন\u201d চাপুন, BMI মান দেখুন"],
+benefits:["দ্রুত স্বাস্থ্য সচেতনতা তৈরি করে","কোনো অ্যাপ ইনস্টল ছাড়াই ব্যবহারযোগ্য"],
+tips:["১৮.৫–২৪.৯ সাধারণত স্বাস্থ্যকর সীমা হিসেবে ধরা হয়","BMI একটি সাধারণ indicator মাত্র, চূড়ান্ত রোগ নির্ণয় নয় — প্রয়োজনে ডাক্তারের পরামর্শ নিন"],
+faq:[["BMI-এর formula কী?","BMI = ওজন(kg) ÷ (উচ্চতা(m) × উচ্চতা(m))।"],["BMI কি সবার জন্য নির্ভুল?","না, পেশীবহুল মানুষের ক্ষেত্রে BMI বিভ্রান্তিকর হতে পারে কারণ এটি পেশী ও চর্বির পার্থক্য বোঝে না।"],["শিশুদের জন্য এই calculator ব্যবহার করা যাবে?","না, শিশুদের BMI হিসাব বয়সভিত্তিক আলাদা পদ্ধতিতে হয়, এই টুল প্রাপ্তবয়স্কদের জন্য।"]]
+},
+"discount-calculator":{
+about:"পণ্যের মূল দাম ও ছাড়ের হার দিলে কত টাকা বাঁচলো এবং চূড়ান্ত দাম কত হবে তা সাথে সাথে বের করে দেয়।",
+how:["পণ্যের মূল দাম লিখুন","Discount শতাংশ লিখুন","ফলাফলে Discount ও Final Price দেখুন"],
+benefits:["কেনাকাটার সময় দ্রুত সিদ্ধান্ত নিতে সাহায্য করে","একাধিক দোকানের অফার তুলনা করা সহজ হয়"],
+tips:["একাধিক ধাপের discount (যেমন ২০%+১০%) থাকলে প্রতিটি ধাপ আলাদাভাবে হিসাব করুন","VAT-সহ চূড়ান্ত দাম জানতে VAT Calculator দিয়ে পরে হিসাব করুন"],
+faq:[["Discount বের করার নিয়ম কী?","Discount = মূল দাম × (Discount% ÷ ১০০), Final Price = মূল দাম − Discount।"],["একাধিক discount একসাথে হিসাব করা যাবে?","একবারে একটি discount হিসাব হয়, একাধিক ধাপ থাকলে পরপর দুইবার ব্যবহার করুন।"],["Negative discount দিলে কী হবে?","এটি মূল দামের চেয়ে বেশি ফলাফল দেখাবে, তাই সঠিক শতাংশ দেওয়া জরুরি।"]]
+},
+"profit-loss-calculator":{
+about:"ক্রয়মূল্য ও বিক্রয়মূল্য দিয়ে ব্যবসায় লাভ হয়েছে নাকি ক্ষতি হয়েছে এবং তার শতাংশ কত তা হিসাব করে দেয়।",
+how:["পণ্যের ক্রয়মূল্য লিখুন","বিক্রয়মূল্য লিখুন","ফলাফলে লাভ/ক্ষতির পরিমাণ ও শতাংশ দেখুন"],
+benefits:["ছোট ব্যবসায়ীদের দ্রুত হিসাব রাখতে সাহায্য করে","লাভের শতাংশ জানলে দাম নির্ধারণ সহজ হয়"],
+tips:["একাধিক পণ্যের হিসাব রাখতে প্রতিটি পণ্য আলাদাভাবে হিসাব করুন","মাসিক সামগ্রিক হিসাবের জন্য Salary Calculator ও এই টুল একসাথে ব্যবহার করুন"],
+faq:[["লাভ-ক্ষতির শতাংশ কীভাবে বের হয়?","(বিক্রয়মূল্য − ক্রয়মূল্য) ÷ ক্রয়মূল্য × ১০০।"],["ক্রয়মূল্য ও বিক্রয়মূল্য সমান হলে?","তখন লাভ বা ক্ষতি কোনোটাই হবে না, ফলাফল শূন্য দেখাবে।"],["এটি কি পাইকারি ব্যবসার জন্যও কাজ করে?","হ্যাঁ, যেকোনো একক পণ্যের ক্রয়-বিক্রয় হিসাবের জন্য এটি ব্যবহার করা যায়।"]]
+},
+"salary-calculator":{
+about:"মাসিক বেতনের পরিমাণ দিলে বার্ষিক মোট বেতন কত হবে তা মুহূর্তেই বের করে দেয়।",
+how:["মাসিক বেতনের পরিমাণ লিখুন","\u201cহিসাব করুন\u201d চাপুন","বার্ষিক মোট বেতন দেখুন"],
+benefits:["চাকরির অফার তুলনা করা সহজ হয়","বাজেট পরিকল্পনায় সাহায্য করে"],
+tips:["Bonus বা Incentive থাকলে সেটা আলাদাভাবে যোগ করে নিন","লোনের কিস্তি হিসাবের জন্য EMI Calculator ব্যবহার করুন"],
+faq:[["Bonus এই হিসাবে যুক্ত হয়?","না, শুধু মাসিক বেতন × ১২ হিসাব করা হয়, Bonus আলাদাভাবে যোগ করতে হবে।"],["Tax কর্তনের পর net salary দেখায়?","না, এটি gross বার্ষিক বেতন দেখায়, tax হিসাব এতে যুক্ত নয়।"],["Hourly rate থেকে হিসাব করা যাবে?","না, এই মুহূর্তে শুধু মাসিক বেতন দিয়ে হিসাব করা যায়।"]]
+},
+"vat-calculator":{
+about:"পণ্য বা সেবার মূল্যের সাথে VAT (মূল্য সংযোজন কর) যোগ বা বাদ দিয়ে সঠিক দাম হিসাব করার টুল।",
+how:["পণ্যের মূল দাম লিখুন","VAT হার লিখুন (ডিফল্ট ১৫%)","VAT-এর পরিমাণ ও মোট দাম দেখুন"],
+benefits:["ব্যবসায়ীদের invoice তৈরিতে সাহায্য করে","ক্রেতারা প্রকৃত দাম যাচাই করতে পারেন"],
+tips:["বাংলাদেশে বেশিরভাগ পণ্যে সাধারণ VAT হার ১৫%, তবে পণ্যভেদে ভিন্ন হতে পারে","VAT সংক্রান্ত বিস্তারিত জানতে আমাদের ব্লগ পোস্ট দেখুন"],
+faq:[["VAT হিসাবের নিয়ম কী?","VAT = মূল দাম × (VAT হার ÷ ১০০), মোট দাম = মূল দাম + VAT।"],["সব পণ্যে VAT হার একই?","না, পণ্যভেদে VAT হার ভিন্ন হতে পারে, সরকারি নির্দেশনা অনুযায়ী তা পরিবর্তিত হয়।"],["VAT ও Tax কি একই জিনিস?","না, VAT পরোক্ষ কর আর Income Tax প্রত্যক্ষ কর — দুটি আলাদা বিষয়।"]]
+},
+"emi-calculator":{
+about:"লোনের পরিমাণ, সুদের হার ও মেয়াদ দিলে প্রতি মাসে কত কিস্তি (EMI) দিতে হবে তা হিসাব করে দেয়।",
+how:["Loan amount লিখুন","বার্ষিক সুদের হার লিখুন","মেয়াদ (মাসে) লিখে মাসিক EMI দেখুন"],
+benefits:["লোন নেওয়ার আগে বাজেট পরিকল্পনা করা যায়","বিভিন্ন ব্যাংকের অফার তুলনা করা সহজ হয়"],
+tips:["শুধু EMI নয়, মোট সুদের পরিমাণও বিবেচনা করুন","মাসিক আয়ের ৪০-৫০%-এর বেশি EMI না রাখাই ভালো"],
+faq:[["EMI-এর formula কী?","EMI = P×r×(1+r)^n ÷ ((1+r)^n−1), যেখানে P=Loan amount, r=মাসিক সুদহার, n=মোট মাস।"],["সুদের হার শূন্য দিলে কী হয়?","তখন EMI = Loan amount ÷ মেয়াদ (মাস), simple ভাগ হিসাব হবে।"],["এই হিসাব কি ব্যাংকের প্রকৃত EMI-এর সাথে হুবহু মিলবে?","কাছাকাছি হবে, তবে ব্যাংকভেদে processing fee ও হিসাবের পদ্ধতিতে সামান্য পার্থক্য থাকতে পারে।"]]
+},
+"date-calculator":{
+about:"দুটি তারিখের মধ্যে মোট কত দিনের ব্যবধান তা মুহূর্তেই বের করে দেয় এই টুল।",
+how:["শুরুর তারিখ সিলেক্ট করুন","শেষ তারিখ সিলেক্ট করুন","মোট দিনের ব্যবধান দেখুন"],
+benefits:["ইভেন্ট পরিকল্পনা বা deadline হিসাবে সাহায্য করে","ম্যানুয়াল ক্যালেন্ডার গোনা লাগে না"],
+tips:["ভ্রমণ বা ছুটির পরিকল্পনায় এই টুল দিয়ে মোট দিন হিসাব করে নিন","বয়স হিসাবের জন্য আলাদাভাবে Age Calculator ব্যবহার করুন"],
+faq:[["তারিখের ক্রম উল্টো দিলে সমস্যা হবে?","না, ফলাফল সবসময় absolute (পূর্ণসংখ্যা) দিন হিসেবে দেখায়।"],["সপ্তাহ বা মাসে হিসাব দেখানো যায়?","বর্তমানে শুধু মোট দিন সংখ্যা দেখানো হয়।"],["একই তারিখ দুইবার দিলে?","ব্যবধান ০ দিন দেখাবে।"]]
+},
+"currency-converter":{
+about:"লাইভ exchange rate ব্যবহার করে এক currency থেকে আরেক currency-তে রূপান্তর করে এই টুল।",
+how:["Amount লিখুন","From ও To currency সিলেক্ট করুন","Convert চাপুন, লাইভ rate অনুযায়ী ফলাফল দেখুন"],
+benefits:["Freelancer ও ব্যবসায়ীদের জন্য দ্রুত রেট যাচাই","আলাদা কোনো app ছাড়াই ব্যবহারযোগ্য"],
+tips:["Bank rate ও market rate-এ সামান্য পার্থক্য থাকতে পারে, লেনদেনের আগে ব্যাংকের সাথে নিশ্চিত হয়ে নিন","Rate কয়েক ঘণ্টা পরপর আপডেট হয়, তাই সময়ভেদে সামান্য ভিন্ন হতে পারে"],
+faq:[["Rate কোথা থেকে আসে?","ExchangeRate-API থেকে লাইভ rate নেওয়া হয়।"],["ইন্টারনেট ছাড়া কাজ করবে?","না, লাইভ rate আনতে ইন্টারনেট সংযোগ প্রয়োজন।"],["এই rate কি bKash/Bank-এর exchange rate-এর সমান?","সাধারণত কাছাকাছি থাকে, তবে bank বা exchange house নিজস্ব margin যোগ করতে পারে।"]]
+},
+"word-counter":{
+about:"লেখার মধ্যে মোট কতগুলো শব্দ ও character আছে তা রিয়েল-টাইমে গুনে দেয় এই টুল।",
+how:["Textbox-এ লেখা paste বা টাইপ করুন","উপরে সাথে সাথে Word ও Character সংখ্যা দেখুন"],
+benefits:["Assignment বা article-এর word limit মেনে চলা সহজ হয়","Real-time গণনা, আলাদা বাটন চাপার দরকার নেই"],
+tips:["Social media caption-এর character limit যাচাই করতে এই টুল ব্যবহার করুন","শুধু character গুনতে চাইলে Character Counter ব্যবহার করুন"],
+faq:[["Space-কে word হিসেবে গোনা হয়?","না, শুধু continuous শব্দ (whitespace দিয়ে আলাদা) গোনা হয়।"],["বাংলা লেখাতেও কাজ করে?","হ্যাঁ, বাংলা ও ইংরেজি উভয় লেখাতেই সঠিকভাবে কাজ করে।"],["লেখা কোথাও সংরক্ষণ হয়?","না, সম্পূর্ণ প্রসেসিং আপনার browser-এই হয়, কোথাও পাঠানো হয় না।"]]
+},
+"character-counter":{
+about:"লেখায় মোট কতগুলো character (স্পেস সহ) আছে তা রিয়েল-টাইমে দেখায় এই টুল।",
+how:["Textbox-এ লেখা লিখুন","সাথে সাথে character সংখ্যা দেখুন"],
+benefits:["SMS বা meta description-এর length limit যাচাই করা সহজ","কোনো delay ছাড়াই instant ফলাফল"],
+tips:["Twitter/X বা SEO meta description লেখার সময় এই টুল দিয়ে length চেক করুন"],
+faq:[["Space-ও গোনা হয়?","হ্যাঁ, স্পেস সহ প্রতিটি character গোনা হয়।"],["Word count-ও কি দেখায়?","না, শুধু character count দেখাতে এই টুল, word count-এর জন্য Word Counter ব্যবহার করুন।"],["বাংলা যুক্তাক্ষরে সঠিক গণনা হয়?","হ্যাঁ, প্রতিটি Unicode character হিসেবে গণনা হয়।"]]
+},
+"case-converter":{
+about:"লেখাকে UPPERCASE, lowercase বা Title Case-এ রূপান্তর করে দেয় এক ক্লিকেই।",
+how:["Textbox-এ লেখা লিখুন","UPPER, lower বা Title Case বাটনে ক্লিক করুন","ফলাফল Copy করুন"],
+benefits:["ম্যানুয়ালি case পরিবর্তনের ঝামেলা এড়ানো যায়","Heading বা Title লেখার সময় দ্রুত format করা যায়"],
+tips:["Email subject বা heading-এর জন্য Title Case ব্যবহার করুন","শুধু ইংরেজি টেক্সটের জন্য কার্যকর, বাংলায় case পরিবর্তন প্রযোজ্য নয়"],
+faq:[["বাংলা লেখায় কাজ করে?","না, case (uppercase/lowercase) শুধুমাত্র ইংরেজি বর্ণে প্রযোজ্য।"],["Title Case কীভাবে কাজ করে?","প্রতিটি শব্দের প্রথম অক্ষর বড় ও বাকি অক্ষর ছোট করে দেয়।"],["মূল লেখা পরিবর্তন হয়ে যায়?","টুলের ভেতরের textbox-এর লেখা পরিবর্তন হয়, চাইলে Copy করে অন্য জায়গায় ব্যবহার করুন।"]]
+},
+"image-compressor":{
+about:"ছবির মান প্রায় অক্ষুণ্ণ রেখে file size উল্লেখযোগ্যভাবে কমিয়ে দেয় এই টুল, সম্পূর্ণ browser-এই প্রসেস হয়।",
+how:["ছবি আপলোড করুন","স্বয়ংক্রিয়ভাবে compressed ছবি তৈরি হবে","Download বাটনে চেপে সংরক্ষণ করুন"],
+benefits:["Website বা email attachment-এর জন্য দ্রুত loading নিশ্চিত করে","ছবি কোথাও আপলোড হয় না, privacy বজায় থাকে"],
+tips:["Website-এর জন্য ছবি compress করার পর Image Resizer দিয়ে প্রয়োজনীয় dimension-এও রিসাইজ করুন","PNG ছবিতে transparency থাকলে compress করার পর তা পরীক্ষা করে নিন"],
+faq:[["ছবির মান কতটা কমে?","Visually প্রায় অপরিবর্তিত থাকে, শুধু file size উল্লেখযোগ্যভাবে কমে।"],["কোন format সমর্থিত?","সাধারণ JPG, PNG সহ browser-সমর্থিত সব image format কাজ করে।"],["ছবি কি server-এ আপলোড হয়?","না, পুরো প্রসেসিং আপনার browser-এই হয়, কোনো সার্ভারে যায় না।"]]
+},
+"image-resizer":{
+about:"ছবির width ও height নিজের পছন্দমতো পরিবর্তন করার টুল, exact pixel dimension দিয়ে resize করা যায়।",
+how:["ছবি আপলোড করুন","নতুন Width ও Height লিখুন","Resize করুন বাটনে চেপে Download করুন"],
+benefits:["Website বা social media-র নির্দিষ্ট size requirement পূরণ করা সহজ","Aspect ratio নিজের মতো নিয়ন্ত্রণ করা যায়"],
+tips:["Social media profile picture-এর জন্য সাধারণত square (১:১) dimension ব্যবহার করা ভালো","Aspect ratio বিকৃত না করতে চাইলে width-height অনুপাত মূল ছবির সমান রাখুন"],
+faq:[["ছবি বিকৃত (stretch) হয়ে যাবে না?","আপনি যে width-height দেবেন সেই অনুযায়ীই resize হবে, তাই মূল অনুপাত মাথায় রাখা ভালো।"],["ছবির মান খারাপ হয়ে যায়?","ছোট থেকে বড় করলে সামান্য মান কমতে পারে, বড় থেকে ছোট করলে সাধারণত ভালো মান থাকে।"],["Batch-এ একাধিক ছবি resize করা যায়?","না, বর্তমানে একবারে একটি ছবি resize করা যায়।"]]
+},
+"jpg-to-png":{
+about:"JPG ছবিকে PNG format-এ রূপান্তর করে এই টুল, সম্পূর্ণ ফ্রি ও browser-based।",
+how:["JPG ছবি আপলোড করুন","স্বয়ংক্রিয়ভাবে PNG-তে রূপান্তরিত হবে","Download বাটনে চেপে সংরক্ষণ করুন"],
+benefits:["Transparency প্রয়োজন হলে PNG format দরকার হয়","Design বা editing tool-এর জন্য উপযুক্ত format পাওয়া যায়"],
+tips:["JPG-তে transparency থাকে না, তাই PNG-তে রূপান্তরের পরও background সাদা থাকবে যদি মূল ছবিতে transparency না থাকে"],
+faq:[["রূপান্তরের পর মান কমে যায়?","না, JPG থেকে PNG-তে যাওয়ার সময় মান সাধারণত অক্ষুণ্ণ থাকে, তবে file size বাড়তে পারে।"],["Transparency যোগ হয়ে যাবে?","না, মূল JPG-তে transparency না থাকলে নতুন করে যোগ হবে না।"],["একাধিক ছবি একসাথে রূপান্তর করা যায়?","না, বর্তমানে একবারে একটি ছবি রূপান্তর করা যায়।"]]
+},
+"png-to-jpg":{
+about:"PNG ছবিকে JPG format-এ রূপান্তর করে এই টুল, ফলে file size সাধারণত ছোট হয়।",
+how:["PNG ছবি আপলোড করুন","স্বয়ংক্রিয়ভাবে JPG-তে রূপান্তরিত হবে","Download বাটনে চেপে সংরক্ষণ করুন"],
+benefits:["File size কমিয়ে দ্রুত শেয়ার করা যায়","Website-এ ছবি ব্যবহারের জন্য উপযুক্ত format"],
+tips:["PNG-তে transparency থাকলে JPG-তে রূপান্তরের পর সাদা background যুক্ত হয়ে যাবে, এটা মাথায় রাখুন"],
+faq:[["Transparency-এর কী হয়?","JPG transparency সমর্থন করে না, তাই transparent অংশ সাদা রঙে রূপান্তরিত হয়।"],["মান কতটুকু কমে?","সামান্য কমতে পারে কারণ JPG lossy compression ব্যবহার করে, তবে visually প্রায় অপরিবর্তিত থাকে।"],["File size কতটা কমে?","সাধারণত PNG-এর চেয়ে উল্লেখযোগ্যভাবে কম হয়, বিশেষত ছবিতে বেশি রঙ থাকলে।"]]
+},
+"pdf-to-jpg":{
+about:"PDF ফাইলের প্রতিটি page-কে আলাদা JPG ছবিতে রূপান্তর করে দেয় এই টুল, প্রয়োজনে সবগুলো একসাথে ZIP করে ডাউনলোড করা যায়।",
+how:["PDF ফাইল আপলোড করুন","প্রতিটি page-এর preview ও ডাউনলোড লিংক দেখুন","আলাদা page বা সব page একসাথে ZIP আকারে Download করুন"],
+benefits:["PDF থেকে নির্দিষ্ট page ছবি হিসেবে ব্যবহার করা যায়","Presentation বা document-এ ব্যবহারের জন্য সুবিধাজনক"],
+tips:["বড় PDF ফাইলে page সংখ্যা বেশি থাকলে প্রসেস হতে কিছুটা সময় লাগতে পারে","একসাথে সব page ডাউনলোড করতে \u201cDownload all (ZIP)\u201d বাটন ব্যবহার করুন"],
+faq:[["PDF কোথাও আপলোড হয়?","না, পুরো প্রসেসিং browser-এই হয়, ফাইল কোনো সার্ভারে যায় না।"],["Password-protected PDF কাজ করবে?","না, প্রথমে PDF-এর password সরিয়ে তারপর ব্যবহার করতে হবে।"],["ছবির মান নিয়ন্ত্রণ করা যায়?","বর্তমানে fixed মানে (high-quality JPG) export হয়।"]]
+},
+"json-formatter":{
+about:"এলোমেলো বা minified JSON-কে সুন্দরভাবে indent করে readable বানায়, এবং ভুল থাকলে সেটাও চিহ্নিত করে।",
+how:["JSON টেক্সট paste করুন","Format বা Minify বাটনে চাপুন","ফলাফল দেখুন বা Copy করুন"],
+benefits:["API response debug করা সহজ হয়","Invalid JSON-এর সঠিক error message পাওয়া যায়"],
+tips:["Nested object/array বেশি জটিল হলে Format করে কাঠামো ভালোভাবে বোঝা যায়","শেষ item-এর পর অতিরিক্ত comma রাখলে JSON invalid হয়ে যায়, এই ভুল এড়িয়ে চলুন"],
+faq:[["Invalid JSON দিলে কী হয়?","স্পষ্ট error message দেখানো হয় যাতে সমস্যা কোথায় তা বোঝা যায়।"],["Minify মানে কী?","সব whitespace সরিয়ে JSON-কে সবচেয়ে ছোট আকারে নিয়ে আসা হয়, যা API call-এ data কম পাঠাতে সাহায্য করে।"],["আমার JSON data কোথাও সংরক্ষণ হয়?","না, সম্পূর্ণ প্রসেসিং browser-এই হয়, কোথাও পাঠানো হয় না।"]]
+},
+"password-generator":{
+about:"Cryptographically random ও নিরাপদ password তৈরি করে দেয় এই টুল, নিজের পছন্দমতো length নির্ধারণ করা যায়।",
+how:["Password-এর length লিখুন (৬-১২৮)","Generate বাটনে চাপুন","তৈরি হওয়া password Copy করুন"],
+benefits:["প্রতিটি account-এর জন্য আলাদা strong password তৈরি করা সহজ হয়","Browser-এর crypto API ব্যবহার করায় সত্যিকারের random ফলাফল"],
+tips:["কমপক্ষে ১২-১৬ character-এর password ব্যবহার করুন","একই password একাধিক জায়গায় ব্যবহার করবেন না, প্রয়োজনে Password Manager ব্যবহার করুন"],
+faq:[["এই password কি সত্যিই random?","হ্যাঁ, browser-এর crypto.getRandomValues API ব্যবহার করে তৈরি হয়, যা সাধারণ Math.random-এর চেয়ে অনেক বেশি নিরাপদ।"],["Password কোথাও সংরক্ষণ হয়?","না, তৈরি হওয়া password শুধু আপনার screen-এই দেখানো হয়, কোথাও পাঠানো বা সংরক্ষণ করা হয় না।"],["সর্বোচ্চ কত length-এর password তৈরি করা যায়?","সর্বোচ্চ ১২৮ character পর্যন্ত।"]]
+},
+"qr-generator":{
+about:"যেকোনো text বা URL দিয়ে সাথে সাথে scannable QR Code তৈরি করে দেয় এই টুল, সম্পূর্ণ ফ্রি।",
+how:["Text বা URL লিখুন","Generate QR বাটনে চাপুন","QR Code স্ক্রিনশট নিন বা download করুন"],
+benefits:["Business card, poster বা menu-তে ব্যবহারের জন্য উপযুক্ত","কোনো app install ছাড়াই তৈরি করা যায়"],
+tips:["Print করার আগে scan করে link সঠিক আছে কিনা যাচাই করে নিন","QR Code-এর ভেতরের তথ্য পরে পরিবর্তন করা যায় না, তাই সঠিক link দিন"],
+faq:[["QR Code পরে edit করা যাবে?","না, একবার তৈরি হলে সেই QR Code-এর তথ্য স্থায়ী থাকে, পরিবর্তনের জন্য নতুন QR Code তৈরি করতে হবে।"],["QR Code স্ক্যান করতে বিশেষ app লাগে?","না, বেশিরভাগ smartphone-এর ডিফল্ট camera app দিয়েই স্ক্যান করা যায়।"],["কত তথ্য একটি QR Code-এ রাখা যায়?","সাধারণত কয়েকশ character পর্যন্ত তথ্য রাখা যায়, বেশি তথ্যে QR Code জটিল হয়ে যায়।"]]
+},
+"unit-converter":{
+about:"দৈর্ঘ্য, ওজন ও তাপমাত্রার একক (যেমন মিটার-ফুট, কেজি-মণ, সেলসিয়াস-ফারেনহাইট) একে অপরে রূপান্তর করে দেয় এই টুল।",
+how:["একক পরিমাপের ধরন (দৈর্ঘ্য/ওজন/তাপমাত্রা) সিলেক্ট করুন","পরিমাণ ও From-To একক নির্বাচন করুন","Convert চাপুন, ফলাফল দেখুন"],
+benefits:["একাধিক conversion chart মুখস্থ রাখার দরকার নেই","স্থানীয় একক যেমন মণ-ও সমর্থিত"],
+tips:["জমির পরিমাপ বা কৃষি হিসাবে মণ-কেজি রূপান্তর এই টুল দিয়ে সহজে করা যায়","তাপমাত্রা রূপান্তরে সাধারণ multiplication নয়, formula ভিন্ন — এই টুল স্বয়ংক্রিয়ভাবে তা হিসাব করে"],
+faq:[["মণ কী?","মণ বাংলাদেশ ও ভারতীয় উপমহাদেশে ব্যবহৃত একটি প্রচলিত ওজন একক, ১ মণ = ৩৭.৩২৪২ কেজি।"],["তাপমাত্রা রূপান্তর কীভাবে কাজ করে?","সেলসিয়াস, ফারেনহাইট ও কেলভিনের মধ্যে নির্দিষ্ট formula ব্যবহার করে সঠিক রূপান্তর করা হয়।"],["আরও একক যোগ করা হবে?","ব্যবহারকারীদের চাহিদা অনুযায়ী ভবিষ্যতে নতুন একক যোগ করা হতে পারে।"]]
+},
+"number-to-words":{
+about:"যেকোনো সংখ্যাকে বাংলায় কথায় রূপান্তর করে দেয় এই টুল — চেক, ইনভয়েস বা অফিসিয়াল ডকুমেন্টে টাকার পরিমাণ লেখার জন্য উপযোগী।",
+how:["সংখ্যাটি লিখুন (দশমিক সহ লেখা যায়)","\u201cকথায় লিখুন\u201d বাটনে চাপুন","শব্দে ও চেক-ফরম্যাটে ফলাফল দেখে Copy করুন"],
+benefits:["চেক লেখার সময় ভুল বানান এড়ানো যায়","হিসাব-নিকাশ ও ইনভয়েসে দ্রুত ব্যবহারযোগ্য"],
+tips:["চেকে লেখার সময় \u201cটাকা মাত্র\u201d অংশটি ব্যবহার করুন যাতে জালিয়াতি রোধ হয়","দশমিক থাকলে পয়সা আলাদাভাবে দেখানো হয়, তা লক্ষ্য করুন"],
+faq:[["সর্বোচ্চ কত বড় সংখ্যা সমর্থিত?","প্রায় ৯৯,৯৯,৯৯,৯৯৯ (প্রায় ১০০ কোটি) পর্যন্ত সমর্থিত।"],["দশমিক সংখ্যা দেওয়া যায়?","হ্যাঁ, দশমিক অংশ পয়সা হিসেবে আলাদা করে দেখানো হয়।"],["Negative সংখ্যা দিলে কী হয়?","\u201cঋণাত্মক\u201d শব্দ যোগ করে ফলাফল দেখানো হয়।"]]
+},
+"bangla-number-converter":{
+about:"লেখার মধ্যে থাকা সংখ্যাকে বাংলা (০-৯) থেকে ইংরেজি (0-9) বা তার উল্টো রূপান্তর করে দেয়, বাকি লেখা অপরিবর্তিত থাকে।",
+how:["Textbox-এ লেখা বা সংখ্যা লিখুন","বাংলায় বা English-এ করুন বাটনে চাপুন","ফলাফল Copy করুন"],
+benefits:["সরকারি ফর্ম বা ডকুমেন্টে সংখ্যা সঠিক ভাষায় লেখা সহজ হয়","লেখার বাকি অংশ (অক্ষর) অপরিবর্তিত থাকে, শুধু সংখ্যা বদলায়"],
+tips:["পুরো paragraph paste করেও শুধু সংখ্যাগুলো রূপান্তর করা যায়","Invoice বা bill-এ বাংলা সংখ্যা প্রয়োজন হলে এই টুল ব্যবহার করুন"],
+faq:[["শুধু সংখ্যা রূপান্তর হয়, নাকি পুরো লেখা?","শুধু সংখ্যা (০-৯ বা 0-9) রূপান্তর হয়, বাকি টেক্সট অপরিবর্তিত থাকে।"],["Decimal point বা কমা প্রভাবিত হয়?","না, শুধু সংখ্যার অঙ্কগুলো বদলায়, বাকি চিহ্ন অপরিবর্তিত থাকে।"],["একাধিকবার convert করলে সমস্যা হবে?","না, বারবার convert করলেও ফলাফল সঠিক থাকবে।"]]
+},
+"data-size-converter":{
+about:"Bit, Byte, KB, MB, GB, TB-এর মধ্যে ডেটা সাইজ রূপান্তর করে দেয় এই টুল — ফাইল সাইজ বা ইন্টারনেট প্যাকেজ বোঝার জন্য উপযোগী।",
+how:["পরিমাণ লিখুন","From ও To একক সিলেক্ট করুন","Convert চাপুন, ফলাফল দেখুন"],
+benefits:["ইন্টারনেট ডেটা প্যাকেজ বোঝা সহজ হয়","ফাইল সাইজ সংক্রান্ত বিভ্রান্তি দূর হয়"],
+tips:["১ GB = ১০২৪ MB (বাইনারি হিসাব) — এই টুল সেই standard অনুসরণ করে","মোবাইল ডেটা প্যাকেজ কেনার আগে সঠিক unit বুঝে নিন"],
+faq:[["এখানে ১ GB কত MB ধরা হয়েছে?","১০২৪ MB (বাইনারি/1024-ভিত্তিক হিসাব), যা কম্পিউটিং-এ প্রচলিত standard।"],["Mobile অপারেটরদের হিসাবও কি একই?","কিছু অপারেটর মাঝে মাঝে 1000-ভিত্তিক হিসাব ব্যবহার করে, তাই সামান্য পার্থক্য থাকতে পারে।"],["Bit ও Byte-এর পার্থক্য কী?","১ Byte = ৮ Bit, ইন্টারনেট speed সাধারণত Bit-এ আর file size সাধারণত Byte-এ প্রকাশ করা হয়।"]]
+},
+"base-converter":{
+about:"একটি সংখ্যাকে Binary, Octal, Decimal ও Hexadecimal — এই চার number system-এর মধ্যে রূপান্তর করে দেয়।",
+how:["সংখ্যাটি লিখুন","সংখ্যাটি কোন base-এ আছে তা সিলেক্ট করুন","Convert চাপুন, চারটি base-এই ফলাফল দেখুন"],
+benefits:["Programming ও computer science শেখার জন্য উপযোগী","Color code বা memory address বোঝার জন্য কাজে লাগে"],
+tips:["Hexadecimal-এ A-F অক্ষরও ব্যবহার করা যায় (যেমন FF)","Binary সংখ্যায় শুধু 0 ও 1 ব্যবহার করুন"],
+faq:[["ভুল base-এ ভুল digit দিলে কী হয়?","Error দেখানো হবে, যেমন Binary-তে 2 দিলে তা invalid বলে চিহ্নিত হবে।"],["Negative সংখ্যা সমর্থিত?","না, বর্তমানে শুধু non-negative সংখ্যা সমর্থিত।"],["Decimal সংখ্যা (fraction) সমর্থিত?","না, শুধু পূর্ণসংখ্যা (integer) সমর্থিত।"]]
+},
+"color-converter":{
+about:"HEX color code (যেমন #14b8a6) থেকে RGB, অথবা RGB থেকে HEX-এ রূপান্তর করে দেয়, সাথে live color preview দেখায়।",
+how:["HEX code লিখুন এবং HEX → RGB চাপুন, অথবা R, G, B মান লিখে RGB → HEX চাপুন","নিচে color preview দেখুন","ফলাফল থেকে code কপি করে নিন"],
+benefits:["Web design ও CSS-এর কাজে দ্রুত color code পাওয়া যায়","Live preview দিয়ে রঙ সরাসরি চোখে দেখা যায়"],
+tips:["৩-digit শর্টহ্যান্ড HEX (যেমন #fff) দিলেও এটি সঠিকভাবে বুঝে নেয়","Design system-এর জন্য brand color-এর HEX ও RGB দুটোই note করে রাখুন"],
+faq:[["শর্টহ্যান্ড HEX (৩ digit) সমর্থিত?","হ্যাঁ, যেমন #14b লিখলেও তা #1144bb হিসেবে বোঝা হবে।"],["RGB মান কত পর্যন্ত দেওয়া যায়?","প্রতিটি R, G, B মান ০ থেকে ২৫৫-এর মধ্যে হতে হবে।"],["এটি কি CMYK সমর্থন করে?","না, বর্তমানে শুধু HEX ও RGB-এর মধ্যে রূপান্তর সমর্থিত।"]]
+},
+"base64-encoder-decoder":{
+about:"টেক্সটকে Base64 format-এ এনকোড অথবা Base64 থেকে সাধারণ টেক্সটে ডিকোড করে দেয় এই টুল, বাংলা ও ইংরেজি উভয় লেখাতেই কাজ করে।",
+how:["Textbox-এ টেক্সট বা Base64 code লিখুন","Encode বা Decode বাটনে চাপুন","ফলাফল Copy করুন"],
+benefits:["API testing বা data transfer-এর কাজে দ্রুত ব্যবহারযোগ্য","কোনো software install ছাড়াই browser-এই কাজ করে"],
+tips:["Email attachment বা image data base64-এ থাকলে তা decode করে আসল content দেখা যায়","Encode করা টেক্সট আসল data-কে encrypt করে না, এটি শুধু ভিন্ন format — sensitive তথ্যের জন্য যথেষ্ট নিরাপদ নয়"],
+faq:[["Base64 কি এনক্রিপশন?","না, Base64 শুধু data-কে ভিন্ন format-এ উপস্থাপন করে, এটি কোনো নিরাপত্তা বা এনক্রিপশন প্রদান করে না।"],["বাংলা টেক্সট encode/decode করা যায়?","হ্যাঁ, UTF-8 encoding ব্যবহার করে বাংলা টেক্সটও সঠিকভাবে encode/decode হয়।"],["Invalid Base64 দিলে কী হয়?","Decode করার সময় error দেখানো হবে, তাই সঠিক Base64 string দেওয়া জরুরি।"]]
+},
+"url-encoder-decoder":{
+about:"URL বা যেকোনো টেক্সটের special character-কে encode করে URL-safe বানায়, অথবা encoded URL-কে আসল টেক্সটে decode করে দেয়।",
+how:["Textbox-এ URL বা টেক্সট লিখুন","Encode বা Decode বাটনে চাপুন","ফলাফল Copy করুন"],
+benefits:["Query parameter-এ space বা special character থাকলে সমস্যা এড়ানো যায়","Developer-দের API/link তৈরির কাজে সাহায্য করে"],
+tips:["URL-এ space, বাংলা অক্ষর বা & চিহ্ন থাকলে অবশ্যই encode করে ব্যবহার করুন","Encode করা URL browser address bar-এ paste করলে ঠিকভাবে কাজ করবে"],
+faq:[["Encode করলে কী পরিবর্তন হয়?","Space, বাংলা অক্ষর ও special character-কে %XX ফরম্যাটে রূপান্তর করে যাতে URL-এ নিরাপদে ব্যবহার করা যায়।"],["সব character-ই কি encode হয়?","না, letter, number ও কিছু safe character (- _ . ~) অপরিবর্তিত থাকে।"],["Decode করার সময় ভুল হলে কী হয়?","সঠিক encoded ফরম্যাট না হলে error দেখানো হবে।"]]
+},
+"uuid-generator":{
+about:"এলোমেলো, বিশ্বব্যাপী unique UUID (v4) তৈরি করে দেয় এই টুল — database record, session ID বা file naming-এর জন্য ব্যবহার করা যায়।",
+how:["কতগুলো UUID দরকার তা লিখুন (সর্বোচ্চ ৫০)","Generate বাটনে চাপুন","ফলাফল থেকে একটি বা সবগুলো Copy করুন"],
+benefits:["Programming-এ unique identifier হিসেবে ব্যবহারযোগ্য","Browser-এর crypto API ব্যবহার করায় collision হওয়ার সম্ভাবনা প্রায় শূন্য"],
+tips:["Database primary key হিসেবে UUID ব্যবহার করলে distributed system-এ id conflict এড়ানো যায়","একসাথে অনেক UUID দরকার হলে \u201cসব Copy করুন\u201d বাটন ব্যবহার করুন"],
+faq:[["UUID v4 কী?","এটি একটি র‍্যান্ডম-ভিত্তিক UUID সংস্করণ, যেখানে প্রতিটি ID সম্পূর্ণ এলোমেলোভাবে তৈরি হয়।"],["দুটি UUID কি কখনো একই হতে পারে?","সম্ভাবনা এতটাই কম (প্রায় শূন্যের কাছাকাছি) যে বাস্তবে এটি ধরা হয় না।"],["একসাথে সর্বোচ্চ কতগুলো তৈরি করা যায়?","একবারে সর্বোচ্চ ৫০টি UUID তৈরি করা যায়।"]]
+},
+"timestamp-converter":{
+about:"Unix Timestamp (seconds) থেকে সাধারণ তারিখ-সময়ে, অথবা তারিখ-সময় থেকে Unix Timestamp-এ রূপান্তর করে দেয় এই টুল।",
+how:["Timestamp থেকে তারিখ পেতে সংখ্যাটি লিখে \u201cতারিখে রূপান্তর\u201d চাপুন","তারিখ থেকে timestamp পেতে date-time সিলেক্ট করে \u201cTimestamp-এ রূপান্তর\u201d চাপুন","\u201cএখনকার Timestamp\u201d বাটনে বর্তমান সময়ের timestamp পাবেন"],
+benefits:["API response-এর timestamp দ্রুত বোঝা যায়","Developer ও log-analysis কাজে সহায়ক"],
+tips:["কিছু API millisecond-এ timestamp দেয় (১৩ digit), সেক্ষেত্রে শেষের তিনটি শূন্য বাদ দিয়ে seconds-এ (১০ digit) রূপান্তর করে ব্যবহার করুন","তারিখ-সময় আপনার browser-এর local timezone অনুযায়ী দেখানো হয়"],
+faq:[["Unix Timestamp কী?","১৯৭০ সালের ১ জানুয়ারি (UTC) থেকে এখন পর্যন্ত পার হওয়া সেকেন্ডের সংখ্যা।"],["Millisecond timestamp সমর্থিত?","সরাসরি না, millisecond timestamp হলে শেষের তিনটি অঙ্ক বাদ দিয়ে seconds-এ রূপান্তর করে ব্যবহার করুন।"],["Timezone কীভাবে হিসাব হয়?","আপনার device/browser-এর local timezone অনুযায়ী তারিখ-সময় দেখানো হয়।"]]
+},
+"lorem-ipsum-generator":{
+about:"Website বা design mockup-এর জন্য classic Lorem Ipsum placeholder text তৈরি করে দেয় এই টুল, প্রয়োজনমতো paragraph সংখ্যা ঠিক করা যায়।",
+how:["কতগুলো paragraph দরকার তা লিখুন","Generate বাটনে চাপুন","তৈরি হওয়া টেক্সট Copy করে ডিজাইনে ব্যবহার করুন"],
+benefits:["Design mockup-এ real content ছাড়াই layout দেখানো যায়","প্রতিবার আলাদা random টেক্সট তৈরি হয়"],
+tips:["Website layout test করার সময় বিভিন্ন length-এর paragraph দিয়ে দেখুন কেমন লাগে","চূড়ান্ত publish করার আগে অবশ্যই আসল content দিয়ে replace করুন"],
+faq:[["Lorem Ipsum-এর অর্থ কী?","এটি ল্যাটিন-সদৃশ একটি ঐতিহ্যবাহী placeholder টেক্সট, যা কয়েক শতাব্দী ধরে printing ও design industry-তে ব্যবহৃত হয়ে আসছে, এর কোনো সুনির্দিষ্ট অর্থ নেই।"],["প্রতিবার একই টেক্সট আসে?","না, প্রতিবার Generate করলে শব্দের এলোমেলো সমন্বয়ে ভিন্ন টেক্সট তৈরি হয়।"],["এই টেক্সট কি SEO-র জন্য ব্যবহার করা উচিত?","না, এটি শুধু layout/design testing-এর জন্য, প্রকৃত ওয়েবসাইটে আসল, অর্থবহ content ব্যবহার করা উচিত।"]]
+}
+};
+
 /* ---------- Small utilities ---------- */
 function toast(t){toastEl.textContent=t;toastEl.classList.add("show");clearTimeout(window.__tt);window.__tt=setTimeout(()=>toastEl.classList.remove("show"),2200)}
 async function copyText(t){try{await navigator.clipboard.writeText(t);toast(state.lang==="bn"?"কপি হয়েছে ✓":"Copied ✓")}catch{toast("Copy failed")}}
@@ -217,7 +500,22 @@ function setSchema(obj){
   if(!el){el=document.createElement("script");el.type="application/ld+json";el.id="page-schema";document.head.appendChild(el)}
   el.textContent=JSON.stringify(obj);
 }
-function clearSchema(){const el=document.getElementById("page-schema");if(el)el.remove()}
+function clearSchema(){const el=document.getElementById("page-schema");if(el)el.remove();clearFaqSchema()}
+function setFaqSchema(faqPairs){
+  let el=document.getElementById("faq-schema");
+  if(!el){el=document.createElement("script");el.type="application/ld+json";el.id="faq-schema";document.head.appendChild(el)}
+  el.textContent=JSON.stringify({"@context":"https://schema.org","@type":"FAQPage","mainEntity":faqPairs.map(([q,a])=>({"@type":"Question","name":q,"acceptedAnswer":{"@type":"Answer","text":a.replace(/<[^>]*>/g,"")}}))});
+}
+function clearFaqSchema(){const el=document.getElementById("faq-schema");if(el)el.remove()}
+function breadcrumb(cat,title){
+  return `<div class="breadcrumb" role="navigation" aria-label="Breadcrumb"><a href="#/">হোম</a> <span>/</span> <a href="#/tools?cat=${encodeURIComponent(cat)}">${esc(cat)}</a> <span>/</span> <span aria-current="page">${esc(title)}</span></div>`;
+}
+function toolContentBlock(id){
+  const c=toolContent[id];
+  if(!c)return "";
+  const faqHtml=c.faq.map(([q,a])=>`<details class="faq-item"><summary>${esc(q)}</summary><p>${a}</p></details>`).join("");
+  return `<div class="tool-content"><h2>এই টুল সম্পর্কে</h2><p>${c.about}</p><h2>ব্যবহারের নিয়ম</h2><ol>${c.how.map(s=>`<li>${s}</li>`).join("")}</ol><h2>সুবিধা</h2><ul>${c.benefits.map(s=>`<li>${s}</li>`).join("")}</ul><h2>টিপস</h2><ul>${c.tips.map(s=>`<li>${s}</li>`).join("")}</ul><h2>প্রায়ই জিজ্ঞাসিত প্রশ্ন</h2>${faqHtml}</div>`;
+}
 
 /* ---------- Share button ---------- */
 function shareRow(title){
@@ -268,12 +566,13 @@ function article(slug){
   const b=blogs.find(x=>x[0]===slug)||blogs[0];
   setMeta(`${b[1]} — BanglaSmartTools Blog`,b[2]);
   setSchema({"@context":"https://schema.org","@type":"BlogPosting","headline":b[1],"description":b[2],"author":{"@type":"Organization","name":"BanglaSmartTools"},"publisher":{"@type":"Organization","name":"BanglaSmartTools"}});
+  clearFaqSchema();
   const sections=b[3].map(([h,p])=>`<h2>${esc(h)}</h2><p>${p}</p>`).join("");
   const cta=b[4]?`<div class="result"><b>${state.lang==="bn"?"এখনই চেষ্টা করুন:":"Try it now:"}</b> <a class="btn" style="margin-top:10px;display:inline-block" href="#/${b[4]}">${esc((tools.find(t=>t[0]===b[4])||[,b[4]])[1])} ব্যবহার করুন →</a></div>`:"";
   app.innerHTML=`<article class="article container"><div class="blog-meta">BanglaSmartTools Blog</div><h1>${esc(b[1])}</h1><p>${esc(b[2])}</p>${shareRow(b[1])}<hr>${sections}${cta}</article>`;
   bindShare(b[1]);
 }
-function form(title,body){app.innerHTML=`<section class="tool-layout"><div class="card"><h1>${title}</h1>${body}</div></section>`}
+function form(title,body){app.innerHTML=`<section class="tool-layout">${window.__crumb||""}<div class="card"><h1>${title}</h1>${body}</div></section>`}
 function result(html){return `<div id="result" class="result">${html}</div>`}
 
 function toolPage(id){
@@ -282,6 +581,8 @@ function toolPage(id){
   if(!t)return notFound();
   setMeta(`${t[1]} — BanglaSmartTools`,`${t[2]} — সম্পূর্ণ ফ্রি, দ্রুত ও ব্রাউজার-ভিত্তিক BanglaSmartTools tool।`);
   setSchema({"@context":"https://schema.org","@type":"SoftwareApplication","name":t[1],"applicationCategory":"UtilitiesApplication","operatingSystem":"Any, Web Browser","description":t[2],"offers":{"@type":"Offer","price":"0","priceCurrency":"BDT"}});
+  window.__crumb=breadcrumb(t[3],t[1]);
+  if(toolContent[id])setFaqSchema(toolContent[id].faq); else clearFaqSchema();
   const pages={
 "age-calculator":()=>{form(t[1],`<div class="field"><label>জন্মতারিখ</label><input id="birth" type="date" class="input"></div><button class="btn" id="go">হিসাব করুন</button>${result("ফলাফল এখানে দেখাবে")}`);enterSubmits(".tool-layout","#go");$("#go").onclick=()=>{const d=new Date($("#birth").value);if(isNaN(d))return toast("তারিখ দিন");const n=new Date();let y=n.getFullYear()-d.getFullYear(),m=n.getMonth()-d.getMonth(),day=n.getDate()-d.getDate();if(day<0){m--;day+=new Date(n.getFullYear(),n.getMonth(),0).getDate()}if(m<0){y--;m+=12}$("#result").innerHTML=`আপনার বয়স <b>${y} বছর ${m} মাস ${day} দিন</b>। <div class="actions"><button class="btn alt" id="copyAge">Copy</button></div>`;$("#copyAge").onclick=()=>copyText(`${y} বছর ${m} মাস ${day} দিন`)}},
 "percentage-calculator":()=>{form(t[1],`<div class="form-grid"><div class="field"><label>সংখ্যা</label><input id="a" type="number" class="input"></div><div class="field"><label>শতাংশ (%)</label><input id="b" type="number" class="input"></div></div><button class="btn" id="go">হিসাব করুন</button>${result("ফলাফল")}`);enterSubmits(".tool-layout","#go");$("#go").onclick=()=>{const v=+$("#a").value*+$("#b").value/100;$("#result").innerHTML=`ফলাফল: <b>${v}</b> <button class="small" id="copy">Copy</button>`;$("#copy").onclick=()=>copyText(String(v))}},
@@ -377,10 +678,104 @@ function toolPage(id){
     setSwatch(hex);
   };
   setSwatch($("#hex").value);
+},
+"base64-encoder-decoder":()=>{
+  form(t[1],`<textarea id="txt" class="textarea" placeholder="টেক্সট লিখুন…"></textarea><div class="actions"><button class="btn" id="enc">Encode</button><button class="btn alt" id="dec">Decode</button><button class="btn alt" id="copy">Copy</button></div>`);
+  const x=$("#txt");
+  $("#enc").onclick=()=>{try{x.value=btoa(unescape(encodeURIComponent(x.value)))}catch{toast("Encode করা যায়নি")}};
+  $("#dec").onclick=()=>{try{x.value=decodeURIComponent(escape(atob(x.value)))}catch{toast("সঠিক Base64 টেক্সট দিন")}};
+  $("#copy").onclick=()=>copyText(x.value);
+},
+"url-encoder-decoder":()=>{
+  form(t[1],`<textarea id="txt" class="textarea" placeholder="URL বা টেক্সট লিখুন…"></textarea><div class="actions"><button class="btn" id="enc">Encode</button><button class="btn alt" id="dec">Decode</button><button class="btn alt" id="copy">Copy</button></div>`);
+  const x=$("#txt");
+  $("#enc").onclick=()=>{x.value=encodeURIComponent(x.value)};
+  $("#dec").onclick=()=>{try{x.value=decodeURIComponent(x.value)}catch{toast("Decode করা যায়নি")}};
+  $("#copy").onclick=()=>copyText(x.value);
+},
+"uuid-generator":()=>{
+  form(t[1],`<div class="form-grid"><div class="field"><label>কতগুলো UUID চান</label><input id="n" type="number" min="1" max="50" value="1" class="input"></div></div><button class="btn" id="go">Generate</button>${result("UUID এখানে দেখাবে")}`);
+  enterSubmits(".tool-layout","#go");
+  $("#go").onclick=()=>{
+    const n=Math.min(50,Math.max(1,+$("#n").value||1));
+    const ids=Array.from({length:n},()=>crypto.randomUUID());
+    $("#result").innerHTML=ids.map(id=>`<code>${id}</code>`).join("<br>")+`<div class="actions"><button class="btn alt" id="copy">সব Copy করুন</button></div>`;
+    $("#copy").onclick=()=>copyText(ids.join("\n"));
+  };
+},
+"timestamp-converter":()=>{
+  form(t[1],`<div class="field"><label>Unix Timestamp (seconds)</label><input id="ts" type="number" class="input" placeholder="যেমন: 1700000000"></div><div class="actions"><button class="btn" id="toDate">তারিখে রূপান্তর</button><button class="btn alt" id="now">এখনকার Timestamp</button></div>${result("ফলাফল")}<hr style="margin:22px 0;border-color:var(--border)"><div class="field"><label>তারিখ ও সময়</label><input id="dt" type="datetime-local" class="input"></div><button class="btn alt" id="toTs" style="margin-top:10px">Timestamp-এ রূপান্তর</button><div id="result2" class="result">ফলাফল</div>`);
+  $("#toDate").onclick=()=>{const ts=+$("#ts").value;if(isNaN(ts)||$("#ts").value==="")return toast("সঠিক timestamp দিন");const d=new Date(ts*1000);$("#result").innerHTML=`<b>${d.toString()}</b>`};
+  $("#now").onclick=()=>{$("#ts").value=Math.floor(Date.now()/1000);toast("বর্তমান timestamp বসানো হয়েছে")};
+  $("#toTs").onclick=()=>{const d=new Date($("#dt").value);if(isNaN(d))return toast("তারিখ দিন");$("#result2").innerHTML=`Unix Timestamp: <b>${Math.floor(d.getTime()/1000)}</b>`};
+},
+"lorem-ipsum-generator":()=>{
+  const words="lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat duis aute irure dolor in reprehenderit voluptate velit esse cillum dolore eu fugiat nulla pariatur excepteur sint occaecat cupidatat non proident sunt in culpa qui officia deserunt mollit anim id est laborum".split(" ");
+  function genPara(){const n=6+Math.floor(Math.random()*4);let arr=[];for(let i=0;i<n;i++){const len=5+Math.floor(Math.random()*10);let s=[];for(let j=0;j<len;j++)s.push(words[Math.floor(Math.random()*words.length)]);s[0]=s[0][0].toUpperCase()+s[0].slice(1);arr.push(s.join(" ")+".")}return arr.join(" ")}
+  form(t[1],`<div class="form-grid"><div class="field"><label>প্যারাগ্রাফ সংখ্যা</label><input id="n" type="number" min="1" max="20" value="3" class="input"></div></div><button class="btn" id="go">Generate</button>${result("Lorem Ipsum text এখানে দেখাবে")}`);
+  enterSubmits(".tool-layout","#go");
+  $("#go").onclick=()=>{
+    const n=Math.min(20,Math.max(1,+$("#n").value||3));
+    const paras=Array.from({length:n},genPara);
+    $("#result").innerHTML=`<div style="white-space:pre-wrap">${paras.join("\n\n")}</div><div class="actions"><button class="btn alt" id="copy">Copy</button></div>`;
+    $("#copy").onclick=()=>copyText(paras.join("\n\n"));
+  };
+},
+"text-reverser":()=>{
+  form(t[1],`<textarea id="txt" class="textarea" placeholder="এখানে টেক্সট লিখুন…"></textarea><div class="actions"><button class="btn" id="revChar">অক্ষর Reverse</button><button class="btn alt" id="revWord">শব্দের ক্রম Reverse</button><button class="btn alt" id="copy">Copy</button></div>`);
+  const x=$("#txt");
+  $("#revChar").onclick=()=>{x.value=[...x.value].reverse().join("")};
+  $("#revWord").onclick=()=>{x.value=x.value.split(/\s+/).reverse().join(" ")};
+  $("#copy").onclick=()=>copyText(x.value);
+},
+"sentence-counter":()=>{
+  form(t[1],`<textarea id="txt" class="textarea" placeholder="এখানে লেখা লিখুন…"></textarea>${result("Sentences: 0 | Words: 0 | Characters: 0")}`);
+  $("#txt").oninput=e=>{
+    const s=e.target.value;
+    const sentences=s.split(/(?<=[।.!?])\s+/).map(x=>x.trim()).filter(Boolean);
+    const words=s.trim()?s.trim().split(/\s+/).length:0;
+    $("#result").textContent=`Sentences: ${s.trim()?sentences.length:0} | Words: ${words} | Characters: ${s.length}`;
+  };
+},
+"remove-duplicate-lines":()=>{
+  form(t[1],`<textarea id="txt" class="textarea" placeholder="প্রতি লাইনে একটি করে item লিখুন…"></textarea><div class="actions"><button class="btn" id="go">Duplicate সরান</button><button class="btn alt" id="copy">Copy</button></div>${result("ফলাফল এখানে দেখাবে")}`);
+  let out="";
+  $("#go").onclick=()=>{
+    const lines=$("#txt").value.split("\n");
+    const seen=new Set(),keep=[];
+    for(const l of lines){const k=l.trim();if(!seen.has(k)){seen.add(k);keep.push(l)}}
+    out=keep.join("\n");
+    $("#result").innerHTML=`<pre style="white-space:pre-wrap;margin:0;font-family:inherit">${esc(out)}</pre>`;
+    toast(`${lines.length-keep.length}টা duplicate লাইন সরানো হয়েছে`);
+  };
+  $("#copy").onclick=()=>copyText(out);
+},
+"text-sorter":()=>{
+  form(t[1],`<textarea id="txt" class="textarea" placeholder="প্রতি লাইনে একটি item লিখুন…"></textarea><div class="actions"><button class="btn" id="asc">A → Z</button><button class="btn alt" id="desc">Z → A</button><button class="btn alt" id="copy">Copy</button></div>`);
+  const x=$("#txt");
+  const sortIt=dir=>{const lines=x.value.split("\n").filter(l=>l.length);lines.sort((a,b)=>dir*a.localeCompare(b,"bn"));x.value=lines.join("\n")};
+  $("#asc").onclick=()=>sortIt(1);
+  $("#desc").onclick=()=>sortIt(-1);
+  $("#copy").onclick=()=>copyText(x.value);
+},
+"time-calculator":()=>{
+  form(t[1],`<div class="form-grid"><div class="field"><label>শুরুর সময়</label><input id="t1" type="time" class="input"></div><div class="field"><label>শেষ সময়</label><input id="t2" type="time" class="input"></div></div><button class="btn" id="go">ব্যবধান বের করুন</button>${result("ফলাফল")}`);
+  enterSubmits(".tool-layout","#go");
+  $("#go").onclick=()=>{
+    const [h1,m1]=($("#t1").value||"").split(":").map(Number);
+    const [h2,m2]=($("#t2").value||"").split(":").map(Number);
+    if(isNaN(h1)||isNaN(h2))return toast("দুইটি সময় দিন");
+    let mins=(h2*60+m2)-(h1*60+m1);
+    if(mins<0)mins+=24*60;
+    const h=Math.floor(mins/60),m=mins%60;
+    $("#result").innerHTML=`ব্যবধান: <b>${h} ঘণ্টা ${m} মিনিট</b>`;
+  };
 }};
   (pages[id]||generic)(t[1]);
   const rel=relatedTools(id,t[3],3);
   if(rel)app.insertAdjacentHTML("beforeend",`<div class="tool-layout" style="margin-top:0">${rel}</div>`);
+  const cb=toolContentBlock(id);
+  if(cb)app.insertAdjacentHTML("beforeend",`<div class="tool-layout" style="margin-top:0">${cb}</div>`);
 }
 function textCounter(title,words){form(title,`<textarea id="txt" class="textarea"></textarea>${result("0")}`);$("#txt").oninput=e=>{let s=e.target.value;$("#result").textContent=words?`Words: ${s.trim()?s.trim().split(/\s+/).length:0} | Characters: ${s.length}`:`Characters: ${s.length}`}}
 
@@ -484,6 +879,7 @@ function route(){
   let [r,qs]=raw.split("?");
   const params=new URLSearchParams(qs||"");
   window.scrollTo(0,0);
+  window.__crumb="";
   if(r==="")return home();
   if(r.startsWith("blog/"))return article(r.slice(5));
   if(["about","contact","privacy","terms","disclaimer"].includes(r))return legal(r);
