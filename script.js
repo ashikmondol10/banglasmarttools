@@ -16,6 +16,7 @@ function loadScript(src){
 }
 async function loadQRCode(){ if(!window.QRCode) await loadScript("https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"); return window.QRCode; }
 async function loadJSZip(){ if(!window.JSZip) await loadScript("https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"); return window.JSZip; }
+async function loadPdfLib(){ if(!window.PDFLib) await loadScript("https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"); return window.PDFLib; }
 
 /* ---------- Per-tool icons (each tool gets its own distinct mark, outline style, currentColor) ---------- */
 const toolIcons={
@@ -55,14 +56,35 @@ const toolIcons={
 "sentence-counter":`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="7" x2="15" y2="7"/><circle cx="18" cy="7" r="1" fill="currentColor" stroke="none"/><line x1="4" y1="13" x2="17" y2="13"/><circle cx="20" cy="13" r="1" fill="currentColor" stroke="none"/><line x1="4" y1="19" x2="12" y2="19"/><circle cx="15" cy="19" r="1" fill="currentColor" stroke="none"/></svg>`,
 "remove-duplicate-lines":`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="5" x2="15" y2="5"/><line x1="3" y1="9.5" x2="15" y2="9.5" opacity="0.35"/><line x1="17.5" y1="7" x2="21.5" y2="11"/><line x1="21.5" y1="7" x2="17.5" y2="11"/><line x1="3" y1="15" x2="17" y2="15"/><line x1="3" y1="19.5" x2="11" y2="19.5"/></svg>`,
 "text-sorter":`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><text x="2" y="10" font-size="8" font-family="Arial,sans-serif" font-weight="700" fill="currentColor" stroke="none">A</text><text x="2" y="21" font-size="8" font-family="Arial,sans-serif" font-weight="700" fill="currentColor" stroke="none">Z</text><line x1="16" y1="4" x2="16" y2="19"/><polyline points="12.5,15.5 16,19 19.5,15.5"/></svg>`,
-"time-calculator":`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="10.5" cy="12.5" r="7.5"/><line x1="10.5" y1="8" x2="10.5" y2="12.5"/><line x1="10.5" y1="12.5" x2="13.5" y2="14.5"/><line x1="19" y1="4" x2="19" y2="8"/><line x1="17" y1="6" x2="21" y2="6"/></svg>`
+"time-calculator":`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="10.5" cy="12.5" r="7.5"/><line x1="10.5" y1="8" x2="10.5" y2="12.5"/><line x1="10.5" y1="12.5" x2="13.5" y2="14.5"/><line x1="19" y1="4" x2="19" y2="8"/><line x1="17" y1="6" x2="21" y2="6"/></svg>`,
+"bkash-charge-calculator":`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="2.5"/><line x1="6" y1="17" x2="18" y2="17"/><text x="12" y="12.5" font-size="8" text-anchor="middle" font-family="Arial,sans-serif" font-weight="700" fill="currentColor" stroke="none">৳</text></svg>`,
+"nagad-charge-calculator":`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="2.5"/><line x1="6" y1="17" x2="18" y2="17"/><polyline points="9,12 12,8.5 15,12"/><line x1="12" y1="8.5" x2="12" y2="14"/></svg>`,
+"rocket-charge-calculator":`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="2.5"/><line x1="6" y1="17" x2="18" y2="17"/><path d="M12 6.5c1.4 1 1.8 3 1.8 4.8-.6.35-1.2.35-1.8.35s-1.2 0-1.8-.35c0-1.8.4-3.8 1.8-4.8z"/><line x1="11" y1="11.6" x2="10.2" y2="13.2"/><line x1="13" y1="11.6" x2="13.8" y2="13.2"/></svg>`,
+"income-tax-calculator":`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12v18l-2-1.3L14 21l-2-1.3L10 21l-2-1.3L6 21z"/><line x1="8.5" y1="7.5" x2="14.5" y2="7.5"/><circle cx="9.3" cy="12" r="1.3"/><circle cx="14.7" cy="15.5" r="1.3"/><line x1="9" y1="16" x2="15" y2="11.5"/></svg>`,
+"electricity-bill-calculator":`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="13,2 4,14 11,14 10,22 20,9 13,9 13,2"/></svg>`,
+"ssc-hsc-gpa-calculator":`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M2 9l10-4 10 4-10 4-10-4z"/><path d="M6 11v5c0 1.4 2.7 2.5 6 2.5s6-1.1 6-2.5v-5"/><line x1="21" y1="9" x2="21" y2="15"/></svg>`,
+"cgpa-calculator":`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="13" rx="2"/><line x1="7.5" y1="7" x2="16.5" y2="7"/><line x1="7.5" y1="10.5" x2="14" y2="10.5"/><path d="M9 16v5l3-2 3 2v-5"/></svg>`,
+"html-formatter":`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="7,7 3,12 7,17"/><polyline points="17,7 21,12 17,17"/><line x1="10" y1="18" x2="14" y2="6"/></svg>`,
+"css-minifier":`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="10" height="6" rx="1.3"/><path d="M6 9v4a2 2 0 0 0 2 2h1"/><line x1="9" y1="15" x2="9" y2="21"/><line x1="7" y1="21" x2="11" y2="21"/></svg>`,
+"js-minifier":`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><text x="12" y="15.5" font-size="9" text-anchor="middle" font-family="Arial,sans-serif" font-weight="700" fill="currentColor" stroke="none">JS</text></svg>`,
+"image-to-webp":`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="8.5" width="7" height="7" rx="1.3" fill="currentColor" stroke="none"/><line x1="10.5" y1="12" x2="14.5" y2="12"/><polyline points="12.7,9.8 15.2,12 12.7,14.2"/><rect x="16" y="8.5" width="7" height="7" rx="1.3"/><text x="19.5" y="14" font-size="5" text-anchor="middle" font-family="Arial,sans-serif" font-weight="700" fill="currentColor" stroke="none">W</text></svg>`,
+"webp-to-jpg":`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="8.5" width="7" height="7" rx="1.3"/><text x="4.5" y="14" font-size="5" text-anchor="middle" font-family="Arial,sans-serif" font-weight="700" fill="currentColor" stroke="none">W</text><line x1="10.5" y1="12" x2="14.5" y2="12"/><polyline points="12.7,9.8 15.2,12 12.7,14.2"/><rect x="16" y="8.5" width="7" height="7" rx="1.3" fill="currentColor" stroke="none"/></svg>`,
+"image-cropper":`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2v14a2 2 0 0 0 2 2h14"/><path d="M18 22V8a2 2 0 0 0-2-2H2"/></svg>`,
+"image-metadata-viewer":`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="14" height="12" rx="2"/><circle cx="7.5" cy="9.5" r="1.2"/><polyline points="5,15 8.5,11 11,13.5 14,10"/><circle cx="19.5" cy="6.5" r="3.2"/><line x1="19.5" y1="5.6" x2="19.5" y2="7.6" stroke-width="1.3"/><circle cx="19.5" cy="4.6" r="0.4" fill="currentColor" stroke="none"/></svg>`,
+"pdf-merge":`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="7" height="6" rx="1.1"/><rect x="1" y="13" width="7" height="6" rx="1.1"/><polyline points="10.5,12 14,12"/><polyline points="12.2,9.8 14.5,12 12.2,14.2"/><rect x="16" y="7" width="7" height="10" rx="1.3"/><line x1="18" y1="10.5" x2="21" y2="10.5"/><line x1="18" y1="13" x2="21" y2="13"/></svg>`,
+"pdf-split":`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="7" width="7" height="10" rx="1.3"/><line x1="3" y1="10.5" x2="6" y2="10.5"/><line x1="3" y1="13" x2="6" y2="13"/><polyline points="10.5,12 14,12"/><polyline points="12.2,9.8 14.5,12 12.2,14.2"/><rect x="16" y="4" width="7" height="6" rx="1.1"/><rect x="16" y="13" width="7" height="6" rx="1.1"/></svg>`,
+"jpg-to-pdf":`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="6.5" width="7" height="7.5" rx="1.3"/><polyline points="2,12.3 4.2,9.8 6.5,12.7"/><polyline points="10.5,10 14,10"/><polyline points="12.2,7.8 14.5,10 12.2,12.2"/><path d="M16 2h5v20h-9V6z"/><line x1="18.5" y1="9" x2="21" y2="9"/><line x1="18.5" y1="12" x2="21" y2="12"/><line x1="18.5" y1="15" x2="21" y2="15"/></svg>`,
+"pdf-compressor":`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M7 2h7l4 4v16H7z"/><polyline points="12,10 9,10 9,7"/><line x1="9" y1="10" x2="13" y2="6"/><polyline points="12,15 15,15 15,18"/><line x1="15" y1="15" x2="11" y2="19"/></svg>`,
+"bijoy-unicode-converter":`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><text x="1" y="10" font-size="6.5" font-family="Arial,sans-serif" font-weight="700" fill="currentColor" stroke="none">Bijoy</text><text x="9" y="21" font-size="7" font-family="Arial,sans-serif" font-weight="700" fill="currentColor" stroke="none">বাংলা</text><polyline points="6,13 15,7"/><polyline points="12,7.3 15.3,7 15,10.3"/></svg>`
 };
 const genericIcon=`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="7" height="7" rx="1.5"/><rect x="13" y="4" width="7" height="7" rx="1.5"/><rect x="4" y="13" width="7" height="7" rx="1.5"/><rect x="13" y="13" width="7" height="7" rx="1.5"/></svg>`;
+const CAT_EMOJI={"ক্যালকুলেটর":"🧮","ফাইন্যান্স":"📊","টেক্সট":"📝","ইমেজ":"🖼️","PDF":"📄","ডেভেলপার":"💻","ইউটিলিটি":"🔐","কনভার্টার":"🔁","বাংলাদেশ":"🇧🇩","শিক্ষা":"🎓"};
+function catLabel(c){return `${CAT_EMOJI[c]||"⚡"} ${c}`}
 const shareIcon=`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="2.3"/><circle cx="6" cy="12" r="2.3"/><circle cx="18" cy="19" r="2.3"/><line x1="8" y1="10.8" x2="16" y2="6.2"/><line x1="8" y1="13.2" x2="16" y2="17.8"/></svg>`;
 
 /* ---------- App state ---------- */
 const $=s=>document.querySelector(s), app=$("#app"), toastEl=$("#toast");
-const state={lang:localStorage.bst_lang||"bn",theme:localStorage.bst_theme||"light",recent:JSON.parse(localStorage.bst_recent||"[]")};
+const state={lang:localStorage.bst_lang||"bn",theme:localStorage.bst_theme||"light",recent:JSON.parse(localStorage.bst_recent||"[]"),favorites:JSON.parse(localStorage.bst_favorites||"[]")};
 document.documentElement.dataset.theme=state.theme; $("#year").textContent=new Date().getFullYear();
 
 const SITE="https://banglasmarttools.com/";
@@ -72,12 +94,12 @@ const tools=[
 ["percentage-calculator","Percentage Calculator","শতকরা হিসাব সহজে করুন","ক্যালকুলেটর"],
 ["bmi-calculator","BMI Calculator","উচ্চতা ও ওজন থেকে BMI হিসাব করুন","ক্যালকুলেটর"],
 ["discount-calculator","Discount Calculator","ছাড়ের পর দাম ও সাশ্রয় হিসাব করুন","ক্যালকুলেটর"],
-["profit-loss-calculator","Profit & Loss","লাভ বা ক্ষতির পরিমাণ ও শতাংশ বের করুন","ফাইন্যান্স"],
-["salary-calculator","Salary Calculator","মাসিক বেতন থেকে বার্ষিক মোট হিসাব","ফাইন্যান্স"],
-["vat-calculator","VAT Calculator","VAT যোগ বা বাদ দিয়ে মূল্য হিসাব করুন","ফাইন্যান্স"],
-["emi-calculator","EMI Calculator","ঋণের মাসিক কিস্তি হিসাব করুন","ফাইন্যান্স"],
+["profit-loss-calculator","Profit & Loss","লাভ বা ক্ষতির পরিমাণ ও শতাংশ বের করুন","বিজনেস ও ফাইন্যান্স"],
+["salary-calculator","Salary Calculator","মাসিক বেতন থেকে বার্ষিক মোট হিসাব","বিজনেস ও ফাইন্যান্স"],
+["vat-calculator","VAT Calculator","VAT যোগ বা বাদ দিয়ে মূল্য হিসাব করুন","বিজনেস ও ফাইন্যান্স"],
+["emi-calculator","EMI Calculator","ঋণের মাসিক কিস্তি হিসাব করুন","বিজনেস ও ফাইন্যান্স"],
 ["date-calculator","Date Calculator","দুই তারিখের ব্যবধান বের করুন","ক্যালকুলেটর"],
-["currency-converter","Currency Converter","লাইভ exchange rate দিয়ে currency convert করুন","ফাইন্যান্স"],
+["currency-converter","Currency Converter","লাইভ exchange rate দিয়ে currency convert করুন","বিজনেস ও ফাইন্যান্স"],
 ["word-counter","Word Counter","শব্দ ও character গণনা করুন","টেক্সট"],
 ["character-counter","Character Counter","অক্ষর গণনা করুন","টেক্সট"],
 ["case-converter","Case Converter","UPPER, lower ও Title Case করুন","টেক্সট"],
@@ -87,7 +109,7 @@ const tools=[
 ["png-to-jpg","PNG to JPG","PNG ছবিকে JPG করুন","ইমেজ"],
 ["pdf-to-jpg","PDF to JPG","PDF-এর page JPG হিসেবে export করুন","PDF"],
 ["json-formatter","JSON Formatter","JSON format ও validate করুন","ডেভেলপার"],
-["password-generator","Password Generator","নিরাপদ random password তৈরি করুন","ইউটিলিটি"],
+["password-generator","Password Generator","নিরাপদ random password তৈরি করুন","নিরাপত্তা"],
 ["qr-generator","QR Code Generator","Text বা URL থেকে QR code তৈরি করুন","ইউটিলিটি"],
 ["unit-converter","Unit Converter","দৈর্ঘ্য, ওজন ও তাপমাত্রা একক পরিবর্তন করুন","কনভার্টার"],
 ["number-to-words","সংখ্যা থেকে কথায়","সংখ্যাকে বাংলায় কথায় রূপান্তর করুন — চেক/ইনভয়েস লেখার জন্য","কনভার্টার"],
@@ -104,7 +126,26 @@ const tools=[
 ["sentence-counter","Sentence Counter","লেখায় কতগুলো বাক্য আছে গণনা করুন","টেক্সট"],
 ["remove-duplicate-lines","Remove Duplicate Lines","একই রকম লাইন বাদ দিয়ে unique list বানান","টেক্সট"],
 ["text-sorter","Text Sorter","লাইনগুলো A-Z বা Z-A ক্রমে সাজান","টেক্সট"],
-["time-calculator","Time Calculator","দুই সময়ের মধ্যে ব্যবধান বের করুন","ক্যালকুলেটর"]];
+["time-calculator","Time Calculator","দুই সময়ের মধ্যে ব্যবধান বের করুন","ক্যালকুলেটর"],
+["bijoy-unicode-converter","Bijoy ↔ Unicode Converter","Bijoy ANSI টেক্সট Unicode বাংলায় রূপান্তর করুন","বাংলাদেশ"],
+["bkash-charge-calculator","bKash Charge Calculator","bKash cash out চার্জ হিসাব করুন","বাংলাদেশ"],
+["nagad-charge-calculator","Nagad Charge Calculator","Nagad cash out চার্জ হিসাব করুন","বাংলাদেশ"],
+["rocket-charge-calculator","Rocket Charge Calculator","Rocket (DBBL) cash out চার্জ হিসাব করুন","বাংলাদেশ"],
+["income-tax-calculator","Income Tax Calculator","বাংলাদেশের personal income tax আনুমানিক হিসাব করুন","বাংলাদেশ"],
+["electricity-bill-calculator","Electricity Bill Calculator","মাসিক বিদ্যুৎ বিল আনুমানিক হিসাব করুন","বাংলাদেশ"],
+["ssc-hsc-gpa-calculator","SSC/HSC GPA Calculator","বিষয়ভিত্তিক গ্রেড থেকে GPA বের করুন","শিক্ষা"],
+["cgpa-calculator","CGPA Calculator","Credit-ভিত্তিক সেমিস্টার CGPA হিসাব করুন","শিক্ষা"],
+["html-formatter","HTML Formatter","HTML code সুন্দরভাবে indent করুন","ডেভেলপার"],
+["css-minifier","CSS Minifier","CSS থেকে comment ও extra space বাদ দিন","ডেভেলপার"],
+["js-minifier","JavaScript Minifier","JS থেকে comment ও extra space নিরাপদে বাদ দিন","ডেভেলপার"],
+["image-to-webp","Image to WebP","ছবিকে WebP format-এ রূপান্তর করুন","ইমেজ"],
+["webp-to-jpg","WebP to JPG","WebP ছবিকে JPG-তে রূপান্তর করুন","ইমেজ"],
+["image-cropper","Image Cropper","ছবি প্রয়োজনমতো crop করুন","ইমেজ"],
+["image-metadata-viewer","Image Metadata Viewer","ছবির dimension, size ও type দেখুন","ইমেজ"],
+["pdf-merge","PDF Merge","একাধিক PDF জোড়া লাগিয়ে একটি ফাইল বানান","PDF"],
+["pdf-split","PDF Split","PDF থেকে নির্দিষ্ট page আলাদা ফাইল করুন","PDF"],
+["jpg-to-pdf","JPG to PDF","একাধিক ছবি থেকে PDF তৈরি করুন","PDF"],
+["pdf-compressor","PDF Compressor","PDF-এর file size কমান","PDF"]];
 
 /* blogs: [slug, title, short description, sections[[heading, htmlBody]...], relatedToolId|null] */
 const blogs=[
@@ -235,6 +276,139 @@ how:["শুরুর সময় সিলেক্ট করুন","শে�
 benefits:["Office/শিফটের কাজের সময় দ্রুত হিসাব করা যায়","Overnight (মধ্যরাত পার হওয়া) সময়ও সঠিকভাবে গণনা হয়","হাতে হিসাবের ভুল এড়ানো যায়"],
 tips:["শেষ সময় শুরুর সময়ের চেয়ে ছোট হলে এটি পরের দিনের সময় ধরে নিয়ে হিসাব করে (২৪ ঘণ্টা যোগ করে)।","দিন পার হওয়া শিফটের জন্য এই ব্যবহারই সবচেয়ে সহজ।"],
 faq:[["সেকেন্ড হিসাব করা যায় কি?","না, বর্তমানে ঘণ্টা ও মিনিট পর্যন্ত সাপোর্ট করে।"],["একাধিক দিনের ব্যবধান বের করতে চাইলে?","তারিখসহ ব্যবধানের জন্য আমাদের Date Calculator ব্যবহার করুন।"],["মধ্যরাত পার হওয়া শিফট কি ঠিকভাবে হিসাব হয়?","হ্যাঁ, যেমন রাত ১০টা থেকে সকাল ৬টা দিলে সঠিকভাবে ৮ ঘণ্টা দেখাবে।"]]
+},
+"bkash-charge-calculator":{
+about:"bKash-এ Cash Out করলে কত চার্জ কাটবে তা এই টুল সাথে সাথে হিসাব করে দেয় — Standard Agent ও Priyo Agent/ATM, দুই রকম রেটই সাপোর্ট করে।",
+how:["Cash Out-এর পরিমাণ লিখুন","Agent-এর ধরন বেছে নিন (Standard বা Priyo/ATM)","চার্জ ও হাতে পাওয়া টাকা দেখুন"],
+benefits:["Agent-এ যাওয়ার আগেই সঠিক চার্জ জানা যায়","Priyo Agent ব্যবহারে কত সাশ্রয় হয় তা তুলনা করা যায়","কোনো app খোলার দরকার নেই"],
+tips:["দুইটা নম্বরকে Priyo Agent হিসেবে সেট করলে মাসে ৫০,০০০ টাকা পর্যন্ত কম চার্জে (১.৪৯%) Cash Out করা যায়, তার বেশি হলে standard রেট (১.৮৫%) প্রযোজ্য হয়।","চার্জ সবসময় পরিবর্তনযোগ্য — bKash app-এ transaction confirm করার আগে দেখানো charge-ই চূড়ান্ত ধরুন।"],
+faq:[["bKash cash out চার্জ কত?","Standard Agent-এ প্রতি হাজারে প্রায় ১৮.৫০ টাকা (১.৮৫%), আর Priyo Agent বা ATM-এ প্রায় ১৪.৯০ টাকা (১.৪৯%)।"],["Priyo Agent কী?","আপনি ২টি bKash Agent নম্বরকে \u201cপ্রিয়\u201d হিসেবে সেট করতে পারেন, যেখান থেকে কম চার্জে মাসে ৫০,০০০ টাকা পর্যন্ত Cash Out করা যায়।"],["এই হিসাব কি সবসময় সঠিক থাকবে?","চার্জ সময়ে সময়ে পরিবর্তিত হয়, তাই চূড়ান্ত সিদ্ধান্তের আগে bKash app বা official সোর্স দেখে নিশ্চিত হয়ে নিন।"]]
+},
+"nagad-charge-calculator":{
+about:"Nagad-এ Cash Out করলে App বা USSD (*167#) — কোন মাধ্যমে কত চার্জ কাটবে তা এই টুল হিসাব করে দেয়।",
+how:["Cash Out-এর পরিমাণ লিখুন","মাধ্যম বেছে নিন (App বা USSD)","চার্জ ও হাতে পাওয়া টাকা দেখুন"],
+benefits:["App ও USSD-এর চার্জ তুলনা করে সাশ্রয়ী মাধ্যম বেছে নেওয়া যায়","দ্রুত, কোনো লগইনের দরকার নেই"],
+tips:["App দিয়ে Cash Out করলে USSD-এর চেয়ে কম চার্জ কাটে, তাই ইন্টারনেট থাকলে App ব্যবহার করাই ভালো।"],
+faq:[["Nagad cash out চার্জ কত?","App দিয়ে প্রতি হাজারে প্রায় ১২.৫০ টাকা (১.২৫%), আর USSD (*167#) দিয়ে প্রায় ১৫ টাকা (১.৫%)।"],["Islamic account-এও কি একই চার্জ?","হ্যাঁ, নিয়মিত ও Islamic উভয় account-এই একই হার প্রযোজ্য।"],["চার্জ কি পরিবর্তন হতে পারে?","হ্যাঁ, তাই লেনদেনের সময় Nagad app-এ দেখানো charge-কেই চূড়ান্ত ধরুন।"]]
+},
+"rocket-charge-calculator":{
+about:"Dutch-Bangla Bank-এর Rocket সার্ভিসে Cash Out করলে Agent বা DBBL ATM/Branch — কোন মাধ্যমে কত চার্জ কাটবে তা এই টুল হিসাব করে দেয়।",
+how:["Cash Out-এর পরিমাণ লিখুন","মাধ্যম বেছে নিন (Agent বা DBBL ATM/Branch)","চার্জ ও হাতে পাওয়া টাকা দেখুন"],
+benefits:["ATM ব্যবহার করলে কত সাশ্রয় হয় তা সহজে বোঝা যায়","Salary Account হোল্ডারদের জন্য বিশেষ তথ্যও দেওয়া আছে"],
+tips:["DBBL ATM/Branch থেকে Cash Out করলে Agent-এর তুলনায় চার্জ প্রায় অর্ধেক (০.৯%)।","Salary Account থাকলে DBBL ATM থেকে Cash Out সম্পূর্ণ ফ্রি হতে পারে — নিজের account type নিশ্চিত করে নিন।"],
+faq:[["Rocket cash out চার্জ কত?","General Account-এ Agent থেকে প্রায় ১.৬৭% (হাজারে ১৬.৭০ টাকা), আর DBBL ATM/Branch থেকে প্রায় ০.৯% (হাজারে ৯ টাকা)।"],["Salary Account হলে কী সুবিধা?","Salary Account হোল্ডাররা DBBL ATM থেকে সাধারণত বিনামূল্যে Cash Out করতে পারেন।"],["এই রেট কি সব সময় ঠিক থাকে?","না, DBBL সময়ে সময়ে চার্জ পরিবর্তন করতে পারে — Rocket app-এ চূড়ান্ত চার্জ দেখে নিন।"]]
+},
+"income-tax-calculator":{
+about:"বাংলাদেশের ব্যক্তিগত (individual) income tax-এর progressive slab অনুযায়ী আনুমানিক কর হিসাব করে এই টুল — এটি শুধুমাত্র প্রাথমিক ধারণার জন্য, চূড়ান্ত return filing নয়।",
+how:["আপনার বার্ষিক করযোগ্য আয় লিখুন","Taxpayer category বেছে নিন (General/নারী ও প্রবীণ/প্রতিবন্ধী)","আনুমানিক tax দেখুন"],
+benefits:["ট্যাক্স প্ল্যানিং-এর আগে দ্রুত ধারণা পাওয়া যায়","বিভিন্ন আয়ের স্তরে কর কেমন বাড়ে তা বোঝা সহজ হয়"],
+tips:["Investment rebate (approved খাতে বিনিয়োগের ১৫%) এই হিসাবে যোগ করা হয়নি — প্রকৃত করদায় এর চেয়ে কম হতে পারে।","চূড়ান্ত filing-এর আগে অবশ্যই NBR-এর official website (nbr.gov.bd) বা tax consultant-এর সাথে যাচাই করে নিন, কারণ প্রতি বছর বাজেটে slab পরিবর্তন হতে পারে।"],
+faq:[["Tax-free সীমা কত?","সাধারণ করদাতাদের জন্য বার্ষিক ৩,৭৫,০০০ টাকা পর্যন্ত আয়কর-মুক্ত (নারী/৬৫+ বছর: ৪,২৫,০০০, প্রতিবন্ধী/তৃতীয় লিঙ্গ: ৫,০০,০০০)।"],["সর্বোচ্চ tax rate কত?","সর্বোচ্চ ৩০%, যা সবচেয়ে উপরের স্তরের আয়ে প্রযোজ্য।"],["এই হিসাব কি চূড়ান্ত?","না, এটি আনুমানিক estimation মাত্র — rebate, minimum tax ও বিশেষ নিয়ম বিবেচনা করে চূড়ান্ত হিসাব NBR বা tax professional-এর মাধ্যমে করানো উচিত।"]]
+},
+"electricity-bill-calculator":{
+about:"মাসিক ব্যবহৃত ইউনিট (kWh) দিলে BERC-এর residential (LT-A) স্ল্যাব রেট অনুযায়ী আনুমানিক বিদ্যুৎ বিল হিসাব করে দেয় এই টুল।",
+how:["মাসে ব্যবহৃত ইউনিট (kWh) লিখুন","চাইলে sanctioned load (kW) দিন demand charge-এর জন্য","আনুমানিক বিল দেখুন"],
+benefits:["মিটার রিডিং থেকেই মোটামুটি বিল অনুমান করা যায়","কোন স্ল্যাবে কত ইউনিট পড়ছে তা ভেঙে দেখানো হয়"],
+tips:["বাংলাদেশে বিদ্যুৎ বিল cumulative slab পদ্ধতিতে হিসাব হয় — অর্থাৎ পুরো বিল সর্বোচ্চ রেটে নয়, ধাপে ধাপে বাড়ে।","এই হিসাবে Demand Charge, Meter Rent ও VAT আনুমানিকভাবে যোগ করা হয়েছে — DESCO/DPDC/NESCO/BPDB এলাকাভেদে ছোটখাটো পার্থক্য থাকতে পারে, প্রকৃত বিলের সাথে সামান্য তফাত হতে পারে।"],
+faq:[["ইউনিট প্রতি দাম কত?","স্ল্যাব অনুযায়ী ভিন্ন — প্রথম ৫০ ইউনিট সবচেয়ে কম রেটে, তারপর ব্যবহার বাড়লে ধাপে ধাপে রেট বাড়ে (সর্বোচ্চ প্রায় ১৭.৩৫ টাকা/ইউনিট, ৬০০ ইউনিটের বেশি ব্যবহারে)।"],["VAT কি আলাদাভাবে যোগ হয়?","হ্যাঁ, energy charge-এর উপর ৫% VAT যোগ করা হয়।"],["সব বিতরণ কোম্পানির (DESCO/DPDC ইত্যাদি) রেট কি একই?","মূল ইউনিট রেট BERC কর্তৃক জাতীয়ভাবে নির্ধারিত, তাই মূলত একই থাকে — তবে meter rent বা সার্ভিস চার্জে সামান্য পার্থক্য থাকতে পারে।"]]
+},
+"ssc-hsc-gpa-calculator":{
+about:"প্রতিটি বিষয়ের গ্রেড পয়েন্ট দিলে বাংলাদেশ শিক্ষা বোর্ডের মান অনুযায়ী গড় GPA বের করে দেয় এই টুল — SSC ও HSC উভয়ের জন্য একই পদ্ধতি।",
+how:["প্রতিটি বিষয়ের Grade Point (0 থেকে 5) লিখুন, কমা দিয়ে আলাদা করে","\u201cGPA বের করুন\u201d বাটনে চাপুন","গড় GPA দেখুন"],
+benefits:["দ্রুত নিজের সম্ভাব্য GPA অনুমান করা যায়","একাধিক বিষয়ের গ্রেড একসাথে গড় করা সহজ"],
+tips:["গ্রেডিং স্কেল: A+ (৮০-১০০) = 5.00, A (৭০-৭৯) = 4.00, A- (৬০-৬৯) = 3.50, B (৫০-৫৯) = 3.00, C (৪০-৪৯) = 2.00, D (৩৩-৩৯) = 1.00, F (০-৩২) = 0.00।","৪র্থ বিষয়ের অতিরিক্ত পয়েন্ট যোগ করার নিয়ম বোর্ড ভেদে কিছুটা ভিন্ন হতে পারে, তাই এই টুল সরল গড় দেখায় — চূড়ান্ত ফলাফলের জন্য বোর্ডের নিয়ম অনুসরণ করুন।"],
+faq:[["এই হিসাব কি official result-এর মতো নির্ভুল?","এটি একটি সাধারণ গড় হিসাব, ৪র্থ বিষয়ের বিশেষ নিয়ম বা bonus point এখানে যোগ করা হয় না, তাই official result-এর সাথে সামান্য পার্থক্য হতে পারে।"],["কোনো বিষয়ে F থাকলে?","F (0.00) থাকলেও গড়ে যোগ হবে, তবে বাস্তবে যেকোনো বিষয়ে F মানে সেই বিষয়ে fail — সামগ্রিক ফলাফলে ভিন্ন নিয়ম প্রযোজ্য হতে পারে।"],["GPA 5 পেতে হলে কী লাগে?","সবগুলো বিষয়ে A+ (Grade Point 5.00) পেতে হবে।"]]
+},
+"cgpa-calculator":{
+about:"প্রতিটি কোর্সের Credit Hour ও Grade Point দিলে Credit-weighted CGPA হিসাব করে দেয় এই টুল — বিশ্ববিদ্যালয়ের সেমিস্টার বা সামগ্রিক CGPA বের করতে ব্যবহার করা যায়।",
+how:["প্রতিটি কোর্সের জন্য Credit Hour ও Grade Point লিখুন","প্রয়োজনে আরও কোর্স যোগ করুন","CGPA হিসাব করুন"],
+benefits:["Credit hour ভিন্ন হলেও সঠিক weighted average পাওয়া যায়","সেমিস্টার শেষে দ্রুত CGPA যাচাই করা যায়"],
+tips:["CGPA = (প্রতিটি কোর্সের Credit × Grade Point-এর সমষ্টি) ÷ (মোট Credit)।","আপনার বিশ্ববিদ্যালয়ের নিজস্ব grading policy (যেমন repeat course নিয়ম) থাকলে চূড়ান্ত হিসাবে তা বিবেচনা করুন।"],
+faq:[["Credit hour কী?","প্রতিটি কোর্সের ওজন বা গুরুত্ব বোঝাতে ব্যবহৃত সংখ্যা, সাধারণত সপ্তাহে ক্লাসের ঘণ্টার সাথে সম্পর্কিত।"],["F গ্রেড পাওয়া কোর্স কি হিসাবে ধরা হয়?","হ্যাঁ, এই ক্যালকুলেটরে Grade Point 0 দিয়ে দিলে তা গড়ে অন্তর্ভুক্ত হবে।"],["Repeat করা কোর্স কীভাবে হিসাব করব?","আপনার বিশ্ববিদ্যালয়ের নিয়ম অনুযায়ী শুধু সর্বশেষ বা সর্বোচ্চ grade যোগ করুন, প্রয়োজনে পুরনো কোর্সটি বাদ দিয়ে হিসাব করুন।"]]
+},
+"html-formatter":{
+about:"এই টুল minified বা এলোমেলো HTML code-কে সুন্দরভাবে indent করে পড়ার উপযোগী করে দেয়।",
+how:["HTML code paste করুন","\u201cFormat\u201d বাটনে চাপুন","Indent করা ফলাফল Copy করে নিন"],
+benefits:["Minified HTML পড়া ও debug করা সহজ হয়","Nested tag-এর structure স্পষ্ট বোঝা যায়"],
+tips:["খুব জটিল বা malformed HTML-এ (যেমন bare/unclosed tag) indentation সবসময় নিখুঁত নাও হতে পারে — গুরুত্বপূর্ণ কাজের আগে ফলাফল চোখে দেখে চেক করে নিন।"],
+faq:[["এটা কি HTML validate করে?","না, এটি শুধু readable ভাবে সাজায়, syntax ভুল ধরে না।"],["Inline JS/CSS-ও কি format হয়?","script/style ট্যাগের ভেতরের কনটেন্ট অপরিবর্তিত থাকে, শুধু HTML tag structure indent হয়।"],["Minify করা যাবে কি?","এই টুল শুধু format/indent করে, minify করতে চাইলে অন্য tool দরকার।"]]
+},
+"css-minifier":{
+about:"এই টুল CSS code থেকে comment ও অপ্রয়োজনীয় space/newline বাদ দিয়ে ছোট আকারে নিয়ে আসে — production-এ ব্যবহারের আগে file size কমাতে সাহায্য করে।",
+how:["CSS code paste করুন","\u201cMinify\u201d বাটনে চাপুন","ফলাফল Copy করে নিন"],
+benefits:["CSS file size কমে, page load দ্রুত হয়","Comment ও extra whitespace সহজেই সরানো যায়"],
+tips:["Minify করার আগে মূল (unminified) CSS file আলাদা করে রেখে দিন, যাতে পরে সহজে edit করতে পারেন।"],
+faq:[["এটা কি CSS-এর মধ্যে ভুল থাকলে ধরিয়ে দেয়?","না, এটি শুধু whitespace/comment সরায়, syntax validate করে না।"],["Variable বা custom property কি ঠিক থাকে?","হ্যাঁ, শুধু whitespace ও comment বাদ যায়, actual rule/value অপরিবর্তিত থাকে।"],["আসল production-grade minifier-এর মতো ছোট হবে কি?","এটি একটি হালকা, নিরাপদ minifier — সর্বোচ্চ compression-এর জন্য build-tool ভিত্তিক minifier (যেমন cssnano) বেশি কার্যকর।"]]
+},
+"js-minifier":{
+about:"এই টুল JavaScript code থেকে comment ও অতিরিক্ত ফাঁকা জায়গা নিরাপদে বাদ দেয় — string/template literal-এর ভেতরের content অক্ষত রেখে।",
+how:["JS code paste করুন","\u201cProcess\u201d বাটনে চাপুন","ফলাফল Copy করে নিন"],
+benefits:["Comment ও ফাঁকা লাইন সরিয়ে code আরেকটু compact হয়","String/template literal-এর ভেতরের টেক্সট নিরাপদে অক্ষত থাকে"],
+tips:["এটি variable rename বা aggressive minification করে না (production build-এর জন্য Terser/esbuild-এর মতো সঠিক tool ব্যবহার করুন) — শুধু নিরাপদে comment/whitespace সরায়।","Regex literal-এ (/ .../) মাঝেমধ্যে edge-case থাকতে পারে — ব্যবহারের আগে output চালিয়ে verify করে নিন।"],
+faq:[["এটা কি পুরোপুরি safe?","String ও template literal-এর ভেতরের কনটেন্ট অক্ষুণ্ণ রেখে comment/whitespace সরানো হয়, তবে জটিল regex literal-এ বিরল edge case হতে পারে — output test করে নেওয়াই নিরাপদ।"],["Variable name ছোট করে দেয় কি?","না, এই টুল rename/mangle করে না — শুধু comment ও whitespace সরায়।"],["Production-এর জন্য যথেষ্ট কি?","ছোট script-এর জন্য যথেষ্ট, তবে বড় production app-এ dedicated bundler/minifier ব্যবহার করাই ভালো।"]]
+},
+"image-to-webp":{
+about:"এই টুল JPG/PNG ছবিকে আধুনিক WebP format-এ রূপান্তর করে, যা একই মানে সাধারণত ছোট file size দেয়।",
+how:["ছবি upload করুন","স্বয়ংক্রিয়ভাবে WebP-তে রূপান্তরিত হবে","Download করুন"],
+benefits:["Website-এর জন্য ছোট, দ্রুত-লোড হওয়া ছবি তৈরি হয়","Modern browser-এ ভালো compression পাওয়া যায়"],
+tips:["সব পুরনো software বা কিছু old device WebP সাপোর্ট নাও করতে পারে — প্রয়োজনে fallback হিসেবে JPG/PNG রেখে দিন।"],
+faq:[["WebP কী?","Google-এর তৈরি একটি আধুনিক ছবি format, যা JPG/PNG-এর তুলনায় কম জায়গায় ভালো quality দেয়।"],["Quality কমে যাবে কি?","সাধারণত visually প্রায় একই থাকে, তবে অতিরিক্ত compression-এ সামান্য পার্থক্য হতে পারে।"],["সব browser-এ কি WebP চলে?","প্রায় সব modern browser সাপোর্ট করে, তবে খুব পুরনো software-এ সমস্যা হতে পারে।"]]
+},
+"webp-to-jpg":{
+about:"এই টুল WebP ছবিকে সব জায়গায় সহজে ব্যবহারযোগ্য JPG format-এ রূপান্তর করে।",
+how:["WebP ছবি upload করুন","স্বয়ংক্রিয়ভাবে JPG-তে রূপান্তরিত হবে","Download করুন"],
+benefits:["যেসব software/website WebP সাপোর্ট করে না, সেখানে ব্যবহারযোগ্য হয়ে যায়","Universal compatibility পাওয়া যায়"],
+tips:["JPG transparency সাপোর্ট করে না, তাই WebP-তে transparent অংশ থাকলে সাদা background-এ পরিণত হবে।"],
+faq:[["Transparency থাকলে কী হয়?","JPG-তে transparency নেই, তাই transparent অংশ সাদা রঙে পরিণত হবে — প্রয়োজনে PNG-তে convert করুন।"],["Quality loss হবে কি?","সামান্য হতে পারে, কারণ JPG lossy compression ব্যবহার করে।"],["সব browser কি WebP upload নিতে পারে?","হ্যাঁ, বেশিরভাগ আধুনিক browser WebP পড়তে পারে, তাই upload-এ সমস্যা হবে না।"]]
+},
+"image-cropper":{
+about:"এই টুল দিয়ে ছবির অপ্রয়োজনীয় অংশ বাদ দিয়ে নির্দিষ্ট অংশ crop করে নেওয়া যায়।",
+how:["ছবি upload করুন","Crop এলাকা টেনে (drag) নির্বাচন করুন","Crop করুন ও Download করুন"],
+benefits:["Profile picture বা thumbnail-এর জন্য নির্দিষ্ট অংশ বেছে নেওয়া যায়","কোনো software install ছাড়াই ব্রাউজারেই করা যায়"],
+tips:["Social media profile picture সাধারণত square (1:1) ratio-তে ভালো দেখায়, crop করার সময় তা মাথায় রাখুন।"],
+faq:[["Crop করা ছবির quality কমে যাবে কি?","না, শুধু নির্বাচিত অংশ কাটা হয়, অবশিষ্ট অংশের quality অপরিবর্তিত থাকে।"],["একাধিকবার crop করা যায় কি?","হ্যাঁ, ফলাফল download করে আবার upload করে দ্বিতীয়বার crop করা যায়।"],["ছবি কোথাও upload/সংরক্ষণ হয় কি?","না, পুরো processing আপনার browser-এই হয়, কোনো server-এ ছবি যায় না।"]]
+},
+"image-metadata-viewer":{
+about:"এই টুল ছবির dimension (width×height), file size, format ও last modified-এর মতো basic তথ্য দেখায়।",
+how:["ছবি upload করুন","তথ্য স্বয়ংক্রিয়ভাবে দেখা যাবে"],
+benefits:["Upload করার আগে ছবির exact dimension ও size যাচাই করা যায়","Website/form-এর file size limit মানছে কিনা দ্রুত বোঝা যায়"],
+tips:["এই টুল basic file তথ্য দেখায় (dimension, size, type) — camera-এর EXIF তথ্য (যেমন location, camera model) দেখাতে আলাদা specialized tool দরকার।"],
+faq:[["EXIF/GPS তথ্যও কি দেখায়?","না, বর্তমানে শুধু dimension, file size, format ও last modified date দেখায়।"],["তথ্য কি নির্ভুল?","হ্যাঁ, browser থেকে সরাসরি পাওয়া file তথ্য দেখানো হয়।"],["ছবি upload হয় কি কোথাও?","না, সম্পূর্ণ processing browser-এই হয়।"]]
+},
+"pdf-merge":{
+about:"এই টুল একাধিক PDF ফাইলকে একসাথে জোড়া লাগিয়ে একটি single PDF তৈরি করে দেয়।",
+how:["একাধিক PDF ফাইল select করুন (ক্রম অনুযায়ী)","\u201cMerge\u201d বাটনে চাপুন","একত্রিত PDF Download করুন"],
+benefits:["একাধিক document একটি ফাইলে পাঠানো সহজ হয়ে যায়","Print বা email করার আগে সব page গুছিয়ে নেওয়া যায়"],
+tips:["ফাইল যে ক্রমে select করবেন, সাধারণত সেই ক্রমেই যুক্ত হবে — merge করার আগে ক্রম নিশ্চিত করে নিন।"],
+faq:[["কতগুলো PDF একসাথে merge করা যায়?","একাধিক ফাইল merge করা যায়, তবে খুব বেশি বড় ফাইলে browser-এর memory limit-এর কারণে সময় বেশি লাগতে পারে।"],["Password-protected PDF কি merge করা যাবে?","না, প্রথমে password সরিয়ে নিতে হবে।"],["ফাইল কোথাও upload হয় কি?","না, পুরো processing browser-এই হয়, কোনো ফাইল server-এ যায় না।"]]
+},
+"pdf-split":{
+about:"এই টুল একটি PDF থেকে নির্দিষ্ট page বা page-range আলাদা করে নতুন PDF ফাইল হিসেবে বের করে দেয়।",
+how:["PDF ফাইল upload করুন","কোন page/range আলাদা করতে চান তা লিখুন (যেমন 1-3)","Split করে Download করুন"],
+benefits:["বড় PDF থেকে দরকারি অংশটুকু আলাদা করে পাঠানো যায়","পুরো ফাইল না পাঠিয়ে প্রাসঙ্গিক page-ই শেয়ার করা যায়"],
+tips:["Page number সবসময় ১ থেকে গোনা হয় (প্রথম page = 1)।"],
+faq:[["একাধিক range একসাথে split করা যায় কি?","হ্যাঁ, কমা দিয়ে একাধিক page/range উল্লেখ করা যায়, যেমন 1-2,5।"],["Split করা page-গুলো কি আলাদা আলাদা ফাইল হয়?","এই টুল নির্বাচিত page-গুলো নিয়ে একটি নতুন PDF তৈরি করে।"],["মূল ফাইল কি পরিবর্তন হয়?","না, মূল ফাইল অপরিবর্তিত থাকে, নতুন ফাইল আলাদাভাবে তৈরি হয়।"]]
+},
+"jpg-to-pdf":{
+about:"এই টুল একাধিক ছবি (JPG/PNG) থেকে একটি PDF ফাইল তৈরি করে দেয় — প্রতিটি ছবি একটি করে page হিসেবে যুক্ত হয়।",
+how:["একাধিক ছবি select করুন (ক্রম অনুযায়ী)","\u201cPDF তৈরি করুন\u201d বাটনে চাপুন","PDF ফাইল Download করুন"],
+benefits:["Scan করা ছবিগুলো থেকে সহজে document PDF বানানো যায়","একাধিক ছবি একসাথে গুছিয়ে পাঠানো সহজ হয়"],
+tips:["ভালো ফলাফলের জন্য ছবিগুলো একই orientation (portrait/landscape) রাখলে PDF দেখতে বেশি গোছানো লাগে।"],
+faq:[["ছবির ক্রম কীভাবে ঠিক হয়?","আপনি যে ক্রমে ছবি select করবেন, PDF-এও সাধারণত সেই ক্রমেই page যুক্ত হবে।"],["ছবির quality কি অক্ষুণ্ণ থাকে?","হ্যাঁ, মূল ছবির resolution অনুযায়ী PDF-এ বসানো হয়।"],["একসাথে অনেক ছবি দেওয়া যায় কি?","হ্যাঁ, তবে খুব বেশি বা বড় সাইজের ছবিতে browser-এর memory limit-এর কারণে সময় বেশি লাগতে পারে।"]]
+},
+"pdf-compressor":{
+about:"এই টুল PDF-এর প্রতিটি page-কে ছবি হিসেবে re-render করে নির্দিষ্ট quality-তে compress করে আবার PDF আকারে তৈরি করে দেয় — মূলত scanned বা image-heavy PDF-এর জন্য কার্যকর।",
+how:["PDF upload করুন","Compression level বেছে নিন","Compress করা PDF Download করুন"],
+benefits:["Scanned document-এর বড় PDF ছোট করা যায়","Email attachment limit-এর মধ্যে আনা সহজ হয়"],
+tips:["এই পদ্ধতি প্রতিটি page-কে ছবিতে রূপান্তর করে, তাই মূলত scanned/image-based PDF-এ ভালো কাজ করে — যদি PDF-এ selectable/searchable text থাকে, compress করার পর সেই text আর select করা যাবে না (page ছবিতে পরিণত হবে)।","Text-heavy PDF (যেমন Word থেকে export করা) compress করলে size কমার বদলে বাড়তেও পারে — সেক্ষেত্রে compress না করাই ভালো।"],
+faq:[["Text selectable থাকবে কি compress করার পর?","না, এই পদ্ধতিতে page ছবিতে রূপান্তরিত হয়, তাই text আর select/search করা যাবে না।"],["সব PDF-এর size কমবে কি?","মূলত scanned/image-heavy PDF-এর size কমে; text-only PDF-এ উল্টো size বাড়তে পারে।"],["Quality কতটা কমে?","আপনি যে compression level বেছে নেবেন তার উপর নির্ভর করে — বেশি compression মানে ছোট size কিন্তু কম quality।"]]
+},
+"bijoy-unicode-converter":{
+about:"পুরনো Bijoy ANSI keyboard layout-এ লেখা বাংলা টেক্সটকে আধুনিক Unicode বাংলায় রূপান্তরের জন্য এই টুল পরিকল্পনা করা হয়েছে — তবে নির্ভুল mapping table verify না হওয়া পর্যন্ত এটি এখনো চালু করা হয়নি।",
+how:["এই মুহূর্তে টুলটি সক্রিয় নয়","বিকল্প হিসেবে Avro Converter বা OpenBangla Keyboard ব্যবহার করুন","আমরা verified mapping table যোগ হলে এখানে আপডেট করব"],
+benefits:["ভবিষ্যতে চালু হলে পুরনো Bijoy document সহজে Unicode-এ আনা যাবে","এখন ভুল/garbled রূপান্তর দেখিয়ে বিভ্রান্ত করার বদলে honest থাকা হয়েছে"],
+tips:["Bijoy-Unicode রূপান্তরে অসংখ্য ছোট নিয়ম (pre-base vowel reordering, conjunct handling) জড়িত — ভুল হলে লেখা silently garbled হয়ে যায়, তাই যাচাই না করে ছাড়া হয়নি।","জরুরি প্রয়োজনে এখন verified, পরীক্ষিত tool (Avro, OpenBangla Keyboard) ব্যবহার করুন।"],
+faq:[["এই টুল কাজ করে না কেন?","সঠিক রূপান্তরের জন্য দরকারি byte-level mapping table নিয়ে আমরা যথেষ্ট নিশ্চিত নই বলে ভুল ফলাফল দেওয়ার বদলে honestly না-করাই বেছে নিয়েছি।"],["কবে চালু হবে?","নির্ভরযোগ্য mapping table verify করে যোগ করা হলে এটি চালু হবে।"],["এখন কী করব?","আপাতত Avro Converter বা OpenBangla Keyboard-এর মতো established tool ব্যবহার করুন।"]]
 },
 "age-calculator":{
 about:"জন্মতারিখ দিলেই এই টুল আপনার সঠিক বয়স বছর, মাস ও দিন হিসেবে বের করে দেয় — চাকরির আবেদন, পরীক্ষার ফর্ম বা যেকোনো সরকারি কাজে বয়স লেখার জন্য এটি কাজে লাগে।",
@@ -485,6 +659,11 @@ function numToBanglaWords(num){
   return parts.join(" ");
 }
 
+/* ---------- Bijoy Classic -> Unicode converter: intentionally NOT auto-implemented ----------
+   A correct converter needs the exact SutonnyMJ/Bijoy Classic byte-to-glyph table plus
+   pre-base vowel-sign reordering. Shipping a guessed table risks silently corrupting
+   people's Bangla text, so this tool instead gives clear guidance (see toolPage handler). */
+
 /* ---------- SEO: per-page title/description/schema ---------- */
 function setMeta(title,desc){
   document.title=title;
@@ -508,7 +687,7 @@ function setFaqSchema(faqPairs){
 }
 function clearFaqSchema(){const el=document.getElementById("faq-schema");if(el)el.remove()}
 function breadcrumb(cat,title){
-  return `<div class="breadcrumb" role="navigation" aria-label="Breadcrumb"><a href="#/">হোম</a> <span>/</span> <a href="#/tools?cat=${encodeURIComponent(cat)}">${esc(cat)}</a> <span>/</span> <span aria-current="page">${esc(title)}</span></div>`;
+  return `<div class="breadcrumb" role="navigation" aria-label="Breadcrumb"><a href="#/">হোম</a> <span>/</span> <a href="#/tools?cat=${encodeURIComponent(cat)}">${catLabel(cat)}</a> <span>/</span> <span aria-current="page">${esc(title)}</span></div>`;
 }
 function toolContentBlock(id){
   const c=toolContent[id];
@@ -531,7 +710,13 @@ function bindShare(title){
 }
 
 /* ---------- Cards / listing ---------- */
-function card(t){return `<div class="card tool-card"><div class="tool-icon">${toolIcons[t[0]]||genericIcon}</div><h3>${esc(t[1])}</h3><p>${esc(t[2])}</p><a class="btn" href="#/${t[0]}">ব্যবহার করুন →</a></div>`}
+function toggleFavorite(id){
+  const i=state.favorites.indexOf(id);
+  if(i>-1)state.favorites.splice(i,1); else state.favorites.push(id);
+  localStorage.bst_favorites=JSON.stringify(state.favorites);
+  document.querySelectorAll(`.fav-btn[data-id="${id}"]`).forEach(b=>b.classList.toggle("active",state.favorites.includes(id)));
+}
+function card(t){const fav=state.favorites.includes(t[0]);return `<div class="card tool-card"><button class="fav-btn${fav?" active":""}" data-id="${t[0]}" aria-label="Favorite" onclick="event.preventDefault();toggleFavorite('${t[0]}')">${fav?"★":"☆"}</button><div class="tool-icon">${toolIcons[t[0]]||genericIcon}</div><h3>${esc(t[1])}</h3><p>${esc(t[2])}</p><a class="btn" href="#/${t[0]}">ব্যবহার করুন →</a></div>`}
 function relatedTools(currentId,category,n){
   const list=tools.filter(t=>t[0]!==currentId && t[3]===category).slice(0,n);
   if(!list.length)return "";
@@ -542,20 +727,21 @@ function relatedTools(currentId,category,n){
 function home(){
   setMeta("BanglaSmartTools — বাংলায় ফ্রি Online Tools","বাংলায় সহজ, দ্রুত ও ফ্রি Online Tools — calculator, text, image, PDF, JSON, QR ও currency tools এক জায়গায়।");
   clearSchema();
-  app.innerHTML=`<section class="hero"><div class="container"><h1>বাংলায় সহজ, দ্রুত ও ফ্রি<br>Online Tools</h1><p>Calculator, PDF, Image, Text, Finance ও Developer tools—সব এক জায়গায়।</p><div class="search"><input id="search" class="input" placeholder="যে tool খুঁজছেন লিখুন…"><button class="btn" id="searchBtn">Search</button></div><div class="chips">${[...new Set(tools.map(x=>x[3]))].map(c=>`<a class="chip" href="#/tools?cat=${encodeURIComponent(c)}">${c}</a>`).join("")}</div></div></section><section class="section"><div class="container"><h2>জনপ্রিয় Tools</h2><div class="grid">${tools.slice(0,9).map(card).join("")}</div></div></section><section class="section"><div class="container"><h2>কেন BanglaSmartTools?</h2><div class="grid"><div class="card"><h3>⚡ দ্রুত</h3><p>বেশিরভাগ tool browser-এই কাজ করে।</p></div><div class="card"><h3>🔒 Privacy-friendly</h3><p>যেখানে সম্ভব local browser processing ব্যবহার করা হয়েছে।</p></div><div class="card"><h3>📱 Mobile friendly</h3><p>মোবাইল ও desktop উভয়ের জন্য responsive design।</p></div></div></div></section>`;
+  app.innerHTML=`<section class="hero"><div class="container"><h1>বাংলায় সহজ, দ্রুত ও ফ্রি<br>Online Tools</h1><p>Calculator, PDF, Image, Text, Finance ও Developer tools—সব এক জায়গায়।</p><div class="search"><input id="search" class="input" placeholder="যে tool খুঁজছেন লিখুন…"><button class="btn" id="searchBtn">Search</button></div><div class="chips">${[...new Set(tools.map(x=>x[3]))].map(c=>`<a class="chip" href="#/tools?cat=${encodeURIComponent(c)}">${catLabel(c)}</a>`).join("")}</div></div></section><section class="section" id="popular"><div class="container"><h2>জনপ্রিয় Tools</h2><div class="grid">${tools.slice(0,9).map(card).join("")}</div></div></section><section class="section"><div class="container"><h2>কেন BanglaSmartTools?</h2><div class="grid"><div class="card"><h3>⚡ দ্রুত</h3><p>বেশিরভাগ tool browser-এই কাজ করে।</p></div><div class="card"><h3>🔒 Privacy-friendly</h3><p>যেখানে সম্ভব local browser processing ব্যবহার করা হয়েছে।</p></div><div class="card"><h3>📱 Mobile friendly</h3><p>মোবাইল ও desktop উভয়ের জন্য responsive design।</p></div></div></div></section>`;
   $("#searchBtn").onclick=()=>searchTools($("#search").value);
   $("#search").oninput=e=>searchTools(e.target.value);
   $("#search").addEventListener("keydown",e=>{if(e.key==="Enter")searchTools(e.target.value)});
 }
 function searchTools(q){const a=tools.filter(t=>(t[1]+t[2]+t[3]).toLowerCase().includes(q.toLowerCase()));const box=document.querySelector("#searchResults");if(box)box.innerHTML=a.map(card).join("")||"<p>কোনো tool পাওয়া যায়নি।</p>";else if(q){app.insertAdjacentHTML("beforeend",`<section class="section container" id="searchResults">${a.map(card).join("")||"<p>কোনো tool পাওয়া যায়নি।</p>"}</section>`)}}
 function toolsPage(cat){
-  const list=cat?tools.filter(t=>t[3]===cat):tools;
-  const heading=cat?`${cat} Tools`:"সব Tools";
-  setMeta(`${heading} — BanglaSmartTools`,cat?`BanglaSmartTools-এর সব ${cat} ক্যাটেগরির ফ্রি অনলাইন tool।`:"BanglaSmartTools-এর সব ফ্রি অনলাইন tool এক জায়গায় — calculator, image, PDF, text ও developer tools।");
+  const showFav=cat==="__favorites__";
+  const list=showFav?tools.filter(t=>state.favorites.includes(t[0])):(cat?tools.filter(t=>t[3]===cat):tools);
+  const heading=showFav?"আমার Favorite Tools":(cat?`${cat} Tools`:"সব Tools");
+  setMeta(`${heading} — BanglaSmartTools`,showFav?"আপনার পছন্দের tools এক জায়গায়।":(cat?`BanglaSmartTools-এর সব ${cat} ক্যাটেগরির ফ্রি অনলাইন tool।`:"BanglaSmartTools-এর সব ফ্রি অনলাইন tool এক জায়গায় — calculator, image, PDF, text ও developer tools।"));
   clearSchema();
   const cats=[...new Set(tools.map(x=>x[3]))];
-  const chips=`<a class="chip${!cat?" active":""}" href="#/tools">সব</a>`+cats.map(c=>`<a class="chip${c===cat?" active":""}" href="#/tools?cat=${encodeURIComponent(c)}">${c}</a>`).join("");
-  app.innerHTML=`<section class="section container"><h1>${heading}</h1><p>আপনার প্রয়োজনীয় free online tool বেছে নিন।</p><div class="chips" style="margin:14px 0 26px">${chips}</div><div class="grid">${list.map(card).join("")||"<p>এই category-তে কোনো tool পাওয়া যায়নি।</p>"}</div></section>`;
+  const chips=`<a class="chip${!cat?" active":""}" href="#/tools">সব</a>`+cats.map(c=>`<a class="chip${c===cat?" active":""}" href="#/tools?cat=${encodeURIComponent(c)}">${catLabel(c)}</a>`).join("")+`<a class="chip${showFav?" active":""}" href="#/tools?cat=__favorites__">★ Favorites</a>`;
+  app.innerHTML=`<section class="section container"><h1>${heading}</h1><p>আপনার প্রয়োজনীয় free online tool বেছে নিন।</p><div class="chips" style="margin:14px 0 26px">${chips}</div><div class="grid">${list.map(card).join("")||(showFav?"<p>এখনো কোনো tool favorite করা হয়নি — card-এর ☆ আইকনে ক্লিক করুন।</p>":"<p>এই category-তে কোনো tool পাওয়া যায়নি।</p>")}</div></section>`;
 }
 function blog(){
   setMeta("Blog — BanglaSmartTools","VAT, Percentage, Excel, Tally ও PDF নিয়ে সহজ বাংলা guide।");
@@ -770,6 +956,337 @@ function toolPage(id){
     const h=Math.floor(mins/60),m=mins%60;
     $("#result").innerHTML=`ব্যবধান: <b>${h} ঘণ্টা ${m} মিনিট</b>`;
   };
+},
+"bkash-charge-calculator":()=>{
+  form(t[1],`<div class="form-grid"><div class="field"><label>Cash Out পরিমাণ (৳)</label><input id="amt" type="number" value="1000" class="input"></div><div class="field"><label>ধরন</label><select id="type" class="select"><option value="1.49">Priyo Agent / ATM (১.৪৯%)</option><option value="1.85">Standard Agent (১.৮৫%)</option></select></div></div><button class="btn" id="go">চার্জ বের করুন</button>${result("ফলাফল")}<p class="blog-meta">চার্জ পরিবর্তনযোগ্য — bKash app-এ চূড়ান্ত charge দেখে নিন।</p>`);
+  enterSubmits(".tool-layout","#go");
+  $("#go").onclick=()=>{
+    const amt=+$("#amt").value,rate=+$("#type").value,charge=amt*rate/100;
+    $("#result").innerHTML=`চার্জ: <b>৳${charge.toFixed(2)}</b><br>হাতে পাবেন: <b>৳${(amt-charge).toFixed(2)}</b>`;
+  };
+},
+"nagad-charge-calculator":()=>{
+  form(t[1],`<div class="form-grid"><div class="field"><label>Cash Out পরিমাণ (৳)</label><input id="amt" type="number" value="1000" class="input"></div><div class="field"><label>মাধ্যম</label><select id="type" class="select"><option value="1.25">App (১.২৫%)</option><option value="1.5">USSD *167# (১.৫%)</option></select></div></div><button class="btn" id="go">চার্জ বের করুন</button>${result("ফলাফল")}<p class="blog-meta">চার্জ পরিবর্তনযোগ্য — Nagad app-এ চূড়ান্ত charge দেখে নিন।</p>`);
+  enterSubmits(".tool-layout","#go");
+  $("#go").onclick=()=>{
+    const amt=+$("#amt").value,rate=+$("#type").value,charge=amt*rate/100;
+    $("#result").innerHTML=`চার্জ: <b>৳${charge.toFixed(2)}</b><br>হাতে পাবেন: <b>৳${(amt-charge).toFixed(2)}</b>`;
+  };
+},
+"rocket-charge-calculator":()=>{
+  form(t[1],`<div class="form-grid"><div class="field"><label>Cash Out পরিমাণ (৳)</label><input id="amt" type="number" value="1000" class="input"></div><div class="field"><label>মাধ্যম</label><select id="type" class="select"><option value="1.67">Agent (১.৬৭%)</option><option value="0.9">DBBL ATM/Branch (০.৯%)</option></select></div></div><button class="btn" id="go">চার্জ বের করুন</button>${result("ফলাফল")}<p class="blog-meta">চার্জ পরিবর্তনযোগ্য — Rocket app-এ চূড়ান্ত charge দেখে নিন।</p>`);
+  enterSubmits(".tool-layout","#go");
+  $("#go").onclick=()=>{
+    const amt=+$("#amt").value,rate=+$("#type").value,charge=amt*rate/100;
+    $("#result").innerHTML=`চার্জ: <b>৳${charge.toFixed(2)}</b><br>হাতে পাবেন: <b>৳${(amt-charge).toFixed(2)}</b>`;
+  };
+},
+"income-tax-calculator":()=>{
+  form(t[1],`<div class="form-grid"><div class="field"><label>বার্ষিক করযোগ্য আয় (৳)</label><input id="inc" type="number" class="input"></div><div class="field"><label>Category</label><select id="cat" class="select"><option value="375000">General</option><option value="425000">নারী / ৬৫+ বছর</option><option value="500000">প্রতিবন্ধী / তৃতীয় লিঙ্গ</option><option value="525000">গেজেটেড মুক্তিযোদ্ধা</option></select></div></div><button class="btn" id="go">হিসাব করুন</button>${result("ফলাফল")}<p class="blog-meta">এটি আনুমানিক হিসাব (AY 2026-27 slab অনুযায়ী), চূড়ান্ত নয়। rebate/minimum tax বিবেচনা করা হয়নি।</p>`);
+  enterSubmits(".tool-layout","#go");
+  $("#go").onclick=()=>{
+    let inc=+$("#inc").value,free=+$("#cat").value;
+    if(!inc)return toast("আয় লিখুন");
+    let rem=Math.max(0,inc-free),tax=0,brackets=[[300000,.10],[400000,.15],[500000,.20],[2000000,.25],[Infinity,.30]],breakdown=[];
+    for(const [slab,rate] of brackets){
+      if(rem<=0)break;
+      const taxed=Math.min(rem,slab),t2=taxed*rate;
+      if(taxed>0){tax+=t2;breakdown.push(`৳${taxed.toLocaleString()} × ${rate*100}% = ৳${t2.toLocaleString(undefined,{maximumFractionDigits:0})}`)}
+      rem-=taxed;
+    }
+    $("#result").innerHTML=`আনুমানিক Tax: <b>৳${tax.toLocaleString(undefined,{maximumFractionDigits:0})}</b><br><small>${breakdown.join("<br>")||"Tax-free সীমার মধ্যে, কোনো Tax নেই"}</small>`;
+  };
+},
+"electricity-bill-calculator":()=>{
+  form(t[1],`<div class="field"><label>মাসিক ব্যবহার (Unit/kWh)</label><input id="units" type="number" class="input"></div><button class="btn" id="go">বিল হিসাব করুন</button>${result("ফলাফল")}<p class="blog-meta">BERC residential (LT-A) স্ল্যাব অনুযায়ী আনুমানিক, প্রকৃত বিলের সাথে সামান্য তফাত হতে পারে।</p>`);
+  enterSubmits(".tool-layout","#go");
+  $("#go").onclick=()=>{
+    let u=+$("#units").value;
+    if(!u)return toast("Unit লিখুন");
+    const slabs=[[50,4.19],[25,5.72],[125,6.48],[100,7.59],[100,10.40],[200,12.30],[Infinity,13.44]];
+    let rem=u,energy=0,breakdown=[];
+    for(const [size,rate] of slabs){
+      if(rem<=0)break;
+      const use=Math.min(rem,size),cost=use*rate;
+      energy+=cost;breakdown.push(`${use} ইউনিট × ৳${rate} = ৳${cost.toFixed(2)}`);
+      rem-=use;
+    }
+    const vat=energy*0.05,total=energy+vat;
+    $("#result").innerHTML=`মোট আনুমানিক বিল: <b>৳${total.toFixed(2)}</b><br><small>Energy charge: ৳${energy.toFixed(2)} + 5% VAT: ৳${vat.toFixed(2)}</small><br><small>${breakdown.join("<br>")}</small>`;
+  };
+},
+"ssc-hsc-gpa-calculator":()=>{
+  form(t[1],`<div class="field"><label>প্রতিটি বিষয়ের Grade Point (কমা দিয়ে আলাদা, 0-5)</label><textarea id="pts" class="textarea" placeholder="যেমন: 5, 4, 3.5, 5, 4, 5"></textarea></div><button class="btn" id="go">GPA বের করুন</button>${result("ফলাফল")}`);
+  $("#go").onclick=()=>{
+    const nums=$("#pts").value.split(",").map(s=>parseFloat(s.trim())).filter(n=>!isNaN(n));
+    if(!nums.length)return toast("অন্তত একটি Grade Point দিন");
+    const avg=nums.reduce((a,b)=>a+b,0)/nums.length;
+    $("#result").innerHTML=`গড় GPA: <b>${avg.toFixed(2)}</b> (${nums.length}টি বিষয়ের ভিত্তিতে)`;
+  };
+},
+"cgpa-calculator":()=>{
+  let rows=[[3,4],[3,4]];
+  const render=()=>`<div id="rowsBox">${rows.map((r,i)=>`<div class="form-grid" style="margin-bottom:8px"><div class="field"><label>Credit Hour</label><input type="number" class="input credit" data-i="${i}" value="${r[0]}"></div><div class="field"><label>Grade Point</label><input type="number" step="0.01" max="4" class="input gp" data-i="${i}" value="${r[1]}"></div></div>`).join("")}</div><button class="btn alt" id="addRow" type="button">+ কোর্স যোগ করুন</button>`;
+  form(t[1],`${render()}<button class="btn" id="go" style="margin-top:14px">CGPA হিসাব করুন</button>${result("ফলাফল")}`);
+  function bindRows(){
+    document.querySelectorAll(".credit").forEach(el=>el.onchange=()=>rows[+el.dataset.i][0]=+el.value);
+    document.querySelectorAll(".gp").forEach(el=>el.onchange=()=>rows[+el.dataset.i][1]=+el.value);
+  }
+  bindRows();
+  $("#addRow").onclick=()=>{rows.push([3,4]);$("#rowsBox").outerHTML=render().match(/<div id="rowsBox">[\s\S]*?<\/div>(?=<button)/)[0];bindRows()};
+  $("#go").onclick=()=>{
+    const totalCredit=rows.reduce((a,r)=>a+r[0],0),weighted=rows.reduce((a,r)=>a+r[0]*r[1],0);
+    if(!totalCredit)return toast("Credit hour দিন");
+    $("#result").innerHTML=`CGPA: <b>${(weighted/totalCredit).toFixed(3)}</b> (মোট Credit: ${totalCredit})`;
+  };
+},
+"html-formatter":()=>{
+  form(t[1],`<textarea id="txt" class="textarea" placeholder="HTML code paste করুন…"></textarea><div class="actions"><button class="btn" id="go">Format</button><button class="btn alt" id="copy">Copy</button></div>${result("Formatted output")}`);
+  $("#go").onclick=()=>{
+    let src=$("#txt").value.trim();
+    if(!src)return toast("HTML code দিন");
+    src=src.replace(/>\s*</g,"><");
+    let indent=0,out="";
+    const tokens=src.split(/(<[^>]+>)/).filter(Boolean);
+    const voidTags=new Set(["area","base","br","col","embed","hr","img","input","link","meta","param","source","track","wbr"]);
+    for(const tok of tokens){
+      if(/^<\//.test(tok)){indent=Math.max(0,indent-1);out+="  ".repeat(indent)+tok+"\n"}
+      else if(/^<[^!/]/.test(tok)){
+        const tagName=(tok.match(/^<([a-zA-Z0-9-]+)/)||[])[1]||"";
+        const selfClose=/\/>$/.test(tok)||voidTags.has(tagName.toLowerCase());
+        out+="  ".repeat(indent)+tok+"\n";
+        if(!selfClose)indent++;
+      } else if(tok.trim()){out+="  ".repeat(indent)+tok.trim()+"\n"}
+    }
+    $("#result").innerHTML=`<pre style="white-space:pre-wrap;margin:0;font-family:monospace;font-size:13px">${esc(out.trim())}</pre>`;
+    window.__htmlOut=out.trim();
+  };
+  $("#copy").onclick=()=>copyText(window.__htmlOut||"");
+},
+"css-minifier":()=>{
+  form(t[1],`<textarea id="txt" class="textarea" placeholder="CSS code paste করুন…"></textarea><div class="actions"><button class="btn" id="go">Minify</button><button class="btn alt" id="copy">Copy</button></div>${result("Minified output")}`);
+  $("#go").onclick=()=>{
+    let src=$("#txt").value;
+    if(!src.trim())return toast("CSS code দিন");
+    src=src.replace(/\/\*[\s\S]*?\*\//g,"");
+    src=src.replace(/\s+/g," ").trim();
+    src=src.replace(/\s*([{}:;,])\s*/g,"$1");
+    src=src.replace(/;}/g,"}");
+    $("#result").innerHTML=`<pre style="white-space:pre-wrap;margin:0;font-family:monospace;font-size:13px">${esc(src)}</pre><small>${$("#txt").value.length} → ${src.length} characters</small>`;
+    window.__cssOut=src;
+  };
+  $("#copy").onclick=()=>copyText(window.__cssOut||"");
+},
+"js-minifier":()=>{
+  form(t[1],`<textarea id="txt" class="textarea" placeholder="JavaScript code paste করুন…"></textarea><div class="actions"><button class="btn" id="go">Process</button><button class="btn alt" id="copy">Copy</button></div>${result("Output")}`);
+  $("#go").onclick=()=>{
+    const src=$("#txt").value;
+    if(!src.trim())return toast("JS code দিন");
+    let out="",i=0,n=src.length;
+    while(i<n){
+      const c=src[i],c2=src[i+1];
+      if(c==="/"&&c2==="/"){while(i<n&&src[i]!=="\n")i++;continue}
+      if(c==="/"&&c2==="*"){i+=2;while(i<n&&!(src[i]==="*"&&src[i+1]==="/"))i++;i+=2;continue}
+      if(c==='"'||c==="'"||c==="`"){const q=c;out+=c;i++;while(i<n&&src[i]!==q){if(src[i]==="\\"){out+=src[i]+src[i+1];i+=2;continue}out+=src[i];i++}out+=src[i]||"";i++;continue}
+      out+=c;i++;
+    }
+    out=out.split("\n").map(l=>l.trim()).filter(l=>l.length).join("\n");
+    $("#result").innerHTML=`<pre style="white-space:pre-wrap;margin:0;font-family:monospace;font-size:13px">${esc(out)}</pre><small>${src.length} → ${out.length} characters</small>`;
+    window.__jsOut=out;
+  };
+  $("#copy").onclick=()=>copyText(window.__jsOut||"");
+},
+"image-to-webp":()=>{
+  form(t[1],`<div class="drop"><input id="file" type="file" accept="image/*"></div>${result("Result")}`);
+  $("#file").onchange=e=>{
+    const f=e.target.files[0];if(!f)return;
+    const im=new Image();
+    im.onload=()=>{
+      const c=document.createElement("canvas");c.width=im.width;c.height=im.height;
+      c.getContext("2d").drawImage(im,0,0);
+      c.toBlob(b=>{
+        if(!b)return toast("এই browser WebP export সাপোর্ট করছে না");
+        const url=URL.createObjectURL(b);
+        $("#result").innerHTML=`<a class="btn" href="${url}" download="image.webp">Download WebP</a><br><small>${Math.round(b.size/1024)} KB</small>`;
+      },"image/webp",0.9);
+    };
+    im.src=URL.createObjectURL(f);
+  };
+},
+"webp-to-jpg":()=>{
+  form(t[1],`<div class="drop"><input id="file" type="file" accept="image/webp,.webp"></div>${result("Result")}`);
+  $("#file").onchange=e=>{
+    const f=e.target.files[0];if(!f)return;
+    const im=new Image();
+    im.onload=()=>{
+      const c=document.createElement("canvas");c.width=im.width;c.height=im.height;
+      const ctx=c.getContext("2d");ctx.fillStyle="#fff";ctx.fillRect(0,0,c.width,c.height);ctx.drawImage(im,0,0);
+      c.toBlob(b=>{
+        const url=URL.createObjectURL(b);
+        $("#result").innerHTML=`<a class="btn" href="${url}" download="image.jpg">Download JPG</a><br><small>${Math.round(b.size/1024)} KB</small>`;
+      },"image/jpeg",0.92);
+    };
+    im.onerror=()=>toast("এই ছবি পড়া যায়নি, WebP ফাইল কিনা নিশ্চিত করুন");
+    im.src=URL.createObjectURL(f);
+  };
+},
+"image-cropper":()=>{
+  form(t[1],`<div class="drop"><input id="file" type="file" accept="image/*"></div><div id="cropBox" style="display:none;margin-top:14px"><div style="position:relative;max-width:100%;touch-action:none" id="stage"><img id="im" style="max-width:100%;display:block;user-select:none;pointer-events:none"><div id="sel" style="position:absolute;border:2px solid var(--primary);background:rgba(20,184,166,.15);cursor:move"></div></div><button class="btn" id="go" style="margin-top:14px">Crop করে Download</button></div>${result("Crop করা ছবি এখানে আসবে")}`);
+  let img,scale=1,sel={x:20,y:20,w:120,h:120},drag=null;
+  const stage=()=>$("#stage"),selEl=()=>$("#sel");
+  function draw(){const s=selEl();s.style.left=sel.x+"px";s.style.top=sel.y+"px";s.style.width=sel.w+"px";s.style.height=sel.h+"px"}
+  $("#file").onchange=e=>{
+    const f=e.target.files[0];if(!f)return;
+    img=new Image();
+    img.onload=()=>{
+      $("#cropBox").style.display="block";
+      const im=$("#im");im.src=URL.createObjectURL(f);
+      im.onload=()=>{
+        scale=img.width/im.clientWidth;
+        sel={x:im.clientWidth*0.15,y:im.clientHeight*0.15,w:im.clientWidth*0.7,h:im.clientHeight*0.7};
+        draw();
+      };
+    };
+    img.src=URL.createObjectURL(f);
+  };
+  stage().addEventListener("pointerdown",e=>{
+    const r=stage().getBoundingClientRect();
+    drag={sx:e.clientX,sy:e.clientY,ox:sel.x,oy:sel.y};
+  });
+  window.addEventListener("pointermove",e=>{
+    if(!drag)return;
+    const im=$("#im");if(!im)return;
+    sel.x=Math.max(0,Math.min(im.clientWidth-sel.w,drag.ox+(e.clientX-drag.sx)));
+    sel.y=Math.max(0,Math.min(im.clientHeight-sel.h,drag.oy+(e.clientY-drag.sy)));
+    draw();
+  });
+  window.addEventListener("pointerup",()=>drag=null);
+  $("#go")?.addEventListener("click",()=>{});
+  document.addEventListener("click",e=>{
+    if(e.target&&e.target.id==="go"&&img){
+      const c=document.createElement("canvas");
+      c.width=sel.w*scale;c.height=sel.h*scale;
+      c.getContext("2d").drawImage(img,sel.x*scale,sel.y*scale,sel.w*scale,sel.h*scale,0,0,c.width,c.height);
+      c.toBlob(b=>{
+        const url=URL.createObjectURL(b);
+        $("#result").innerHTML=`<img style="max-width:100%;border-radius:8px" src="${url}"><br><a class="btn" href="${url}" download="cropped.png" style="margin-top:8px;display:inline-block">Download</a>`;
+      },"image/png");
+    }
+  });
+},
+"image-metadata-viewer":()=>{
+  form(t[1],`<div class="drop"><input id="file" type="file" accept="image/*"></div>${result("তথ্য এখানে দেখাবে")}`);
+  $("#file").onchange=e=>{
+    const f=e.target.files[0];if(!f)return;
+    const im=new Image();
+    im.onload=()=>{
+      $("#result").innerHTML=`<b>File name:</b> ${esc(f.name)}<br><b>Dimensions:</b> ${im.width} × ${im.height} px<br><b>File size:</b> ${(f.size/1024).toFixed(1)} KB<br><b>Type:</b> ${f.type||"অজানা"}<br><b>Last modified:</b> ${f.lastModified?new Date(f.lastModified).toLocaleString("bn-BD"):"অজানা"}`;
+    };
+    im.src=URL.createObjectURL(f);
+  };
+},
+"pdf-merge":()=>{
+  form(t[1],`<div class="drop"><input id="file" type="file" accept="application/pdf" multiple></div><p class="blog-meta">একাধিক PDF select করুন (Ctrl/Cmd চেপে ধরে)।</p>${result("")}`);
+  $("#file").onchange=async e=>{
+    const files=[...e.target.files];
+    if(files.length<2)return toast("অন্তত ২টি PDF select করুন");
+    $("#result").innerHTML=`<span class="loading-row"><span class="spinner"></span> Merge হচ্ছে…</span>`;
+    try{
+      const {PDFDocument}=await loadPdfLib();
+      const merged=await PDFDocument.create();
+      for(const f of files){
+        const bytes=await f.arrayBuffer();
+        const src=await PDFDocument.load(bytes);
+        const pages=await merged.copyPages(src,src.getPageIndices());
+        pages.forEach(p=>merged.addPage(p));
+      }
+      const bytes=await merged.save();
+      const url=URL.createObjectURL(new Blob([bytes],{type:"application/pdf"}));
+      $("#result").innerHTML=`<a class="btn" href="${url}" download="merged.pdf">Download merged.pdf</a>`;
+    }catch{toast("Merge করা যায়নি");$("#result").textContent="একটি সমস্যা হয়েছে, ফাইলগুলো ঠিক আছে কিনা দেখে আবার চেষ্টা করুন।"}
+  };
+},
+"pdf-split":()=>{
+  form(t[1],`<div class="drop"><input id="file" type="file" accept="application/pdf"></div><div class="field" style="margin-top:12px"><label>Page/Range (যেমন 1-3,5)</label><input id="range" class="input" placeholder="1-3,5"></div><button class="btn" id="go">Split করুন</button>${result("")}`);
+  let fileObj=null;
+  $("#file").onchange=e=>{fileObj=e.target.files[0]};
+  $("#go").onclick=async()=>{
+    if(!fileObj)return toast("প্রথমে একটি PDF select করুন");
+    const rangeStr=$("#range").value.trim();
+    if(!rangeStr)return toast("Page range লিখুন");
+    $("#result").innerHTML=`<span class="loading-row"><span class="spinner"></span> Split হচ্ছে…</span>`;
+    try{
+      const {PDFDocument}=await loadPdfLib();
+      const bytes=await fileObj.arrayBuffer();
+      const src=await PDFDocument.load(bytes);
+      const total=src.getPageCount();
+      let idxs=[];
+      rangeStr.split(",").forEach(part=>{
+        part=part.trim();
+        if(part.includes("-")){const [a,b]=part.split("-").map(Number);for(let i=a;i<=b;i++)if(i>=1&&i<=total)idxs.push(i-1)}
+        else{const i=Number(part);if(i>=1&&i<=total)idxs.push(i-1)}
+      });
+      if(!idxs.length)return toast("সঠিক page range দিন (1-"+total+")");
+      const out=await PDFDocument.create();
+      const pages=await out.copyPages(src,idxs);
+      pages.forEach(p=>out.addPage(p));
+      const outBytes=await out.save();
+      const url=URL.createObjectURL(new Blob([outBytes],{type:"application/pdf"}));
+      $("#result").innerHTML=`<a class="btn" href="${url}" download="split.pdf">Download split.pdf</a>`;
+    }catch{toast("Split করা যায়নি");$("#result").textContent="একটি সমস্যা হয়েছে, ফাইল ও page range ঠিক আছে কিনা দেখে আবার চেষ্টা করুন।"}
+  };
+},
+"jpg-to-pdf":()=>{
+  form(t[1],`<div class="drop"><input id="file" type="file" accept="image/*" multiple></div><p class="blog-meta">একাধিক ছবি select করুন, ক্রম অনুযায়ী page হবে।</p>${result("")}`);
+  $("#file").onchange=async e=>{
+    const files=[...e.target.files];
+    if(!files.length)return toast("অন্তত একটি ছবি select করুন");
+    $("#result").innerHTML=`<span class="loading-row"><span class="spinner"></span> PDF তৈরি হচ্ছে…</span>`;
+    try{
+      const {PDFDocument}=await loadPdfLib();
+      const doc=await PDFDocument.create();
+      for(const f of files){
+        const bytes=await f.arrayBuffer();
+        const isPng=f.type.includes("png");
+        const img=isPng?await doc.embedPng(bytes):await doc.embedJpg(bytes);
+        const page=doc.addPage([img.width,img.height]);
+        page.drawImage(img,{x:0,y:0,width:img.width,height:img.height});
+      }
+      const outBytes=await doc.save();
+      const url=URL.createObjectURL(new Blob([outBytes],{type:"application/pdf"}));
+      $("#result").innerHTML=`<a class="btn" href="${url}" download="images.pdf">Download images.pdf</a>`;
+    }catch{toast("PDF তৈরি করা যায়নি");$("#result").textContent="ছবিগুলো JPG/PNG format-এ আছে কিনা দেখে আবার চেষ্টা করুন।"}
+  };
+},
+"pdf-compressor":()=>{
+  form(t[1],`<div class="drop"><input id="file" type="file" accept="application/pdf"></div><div class="field" style="margin-top:12px"><label>Compression Level</label><select id="q" class="select"><option value="0.5">বেশি Compress (কম quality)</option><option value="0.7" selected>মাঝারি</option><option value="0.85">কম Compress (ভালো quality)</option></select></div>${result("")}`);
+  $("#file").onchange=async e=>{
+    const f=e.target.files[0];if(!f)return;
+    $("#result").innerHTML=`<span class="loading-row"><span class="spinner"></span> Compress হচ্ছে, একটু সময় লাগতে পারে…</span>`;
+    try{
+      const pdfjsLib=await loadPdfJs();
+      const {PDFDocument}=await loadPdfLib();
+      const q=+$("#q").value;
+      const data=new Uint8Array(await f.arrayBuffer());
+      const pdf=await pdfjsLib.getDocument({data}).promise;
+      const outDoc=await PDFDocument.create();
+      for(let i=1;i<=pdf.numPages;i++){
+        const page=await pdf.getPage(i),vp=page.getViewport({scale:1.3}),c=document.createElement("canvas");
+        c.width=vp.width;c.height=vp.height;
+        await page.render({canvasContext:c.getContext("2d"),viewport:vp}).promise;
+        const jpgBytes=await new Promise(r=>c.toBlob(b=>b.arrayBuffer().then(r),"image/jpeg",q));
+        const img=await outDoc.embedJpg(jpgBytes);
+        const p=outDoc.addPage([vp.width,vp.height]);
+        p.drawImage(img,{x:0,y:0,width:vp.width,height:vp.height});
+      }
+      const outBytes=await outDoc.save();
+      const url=URL.createObjectURL(new Blob([outBytes],{type:"application/pdf"}));
+      $("#result").innerHTML=`<a class="btn" href="${url}" download="compressed.pdf">Download compressed.pdf</a><br><small>মূল: ${Math.round(f.size/1024)} KB → নতুন: ${Math.round(outBytes.length/1024)} KB</small>`;
+    }catch{toast("Compress করা যায়নি");$("#result").textContent="PDF পড়া যায়নি, ফাইলটি ঠিক আছে কিনা দেখে আবার চেষ্টা করুন।"}
+  };
+},
+"bijoy-unicode-converter":()=>{
+  form(t[1],`<div class="result" style="line-height:1.7"><b>⚠️ এই টুলটি এখনো তৈরি হয়নি</b><br><br>সঠিকভাবে Bijoy → Unicode রূপান্তর করতে হলে প্রতিটি byte-এর জন্য verified mapping table ও যুক্তাক্ষর reordering rule লাগে। ভুল mapping দিলে লেখা silently ভুল/garbled হয়ে যেতে পারে — এবং সেই ভুল table নিয়ে আমরা যথেষ্ট নিশ্চিত নই। তাই ভুল ফলাফল দেওয়ার বদলে আমরা এই মুহূর্তে এটা খোলাখুলি "কাজ চলছে" হিসেবে রাখছি।</div><div class="form-grid" style="margin-top:16px"><div class="field"><label>এখনই দরকার হলে</label><p style="margin:0">Avro Converter বা OpenBangla Keyboard-এর মতো পরীক্ষিত, verified tool ব্যবহার করুন।</p></div></div>`);
 }};
   (pages[id]||generic)(t[1]);
   const rel=relatedTools(id,t[3],3);
@@ -797,12 +1314,14 @@ function imageTool(title,type){
   function runImage(im,w,h,type){
     const c=document.createElement("canvas");c.width=w;c.height=h;
     const ctx=c.getContext("2d");
-    if(type==="pngjpg"){ctx.fillStyle="#fff";ctx.fillRect(0,0,w,h)}
+    if(type==="pngjpg"||type==="webpjpg"){ctx.fillStyle="#fff";ctx.fillRect(0,0,w,h)}
     ctx.drawImage(im,0,0,w,h);
-    const mime=type==="jpgpng"?"image/png":"image/jpeg";
+    const mime=type==="jpgpng"?"image/png":type==="towebp"?"image/webp":type==="webpjpg"?"image/jpeg":"image/jpeg";
+    const ext=type==="towebp"?"webp":type==="webpjpg"?"jpg":mime.split('/')[1];
     c.toBlob(b=>{
+      if(!b)return toast("এই format-এ export browser সাপোর্ট করছে না");
       const url=URL.createObjectURL(b);
-      $("#result").innerHTML=`<a class="btn" href="${url}" download="banglasmarttools.${mime.split('/')[1]}">Download</a><br><small>${Math.round(b.size/1024)} KB</small>`;
+      $("#result").innerHTML=`<a class="btn" href="${url}" download="banglasmarttools.${ext}">Download</a><br><small>${Math.round(b.size/1024)} KB</small>`;
     },mime,type==="compress"?.75:0.92);
   }
 }
@@ -892,6 +1411,23 @@ function route(){
 $("#menuBtn").onclick=()=>$("#nav").classList.toggle("open");
 $("#themeBtn").onclick=()=>{state.theme=state.theme==="dark"?"light":"dark";document.documentElement.dataset.theme=state.theme;localStorage.bst_theme=state.theme};
 $("#langBtn").onclick=()=>{state.lang=state.lang==="bn"?"en":"bn";localStorage.bst_lang=state.lang;$("#langBtn").textContent=state.lang==="bn"?"EN":"BN";toast(state.lang==="bn"?"বাংলা ভাষা সক্রিয়":"English mode active")};
+$("#mobileSearchBtn").onclick=()=>{
+  if(location.hash!=="#/"&&location.hash!=="")location.hash="#/";
+  setTimeout(()=>{const s=$("#search");if(s){s.scrollIntoView({behavior:"smooth",block:"center"});s.focus()}},120);
+};
+$("#popularLink").onclick=e=>{
+  if(location.hash==="#/"||location.hash===""){
+    e.preventDefault();
+    document.getElementById("popular")?.scrollIntoView({behavior:"smooth"});
+  } else {
+    sessionStorage.setItem("bst_scroll_popular","1");
+  }
+};
 window.addEventListener("hashchange",route);
 window.toast=toast;
+window.toggleFavorite=toggleFavorite;
 route();
+if(sessionStorage.getItem("bst_scroll_popular")){
+  sessionStorage.removeItem("bst_scroll_popular");
+  setTimeout(()=>document.getElementById("popular")?.scrollIntoView({behavior:"smooth"}),150);
+}
