@@ -1,5 +1,5 @@
 # BanglaSmartTools — Icon Set
-
+![App Icon](./brand/app-icon.png)
 ## Contents
 - `brand/` — Logo mark, App icon (512/192px), Apple touch icon (180px), Favicon (32/16px), in both PNG and SVG
 - `png-512/` — 58 tool/category icons, transparent background, 512×512px PNG
