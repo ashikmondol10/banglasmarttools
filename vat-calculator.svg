@@ -1,0 +1,16 @@
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<linearGradient id="g_vat_calculator" x1="0" y1="0" x2="1" y2="1">
+<stop offset="0" stop-color="#16A34A"/><stop offset="1" stop-color="#4ADE80"/>
+</linearGradient>
+<radialGradient id="hl_vat_calculator" cx="30%" cy="22%" r="60%">
+<stop offset="0" stop-color="#ffffff" stop-opacity="0.35"/><stop offset="60%" stop-color="#ffffff" stop-opacity="0"/>
+</radialGradient>
+<filter id="sh_vat_calculator" x="-30%" y="-30%" width="160%" height="160%">
+<feDropShadow dx="0" dy="10" stdDeviation="14" flood-color="#16A34A" flood-opacity="0.35"/>
+</filter>
+</defs>
+<rect x="16" y="16" width="480" height="480" rx="112" fill="url(#g_vat_calculator)" filter="url(#sh_vat_calculator)"/>
+<rect x="16" y="16" width="480" height="480" rx="112" fill="url(#hl_vat_calculator)"/>
+<path d="M186 130h140v230l-30-20-30 20-30-20-30 20-30-20-30 20z" fill="white"/><line x1="216" y1="200" x2="316" y2="200" stroke="#16A34A" stroke-width="14" stroke-linecap="round"/><line x1="216" y1="240" x2="316" y2="240" stroke="#16A34A" stroke-width="14" stroke-linecap="round"/>
+</svg>

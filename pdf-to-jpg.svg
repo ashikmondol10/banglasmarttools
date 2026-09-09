@@ -1,0 +1,16 @@
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<linearGradient id="g_pdf_to_jpg" x1="0" y1="0" x2="1" y2="1">
+<stop offset="0" stop-color="#DC2626"/><stop offset="1" stop-color="#F87171"/>
+</linearGradient>
+<radialGradient id="hl_pdf_to_jpg" cx="30%" cy="22%" r="60%">
+<stop offset="0" stop-color="#ffffff" stop-opacity="0.35"/><stop offset="60%" stop-color="#ffffff" stop-opacity="0"/>
+</radialGradient>
+<filter id="sh_pdf_to_jpg" x="-30%" y="-30%" width="160%" height="160%">
+<feDropShadow dx="0" dy="10" stdDeviation="14" flood-color="#DC2626" flood-opacity="0.35"/>
+</filter>
+</defs>
+<rect x="16" y="16" width="480" height="480" rx="112" fill="url(#g_pdf_to_jpg)" filter="url(#sh_pdf_to_jpg)"/>
+<rect x="16" y="16" width="480" height="480" rx="112" fill="url(#hl_pdf_to_jpg)"/>
+<path d="M120 140h106l34 34v156h-140z" fill="white"/><path d="M226 140v34h34" fill="none" stroke="#DC2626" stroke-width="8"/><text x="180.0" y="290" font-size="34" text-anchor="middle" fill="#DC2626" font-family="Arial" font-weight="800">PDF</text><rect x="280" y="220" width="120" height="110" rx="20" fill="white"/><circle cx="330" cy="266" r="18" fill="#DC2626"/><path d="M290 316 l60-60 40 34 56-64 46 50v40h-202z" fill="#DC2626"/>
+</svg>

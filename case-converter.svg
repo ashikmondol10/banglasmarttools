@@ -1,0 +1,16 @@
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<linearGradient id="g_case_converter" x1="0" y1="0" x2="1" y2="1">
+<stop offset="0" stop-color="#7C3AED"/><stop offset="1" stop-color="#A78BFA"/>
+</linearGradient>
+<radialGradient id="hl_case_converter" cx="30%" cy="22%" r="60%">
+<stop offset="0" stop-color="#ffffff" stop-opacity="0.35"/><stop offset="60%" stop-color="#ffffff" stop-opacity="0"/>
+</radialGradient>
+<filter id="sh_case_converter" x="-30%" y="-30%" width="160%" height="160%">
+<feDropShadow dx="0" dy="10" stdDeviation="14" flood-color="#7C3AED" flood-opacity="0.35"/>
+</filter>
+</defs>
+<rect x="16" y="16" width="480" height="480" rx="112" fill="url(#g_case_converter)" filter="url(#sh_case_converter)"/>
+<rect x="16" y="16" width="480" height="480" rx="112" fill="url(#hl_case_converter)"/>
+<text x="256" y="320" font-size="150" text-anchor="middle" fill="white" font-family="Arial" font-weight="800">Aa</text>
+</svg>

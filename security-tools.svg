@@ -1,0 +1,16 @@
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<linearGradient id="g_security_tools" x1="0" y1="0" x2="1" y2="1">
+<stop offset="0" stop-color="#6D28D9"/><stop offset="1" stop-color="#C4B5FD"/>
+</linearGradient>
+<radialGradient id="hl_security_tools" cx="30%" cy="22%" r="60%">
+<stop offset="0" stop-color="#ffffff" stop-opacity="0.35"/><stop offset="60%" stop-color="#ffffff" stop-opacity="0"/>
+</radialGradient>
+<filter id="sh_security_tools" x="-30%" y="-30%" width="160%" height="160%">
+<feDropShadow dx="0" dy="10" stdDeviation="14" flood-color="#6D28D9" flood-opacity="0.35"/>
+</filter>
+</defs>
+<rect x="16" y="16" width="480" height="480" rx="112" fill="url(#g_security_tools)" filter="url(#sh_security_tools)"/>
+<rect x="16" y="16" width="480" height="480" rx="112" fill="url(#hl_security_tools)"/>
+<path d="M256 120l110 44v96c0 92-58 148-110 172-52-24-110-80-110-172v-96z" fill="white"/><rect x="222" y="248" width="68" height="56" rx="10" fill="#6D28D9"/><path d="M234 248v-20a22 22 0 0 1 44 0v20" fill="none" stroke="#6D28D9" stroke-width="12"/>
+</svg>

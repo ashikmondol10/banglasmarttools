@@ -1,0 +1,16 @@
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<linearGradient id="g_currency_converter" x1="0" y1="0" x2="1" y2="1">
+<stop offset="0" stop-color="#16A34A"/><stop offset="1" stop-color="#4ADE80"/>
+</linearGradient>
+<radialGradient id="hl_currency_converter" cx="30%" cy="22%" r="60%">
+<stop offset="0" stop-color="#ffffff" stop-opacity="0.35"/><stop offset="60%" stop-color="#ffffff" stop-opacity="0"/>
+</radialGradient>
+<filter id="sh_currency_converter" x="-30%" y="-30%" width="160%" height="160%">
+<feDropShadow dx="0" dy="10" stdDeviation="14" flood-color="#16A34A" flood-opacity="0.35"/>
+</filter>
+</defs>
+<rect x="16" y="16" width="480" height="480" rx="112" fill="url(#g_currency_converter)" filter="url(#sh_currency_converter)"/>
+<rect x="16" y="16" width="480" height="480" rx="112" fill="url(#hl_currency_converter)"/>
+<path d="M120 210h190" stroke="white" stroke-width="24" stroke-linecap="round"/><path d="M270 160l70 50-70 50" fill="none" stroke="white" stroke-width="24" stroke-linecap="round" stroke-linejoin="round"/><path d="M392 300h-190" stroke="white" stroke-width="24" stroke-linecap="round"/><path d="M242 350l-70-50 70-50" fill="none" stroke="white" stroke-width="24" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

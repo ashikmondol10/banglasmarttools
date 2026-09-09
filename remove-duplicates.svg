@@ -1,0 +1,16 @@
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<linearGradient id="g_remove_duplicates" x1="0" y1="0" x2="1" y2="1">
+<stop offset="0" stop-color="#7C3AED"/><stop offset="1" stop-color="#A78BFA"/>
+</linearGradient>
+<radialGradient id="hl_remove_duplicates" cx="30%" cy="22%" r="60%">
+<stop offset="0" stop-color="#ffffff" stop-opacity="0.35"/><stop offset="60%" stop-color="#ffffff" stop-opacity="0"/>
+</radialGradient>
+<filter id="sh_remove_duplicates" x="-30%" y="-30%" width="160%" height="160%">
+<feDropShadow dx="0" dy="10" stdDeviation="14" flood-color="#7C3AED" flood-opacity="0.35"/>
+</filter>
+</defs>
+<rect x="16" y="16" width="480" height="480" rx="112" fill="url(#g_remove_duplicates)" filter="url(#sh_remove_duplicates)"/>
+<rect x="16" y="16" width="480" height="480" rx="112" fill="url(#hl_remove_duplicates)"/>
+<rect x="140" y="150" width="150" height="190" rx="18" fill="white" fill-opacity="0.55"/><rect x="190" y="180" width="180" height="200" rx="18" fill="white"/><path d="M240 290l35 35 70-80" fill="none" stroke="#7C3AED" stroke-width="22" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

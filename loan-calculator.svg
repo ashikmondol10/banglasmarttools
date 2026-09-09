@@ -1,0 +1,16 @@
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<linearGradient id="g_loan_calculator" x1="0" y1="0" x2="1" y2="1">
+<stop offset="0" stop-color="#16A34A"/><stop offset="1" stop-color="#4ADE80"/>
+</linearGradient>
+<radialGradient id="hl_loan_calculator" cx="30%" cy="22%" r="60%">
+<stop offset="0" stop-color="#ffffff" stop-opacity="0.35"/><stop offset="60%" stop-color="#ffffff" stop-opacity="0"/>
+</radialGradient>
+<filter id="sh_loan_calculator" x="-30%" y="-30%" width="160%" height="160%">
+<feDropShadow dx="0" dy="10" stdDeviation="14" flood-color="#16A34A" flood-opacity="0.35"/>
+</filter>
+</defs>
+<rect x="16" y="16" width="480" height="480" rx="112" fill="url(#g_loan_calculator)" filter="url(#sh_loan_calculator)"/>
+<rect x="16" y="16" width="480" height="480" rx="112" fill="url(#hl_loan_calculator)"/>
+<rect x="150" y="150" width="140" height="180" rx="16" fill="white"/><line x1="176" y1="196" x2="264" y2="196" stroke="#16A34A" stroke-width="12" stroke-linecap="round"/><line x1="176" y1="230" x2="264" y2="230" stroke="#16A34A" stroke-width="12" stroke-linecap="round"/><line x1="176" y1="264" x2="240" y2="264" stroke="#16A34A" stroke-width="12" stroke-linecap="round"/><circle cx="330" cy="310" r="46" fill="white"/><text x="330" y="326" font-size="46" text-anchor="middle" fill="#16A34A" font-family="Arial" font-weight="700">$</text>
+</svg>

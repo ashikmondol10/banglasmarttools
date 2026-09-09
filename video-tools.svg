@@ -1,0 +1,16 @@
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<linearGradient id="g_video_tools" x1="0" y1="0" x2="1" y2="1">
+<stop offset="0" stop-color="#F97316"/><stop offset="1" stop-color="#FDBA74"/>
+</linearGradient>
+<radialGradient id="hl_video_tools" cx="30%" cy="22%" r="60%">
+<stop offset="0" stop-color="#ffffff" stop-opacity="0.35"/><stop offset="60%" stop-color="#ffffff" stop-opacity="0"/>
+</radialGradient>
+<filter id="sh_video_tools" x="-30%" y="-30%" width="160%" height="160%">
+<feDropShadow dx="0" dy="10" stdDeviation="14" flood-color="#F97316" flood-opacity="0.35"/>
+</filter>
+</defs>
+<rect x="16" y="16" width="480" height="480" rx="112" fill="url(#g_video_tools)" filter="url(#sh_video_tools)"/>
+<rect x="16" y="16" width="480" height="480" rx="112" fill="url(#hl_video_tools)"/>
+<rect x="140" y="180" width="180" height="150" rx="20" fill="white"/><polygon points="380,215 380,295 320,255" fill="white"/><polygon points="230,225 230,285 285,255" fill="#F97316"/>
+</svg>

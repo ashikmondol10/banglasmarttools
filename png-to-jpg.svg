@@ -1,0 +1,16 @@
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<linearGradient id="g_png_to_jpg" x1="0" y1="0" x2="1" y2="1">
+<stop offset="0" stop-color="#EA580C"/><stop offset="1" stop-color="#FB923C"/>
+</linearGradient>
+<radialGradient id="hl_png_to_jpg" cx="30%" cy="22%" r="60%">
+<stop offset="0" stop-color="#ffffff" stop-opacity="0.35"/><stop offset="60%" stop-color="#ffffff" stop-opacity="0"/>
+</radialGradient>
+<filter id="sh_png_to_jpg" x="-30%" y="-30%" width="160%" height="160%">
+<feDropShadow dx="0" dy="10" stdDeviation="14" flood-color="#EA580C" flood-opacity="0.35"/>
+</filter>
+</defs>
+<rect x="16" y="16" width="480" height="480" rx="112" fill="url(#g_png_to_jpg)" filter="url(#sh_png_to_jpg)"/>
+<rect x="16" y="16" width="480" height="480" rx="112" fill="url(#hl_png_to_jpg)"/>
+<rect x="120" y="180" width="150" height="150" rx="20" fill="white"/><circle cx="170" cy="226" r="18" fill="#EA580C"/><path d="M130 316 l60-60 40 34 56-64 46 50v40h-202z" fill="#EA580C"/><path d="M290 250h70M340 225l30 25-30 25" fill="none" stroke="white" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/><text x="285" y="370" font-size="46" text-anchor="middle" fill="white" font-family="Arial" font-weight="800">JPG</text>
+</svg>

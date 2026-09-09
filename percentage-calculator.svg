@@ -1,0 +1,16 @@
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<linearGradient id="g_percentage_calculator" x1="0" y1="0" x2="1" y2="1">
+<stop offset="0" stop-color="#2563EB"/><stop offset="1" stop-color="#60A5FA"/>
+</linearGradient>
+<radialGradient id="hl_percentage_calculator" cx="30%" cy="22%" r="60%">
+<stop offset="0" stop-color="#ffffff" stop-opacity="0.35"/><stop offset="60%" stop-color="#ffffff" stop-opacity="0"/>
+</radialGradient>
+<filter id="sh_percentage_calculator" x="-30%" y="-30%" width="160%" height="160%">
+<feDropShadow dx="0" dy="10" stdDeviation="14" flood-color="#2563EB" flood-opacity="0.35"/>
+</filter>
+</defs>
+<rect x="16" y="16" width="480" height="480" rx="112" fill="url(#g_percentage_calculator)" filter="url(#sh_percentage_calculator)"/>
+<rect x="16" y="16" width="480" height="480" rx="112" fill="url(#hl_percentage_calculator)"/>
+<line x1="170" y1="342" x2="342" y2="170" stroke="white" stroke-width="30" stroke-linecap="round"/><circle cx="196" cy="196" r="42" fill="white"/><circle cx="196" cy="196" r="18" fill="#2563EB"/><circle cx="316" cy="316" r="42" fill="white"/><circle cx="316" cy="316" r="18" fill="#2563EB"/>
+</svg>

@@ -1,0 +1,16 @@
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<linearGradient id="g_image_resizer" x1="0" y1="0" x2="1" y2="1">
+<stop offset="0" stop-color="#EA580C"/><stop offset="1" stop-color="#FB923C"/>
+</linearGradient>
+<radialGradient id="hl_image_resizer" cx="30%" cy="22%" r="60%">
+<stop offset="0" stop-color="#ffffff" stop-opacity="0.35"/><stop offset="60%" stop-color="#ffffff" stop-opacity="0"/>
+</radialGradient>
+<filter id="sh_image_resizer" x="-30%" y="-30%" width="160%" height="160%">
+<feDropShadow dx="0" dy="10" stdDeviation="14" flood-color="#EA580C" flood-opacity="0.35"/>
+</filter>
+</defs>
+<rect x="16" y="16" width="480" height="480" rx="112" fill="url(#g_image_resizer)" filter="url(#sh_image_resizer)"/>
+<rect x="16" y="16" width="480" height="480" rx="112" fill="url(#hl_image_resizer)"/>
+<rect x="150" y="170" width="212" height="170" rx="20" fill="white"/><circle cx="200" cy="216" r="18" fill="#EA580C"/><path d="M160 326 l60-60 40 34 56-64 46 50v40h-202z" fill="#EA580C"/><path d="M370 150l30-30M400 148v-28h-28" fill="none" stroke="white" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/><path d="M142 372l-30 30M112 374v28h28" fill="none" stroke="white" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

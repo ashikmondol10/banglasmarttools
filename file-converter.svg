@@ -1,0 +1,16 @@
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<linearGradient id="g_file_converter" x1="0" y1="0" x2="1" y2="1">
+<stop offset="0" stop-color="#059669"/><stop offset="1" stop-color="#34D399"/>
+</linearGradient>
+<radialGradient id="hl_file_converter" cx="30%" cy="22%" r="60%">
+<stop offset="0" stop-color="#ffffff" stop-opacity="0.35"/><stop offset="60%" stop-color="#ffffff" stop-opacity="0"/>
+</radialGradient>
+<filter id="sh_file_converter" x="-30%" y="-30%" width="160%" height="160%">
+<feDropShadow dx="0" dy="10" stdDeviation="14" flood-color="#059669" flood-opacity="0.35"/>
+</filter>
+</defs>
+<rect x="16" y="16" width="480" height="480" rx="112" fill="url(#g_file_converter)" filter="url(#sh_file_converter)"/>
+<rect x="16" y="16" width="480" height="480" rx="112" fill="url(#hl_file_converter)"/>
+<path d="M176 120 h124 l36 36 v174 h-160 z" fill="white" fill-opacity="0.96"/><path d="M300 120 v36 h36" fill="none" stroke="#059669" stroke-width="10" stroke-linejoin="round"/><path d="M300 250h60M335 220l30 30-30 30" fill="none" stroke="white" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

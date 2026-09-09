@@ -1,0 +1,16 @@
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<linearGradient id="g_pdf_merge" x1="0" y1="0" x2="1" y2="1">
+<stop offset="0" stop-color="#DC2626"/><stop offset="1" stop-color="#F87171"/>
+</linearGradient>
+<radialGradient id="hl_pdf_merge" cx="30%" cy="22%" r="60%">
+<stop offset="0" stop-color="#ffffff" stop-opacity="0.35"/><stop offset="60%" stop-color="#ffffff" stop-opacity="0"/>
+</radialGradient>
+<filter id="sh_pdf_merge" x="-30%" y="-30%" width="160%" height="160%">
+<feDropShadow dx="0" dy="10" stdDeviation="14" flood-color="#DC2626" flood-opacity="0.35"/>
+</filter>
+</defs>
+<rect x="16" y="16" width="480" height="480" rx="112" fill="url(#g_pdf_merge)" filter="url(#sh_pdf_merge)"/>
+<rect x="16" y="16" width="480" height="480" rx="112" fill="url(#hl_pdf_merge)"/>
+<path d="M110 150h76l34 34v116h-110z" fill="white"/><path d="M186 150v34h34" fill="none" stroke="#DC2626" stroke-width="8"/><text x="155.0" y="260" font-size="34" text-anchor="middle" fill="#DC2626" font-family="Arial" font-weight="800">PDF</text><g opacity="0.6"><path d="M150 190h76l34 34v116h-110z" fill="white"/><path d="M226 190v34h34" fill="none" stroke="#DC2626" stroke-width="8"/><text x="195.0" y="300" font-size="34" text-anchor="middle" fill="#DC2626" font-family="Arial" font-weight="800">PDF</text></g><path d="M300 260h60M335 230l35 30-35 30" fill="none" stroke="white" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

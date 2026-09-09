@@ -1,0 +1,16 @@
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<linearGradient id="g_discount_calculator" x1="0" y1="0" x2="1" y2="1">
+<stop offset="0" stop-color="#2563EB"/><stop offset="1" stop-color="#60A5FA"/>
+</linearGradient>
+<radialGradient id="hl_discount_calculator" cx="30%" cy="22%" r="60%">
+<stop offset="0" stop-color="#ffffff" stop-opacity="0.35"/><stop offset="60%" stop-color="#ffffff" stop-opacity="0"/>
+</radialGradient>
+<filter id="sh_discount_calculator" x="-30%" y="-30%" width="160%" height="160%">
+<feDropShadow dx="0" dy="10" stdDeviation="14" flood-color="#2563EB" flood-opacity="0.35"/>
+</filter>
+</defs>
+<rect x="16" y="16" width="480" height="480" rx="112" fill="url(#g_discount_calculator)" filter="url(#sh_discount_calculator)"/>
+<rect x="16" y="16" width="480" height="480" rx="112" fill="url(#hl_discount_calculator)"/>
+<path d="M320 150 400 230 250 380 130 260 v-110 z" fill="white"/><circle cx="180" cy="200" r="24" fill="#2563EB"/><line x1="190" y1="330" x2="330" y2="190" stroke="#2563EB" stroke-width="22" stroke-linecap="round"/>
+</svg>

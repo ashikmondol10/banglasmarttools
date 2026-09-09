@@ -1,0 +1,16 @@
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<linearGradient id="g_character_counter" x1="0" y1="0" x2="1" y2="1">
+<stop offset="0" stop-color="#7C3AED"/><stop offset="1" stop-color="#A78BFA"/>
+</linearGradient>
+<radialGradient id="hl_character_counter" cx="30%" cy="22%" r="60%">
+<stop offset="0" stop-color="#ffffff" stop-opacity="0.35"/><stop offset="60%" stop-color="#ffffff" stop-opacity="0"/>
+</radialGradient>
+<filter id="sh_character_counter" x="-30%" y="-30%" width="160%" height="160%">
+<feDropShadow dx="0" dy="10" stdDeviation="14" flood-color="#7C3AED" flood-opacity="0.35"/>
+</filter>
+</defs>
+<rect x="16" y="16" width="480" height="480" rx="112" fill="url(#g_character_counter)" filter="url(#sh_character_counter)"/>
+<rect x="16" y="16" width="480" height="480" rx="112" fill="url(#hl_character_counter)"/>
+<text x="226" y="330" font-size="200" text-anchor="middle" fill="white" font-family="Georgia,serif" font-weight="700">A</text><circle cx="350" cy="180" r="46" fill="white"/><text x="350" y="196" font-size="46" text-anchor="middle" fill="#7C3AED" font-family="Arial" font-weight="800">#</text>
+</svg>

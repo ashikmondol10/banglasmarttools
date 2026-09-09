@@ -1,0 +1,16 @@
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<linearGradient id="g_uuid_generator" x1="0" y1="0" x2="1" y2="1">
+<stop offset="0" stop-color="#1E3A8A"/><stop offset="1" stop-color="#3B82F6"/>
+</linearGradient>
+<radialGradient id="hl_uuid_generator" cx="30%" cy="22%" r="60%">
+<stop offset="0" stop-color="#ffffff" stop-opacity="0.35"/><stop offset="60%" stop-color="#ffffff" stop-opacity="0"/>
+</radialGradient>
+<filter id="sh_uuid_generator" x="-30%" y="-30%" width="160%" height="160%">
+<feDropShadow dx="0" dy="10" stdDeviation="14" flood-color="#1E3A8A" flood-opacity="0.35"/>
+</filter>
+</defs>
+<rect x="16" y="16" width="480" height="480" rx="112" fill="url(#g_uuid_generator)" filter="url(#sh_uuid_generator)"/>
+<rect x="16" y="16" width="480" height="480" rx="112" fill="url(#hl_uuid_generator)"/>
+<text x="256" y="260" font-size="60" text-anchor="middle" fill="white" font-family="monospace" font-weight="700">3F2A</text><text x="256" y="320" font-size="60" text-anchor="middle" fill="white" font-family="monospace" font-weight="700">9C1D</text><path d="M356 150l10 24 24 10-24 10-10 24-10-24-24-10 24-10z" fill="white"/>
+</svg>

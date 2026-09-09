@@ -1,0 +1,16 @@
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<linearGradient id="g_weather" x1="0" y1="0" x2="1" y2="1">
+<stop offset="0" stop-color="#0891B2"/><stop offset="1" stop-color="#22D3EE"/>
+</linearGradient>
+<radialGradient id="hl_weather" cx="30%" cy="22%" r="60%">
+<stop offset="0" stop-color="#ffffff" stop-opacity="0.35"/><stop offset="60%" stop-color="#ffffff" stop-opacity="0"/>
+</radialGradient>
+<filter id="sh_weather" x="-30%" y="-30%" width="160%" height="160%">
+<feDropShadow dx="0" dy="10" stdDeviation="14" flood-color="#0891B2" flood-opacity="0.35"/>
+</filter>
+</defs>
+<rect x="16" y="16" width="480" height="480" rx="112" fill="url(#g_weather)" filter="url(#sh_weather)"/>
+<rect x="16" y="16" width="480" height="480" rx="112" fill="url(#hl_weather)"/>
+<circle cx="200" cy="200" r="46" fill="white"/><path d="M180 300a58 58 0 0 1 8-116 74 74 0 0 1 142 30 50 50 0 0 1-10 99z" fill="white" opacity="0.95"/>
+</svg>

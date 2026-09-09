@@ -1,0 +1,16 @@
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<linearGradient id="g_typing_speed_test" x1="0" y1="0" x2="1" y2="1">
+<stop offset="0" stop-color="#7C3AED"/><stop offset="1" stop-color="#A78BFA"/>
+</linearGradient>
+<radialGradient id="hl_typing_speed_test" cx="30%" cy="22%" r="60%">
+<stop offset="0" stop-color="#ffffff" stop-opacity="0.35"/><stop offset="60%" stop-color="#ffffff" stop-opacity="0"/>
+</radialGradient>
+<filter id="sh_typing_speed_test" x="-30%" y="-30%" width="160%" height="160%">
+<feDropShadow dx="0" dy="10" stdDeviation="14" flood-color="#7C3AED" flood-opacity="0.35"/>
+</filter>
+</defs>
+<rect x="16" y="16" width="480" height="480" rx="112" fill="url(#g_typing_speed_test)" filter="url(#sh_typing_speed_test)"/>
+<rect x="16" y="16" width="480" height="480" rx="112" fill="url(#hl_typing_speed_test)"/>
+<rect x="128" y="200" width="256" height="140" rx="24" fill="white"/><circle cx="170" cy="250" r="12" fill="#7C3AED"/><circle cx="215" cy="250" r="12" fill="#7C3AED"/><circle cx="260" cy="250" r="12" fill="#7C3AED"/><circle cx="305" cy="250" r="12" fill="#7C3AED"/><circle cx="350" cy="250" r="12" fill="#7C3AED"/><rect x="185" y="285" width="140" height="20" rx="10" fill="#7C3AED"/><path d="M330 150a70 70 0 1 1-1 0" fill="none" stroke="white" stroke-width="0"/>
+</svg>
