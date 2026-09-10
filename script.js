@@ -716,11 +716,12 @@ function toggleFavorite(id){
   localStorage.bst_favorites=JSON.stringify(state.favorites);
   document.querySelectorAll(`.fav-btn[data-id="${id}"]`).forEach(b=>b.classList.toggle("active",state.favorites.includes(id)));
 }
-function card(t){const fav=state.favorites.includes(t[0]);return `<div class="card tool-card"><button class="fav-btn${fav?" active":""}" data-id="${t[0]}" aria-label="Favorite" onclick="event.preventDefault();toggleFavorite('${t[0]}')">${fav?"★":"☆"}</button><div class="tool-icon">${toolIcons[t[0]]||genericIcon}</div><h3>${esc(t[1])}</h3><p>${esc(t[2])}</p><a class="btn" href="#/${t[0]}">ব্যবহার করুন →</a></div>`}
+function toolIconTag(id,cls){return `<img class="${cls}" src="icons/${id}.png" alt="" width="44" height="44" loading="lazy">`}
+function card(t){const fav=state.favorites.includes(t[0]);return `<div class="card tool-card"><button class="fav-btn${fav?" active":""}" data-id="${t[0]}" aria-label="Favorite" onclick="event.preventDefault();toggleFavorite('${t[0]}')">${fav?"★":"☆"}</button>${toolIconTag(t[0],"tool-icon")}<h3>${esc(t[1])}</h3><p>${esc(t[2])}</p><a class="btn" href="#/${t[0]}">ব্যবহার করুন →</a></div>`}
 function relatedTools(currentId,category,n){
   const list=tools.filter(t=>t[0]!==currentId && t[3]===category).slice(0,n);
   if(!list.length)return "";
-  return `<div class="related"><h3>${state.lang==="bn"?"সম্পর্কিত Tools":"Related tools"}</h3><div class="related-list">${list.map(t=>`<a href="#/${t[0]}"><span class="tool-icon">${toolIcons[t[0]]||genericIcon}</span><span><b>${esc(t[1])}</b><br><small style="color:var(--muted)">${esc(t[2])}</small></span></a>`).join("")}</div></div>`;
+  return `<div class="related"><h3>${state.lang==="bn"?"সম্পর্কিত Tools":"Related tools"}</h3><div class="related-list">${list.map(t=>`<a href="#/${t[0]}">${toolIconTag(t[0],"tool-icon related-icon")}<span><b>${esc(t[1])}</b><br><small style="color:var(--muted)">${esc(t[2])}</small></span></a>`).join("")}</div></div>`;
 }
 
 /* ---------- Pages ---------- */
